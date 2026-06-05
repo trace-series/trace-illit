@@ -4431,10 +4431,13 @@ async function submitNewSpot() {
 function toggleCard() {
   cardOpen = !cardOpen;
   const card = document.getElementById('map-card');
+  const nearBtn = document.getElementById('nearest-spot-btn');
   if (cardOpen) {
     card.classList.add('open');
+    if (nearBtn) nearBtn.style.display = 'none';
   } else {
     card.classList.remove('open');
+    if (nearBtn) nearBtn.style.display = 'flex';
   }
 }
 
