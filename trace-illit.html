@@ -4624,7 +4624,7 @@ function renderSpotList() {
   var catIcon = {'カフェ・飲食店':'🍜','撮影スポット':'📸','ライブ・イベント会場':'🎤','観光・名所':'🏯','ショップ':'🛍️'};
   var filtered = SPOTS.filter(function(s) {
     if (activeCategory !== 'all' && s.category !== activeCategory) return false;
-    if (activeMember !== 'all' && !(s.member || []).includes(activeMember)) return false;
+    if (activeMember !== 'all' && !(s.member || []).includes(activeMember) && !(s.member || []).includes('全員')) return false;
     if (originSpot) {
       if (s.name === originSpot.name) return false;
       if (activeRadius > 0) {
@@ -5291,7 +5291,7 @@ function filterRouteRegion(el, region) {
       const r = item.getAttribute('data-region') || 'tokyo';
       const mAttr = item.dataset.member || '';
       const mList = mAttr ? mAttr.split(',') : [];
-      const mOk = activeMember === 'all' || mList.includes(activeMember);
+      const mOk = activeMember === 'all' || mList.includes(activeMember) || mList.includes('全員');
       item.style.display = (mOk && (region === 'all' || r === region)) ? 'block' : 'none';
     });
   }
