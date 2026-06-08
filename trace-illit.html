@@ -3794,6 +3794,9 @@ async function initMap() {
       const el = document.querySelector(`.route-spot-check[data-spot="${s.name}"]`);
       if (el) el.dataset.member = (s.member || []).join(',');
     });
+    // data-member設定後にフィルター再適用
+    const activeRegionEl = document.querySelector('.region-tabs .region-tab.active');
+    if (activeRegionEl) filterRouteRegion(activeRegionEl, activeRegionEl.dataset.region || 'all');
     console.log(`✅ Supabaseから${SPOTS.length}件取得`);
   } else {
     console.log(`⚠️ ローカルデータ${SPOTS.length}件で起動`);
