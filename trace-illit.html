@@ -1982,6 +1982,25 @@
     z-index: 100;
     padding: 8px 12px 80px;
   }
+  #origin-bar {
+    display: none;
+    background: linear-gradient(135deg,#6b3a2a,#a0522d);
+    color: white;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    align-items: center;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  #origin-bar span { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #origin-bar button { background: rgba(255,255,255,0.25); border: none; border-radius: 8px; color: white; font-size: 11px; padding: 4px 10px; cursor: pointer; white-space: nowrap; }
+  .radius-btns { display: flex; gap: 6px; padding: 8px 12px 4px; flex-wrap: wrap; }
+  .radius-btn { background: white; border: 2px solid #a0522d; border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 700; color: #6b3a2a; cursor: pointer; }
+  .radius-btn.active { background: #6b3a2a; color: white; }
+  .spot-list-dist { font-size: 11px; font-weight: 700; color: #a0522d; flex-shrink: 0; text-align: right; }
   .spot-list-item {
     background: white;
     border-radius: 14px;
@@ -2083,7 +2102,19 @@
     <div class="map-container">
 
       <button id="list-view-toggle" onclick="toggleListView()">リスト</button>
-      <div id="spot-list-container"></div>
+      <div id="spot-list-container">
+        <div id="origin-bar">
+          <span id="origin-bar-name">📍 起点：</span>
+          <button onclick="clearOrigin()">✕ 解除</button>
+        </div>
+        <div class="radius-btns" id="radius-btns" style="display:none;">
+          <span style="font-size:11px;color:#888;align-self:center;">半径：</span>
+          <button class="radius-btn active" onclick="setRadius(0)" data-r="0">全て</button>
+          <button class="radius-btn" onclick="setRadius(1)" data-r="1">1km</button>
+          <button class="radius-btn" onclick="setRadius(3)" data-r="3">3km</button>
+          <button class="radius-btn" onclick="setRadius(5)" data-r="5">5km</button>
+        </div>
+      </div>
 
       <!-- ローディング -->
       <div id="map-loading">
@@ -2172,6 +2203,9 @@
             </div>
           </div>
 
+          <div style="padding:12px 0 10px;">
+            <button id="btn-set-origin" onclick="setOriginSpot()" style="width:100%;background:linear-gradient(135deg,#f5ede8,#edddd4);border:2px solid #a0522d;border-radius:12px;padding:9px;font-size:13px;font-weight:700;color:#6b3a2a;cursor:pointer;">📍 ここを起点に周辺スポットを探す</button>
+          </div>
           <div class="card-actions">
             <button class="btn-primary" onclick="reportVisit()">📸 巡礼した！</button>
             <button class="btn-secondary" id="btn-navi" onclick="openNavi()">🗺️ ナビ</button>
@@ -4526,6 +4560,43 @@ function toggleCard() {
 
 // リストビュー
 var listViewOpen = false;
+var originSpot = null;
+var activeRadius = 0;
+
+function setOriginSpot() {
+  if (!currentSpot) return;
+  originSpot = currentSpot;
+  activeRadius = 0;
+  document.getElementById('map-card').classList.remove('open');
+  listViewOpen = true;
+  var container = document.getElementById('spot-list-container');
+  container.style.display = 'block';
+  document.getElementById('list-view-toggle').textContent = '地図';
+  document.getElementById('origin-bar').style.display = 'flex';
+  document.getElementById('origin-bar-name').textContent = '📍 起点：' + originSpot.name;
+  document.getElementById('radius-btns').style.display = 'flex';
+  document.querySelectorAll('.radius-btn').forEach(function(b) {
+    b.classList.toggle('active', parseInt(b.dataset.r) === 0);
+  });
+  renderSpotList();
+}
+
+function clearOrigin() {
+  originSpot = null;
+  activeRadius = 0;
+  document.getElementById('origin-bar').style.display = 'none';
+  document.getElementById('radius-btns').style.display = 'none';
+  renderSpotList();
+}
+
+function setRadius(r) {
+  activeRadius = r;
+  document.querySelectorAll('.radius-btn').forEach(function(b) {
+    b.classList.toggle('active', parseInt(b.dataset.r) === r);
+  });
+  renderSpotList();
+}
+
 function toggleListView() {
   listViewOpen = !listViewOpen;
   var container = document.getElementById('spot-list-container');
@@ -4542,31 +4613,56 @@ function toggleListView() {
 
 function renderSpotList() {
   var container = document.getElementById('spot-list-container');
+  var catIcon = {'カフェ・飲食店':'🍜','撮影スポット':'📸','ライブ・イベント会場':'🎤','観光・名所':'🏯','ショップ':'🛍️'};
   var filtered = SPOTS.filter(function(s) {
     if (activeCategory !== 'all' && s.category !== activeCategory) return false;
     if (activeMember !== 'all' && !(s.member || []).includes(activeMember)) return false;
+    if (originSpot) {
+      if (s.name === originSpot.name) return false;
+      if (activeRadius > 0) {
+        var d = haversineKm(originSpot.lat, originSpot.lng, s.lat, s.lng);
+        if (d > activeRadius) return false;
+      }
+    }
     return true;
   });
+  if (originSpot) {
+    filtered.sort(function(a, b) {
+      return haversineKm(originSpot.lat, originSpot.lng, a.lat, a.lng)
+           - haversineKm(originSpot.lat, originSpot.lng, b.lat, b.lng);
+    });
+  }
+  var kids = Array.from(container.children);
+  kids.forEach(function(k) {
+    if (k.id !== 'origin-bar' && k.id !== 'radius-btns') k.remove();
+  });
   if (filtered.length === 0) {
-    container.innerHTML = '<div style="text-align:center;padding:40px;color:#aaa;">スポットが見つかりません</div>';
+    var msg = document.createElement('div');
+    msg.style = 'text-align:center;padding:40px;color:#aaa;';
+    msg.textContent = 'スポットが見つかりません';
+    container.appendChild(msg);
     return;
   }
-  var catIcon = {'カフェ・飲食店':'🍜','撮影スポット':'📸','ライブ・イベント会場':'🎤','観光・名所':'🏯','ショップ':'🛍️'};
-  container.innerHTML = filtered.map(function(s) {
+  var frag = document.createDocumentFragment();
+  filtered.forEach(function(s) {
     var icon = catIcon[s.category] || '📍';
-    var score = (s.good_count || 0) - (s.bad_count || 0);
-    var safeName = s.name.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-    return '<div class="spot-list-item" onclick="selectSpotFromList(\'' + safeName + '\')">'
-      + '<div class="spot-list-icon">' + icon + '</div>'
+    var distHtml = '';
+    if (originSpot) {
+      var d = haversineKm(originSpot.lat, originSpot.lng, s.lat, s.lng);
+      distHtml = '<div class="spot-list-dist">' + (d < 1 ? Math.round(d*1000) + 'm' : d.toFixed(1) + 'km') + '</div>';
+    }
+    var div = document.createElement('div');
+    div.className = 'spot-list-item';
+    div.innerHTML = '<div class="spot-list-icon">' + icon + '</div>'
       + '<div class="spot-list-info">'
       + '<div class="spot-list-name">' + s.name + '</div>'
       + '<div class="spot-list-addr">' + (s.address || '') + '</div>'
-      + '</div>'
-      + '<div class="spot-list-score">★' + score + '</div>'
-      + '</div>';
-  }).join('');
+      + '</div>' + distHtml;
+    div.onclick = (function(spot) { return function() { selectSpotFromList(spot.name); }; })(s);
+    frag.appendChild(div);
+  });
+  container.appendChild(frag);
 }
-
 function selectSpotFromList(name) {
   var spot = SPOTS.find(function(s) { return s.name === name; });
   if (!spot) return;
