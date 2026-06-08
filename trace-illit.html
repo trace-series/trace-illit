@@ -5289,9 +5289,13 @@ function showLangComingSoon() {
   document.querySelectorAll('#route-member-tabs .region-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   activeMember = member;
-  const activeRegionEl = document.querySelector('.region-tabs .region-tab.active');
-  const region = activeRegionEl ? (activeRegionEl.dataset.region || 'all') : 'all';
-  filterRouteRegion(activeRegionEl || document.querySelector('.region-tabs .region-tab'), region);
+  document.querySelectorAll('.route-spot-check').forEach(item => {
+    const mAttr = item.dataset.member || '';
+    const mList = mAttr ? mAttr.split(',') : [];
+    const mOk = activeMember === 'all' || mList.includes(activeMember) || mList.includes('全員');
+    if (mOk) item.style.display = '';
+    else item.style.display = 'none';
+  });
 }
 
 function filterRouteRegion(el, region) {
