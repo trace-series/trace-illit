@@ -5289,7 +5289,9 @@ function showLangComingSoon() {
   document.querySelectorAll('#route-member-tabs .region-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   activeMember = member;
-  renderRouteSpotList();
+  const activeRegionEl = document.querySelector('.region-tabs .region-tab.active');
+  const region = activeRegionEl ? (activeRegionEl.dataset.region || 'all') : 'all';
+  filterRouteRegion(activeRegionEl || document.querySelector('.region-tabs .region-tab'), region);
 }
 
 function filterRouteRegion(el, region) {
