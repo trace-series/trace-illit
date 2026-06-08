@@ -3826,6 +3826,18 @@ async function initMap() {
   // ローディング非表示
   document.getElementById('map-loading').style.display = 'none';
 
+  // ルートスポットのdata-memberをDBから設定
+  fetchSpotsFromDB().then(dbSpots => {
+    const spotMap = {};
+    dbSpots.forEach(s => { spotMap[s.name] = s.member || ''; });
+    document.querySelectorAll('.route-spot-check').forEach(el => {
+      const spotName = el.dataset.spot;
+      if (spotMap[spotName] !== undefined) {
+        el.dataset.member = spotMap[spotName];
+      }
+    });
+  });
+
   // 初回起動チェック
   checkOnboarding();
 
