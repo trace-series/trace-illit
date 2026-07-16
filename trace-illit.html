@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trace ILLIT — 聖地巡礼MAP</title>
-<meta name="description" content="ILLITメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
+<meta name="description" content="IVEメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
 
 <!-- OGP -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Trace ILLIT — 聖地巡礼MAP">
-<meta property="og:description" content="ILLITメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
-<meta property="og:url" content="https://missinglink4179.github.io/trace-illit/trace-illit.html">
-<meta property="og:image" content="https://missinglink4179.github.io/trace-illit/ogp.png">
+<meta property="og:description" content="IVEメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
+<meta property="og:url" content="https://missinglink4179.github.io/trace-ive/trace-ive.html">
+<meta property="og:image" content="https://missinglink4179.github.io/trace-ive/ogp.png">
 <meta property="og:site_name" content="Trace ILLIT">
 <meta property="og:locale" content="ja_JP">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Trace ILLIT — 聖地巡礼MAP">
-<meta name="twitter:description" content="ILLITメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
-<meta name="twitter:image" content="https://missinglink4179.github.io/trace-illit/ogp.png">
+<meta name="twitter:description" content="IVEメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
+<meta name="twitter:image" content="https://missinglink4179.github.io/trace-ive/ogp.png">
 
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -189,7 +189,7 @@
     display: block;
   }
 
-  #view-ranking, #view-feed, #view-post, #view-profile, #view-route {
+  #view-ranking, #view-feed, #view-post, #view-profile, #view-route, #view-terms, #view-privacy, #view-pointrules {
     display: none;
     padding: 20px 16px;
   }
@@ -299,6 +299,7 @@
     justify-content: center;
     font-size: 20px;
     flex-shrink: 0;
+      overflow: hidden;
   }
 
   .card-title {
@@ -1331,7 +1332,7 @@
     header, .member-tabs, .bottom-nav, .modal-overlay { display: none !important; }
     body { background: white !important; }
     main { padding-top: 0 !important; padding-bottom: 0 !important; }
-    #view-map, #view-ranking, #view-feed, #view-post, #view-profile, #view-route { display: none !important; }
+    #view-map, #view-ranking, #view-feed, #view-post, #view-profile, #view-route, #view-terms, #view-privacy, #view-pointrules { display: none !important; }
     #print-area { display: block !important; }
   }
 
@@ -1984,7 +1985,7 @@
   }
   #origin-bar {
     display: none;
-    background: linear-gradient(135deg,#6b3a2a,#a0522d);
+    background: linear-gradient(135deg,#6b21a8,#9333ea);
     color: white;
     padding: 8px 14px;
     font-size: 12px;
@@ -1998,9 +1999,9 @@
   #origin-bar span { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   #origin-bar button { background: rgba(255,255,255,0.25); border: none; border-radius: 8px; color: white; font-size: 11px; padding: 4px 10px; cursor: pointer; white-space: nowrap; }
   .radius-btns { display: flex; gap: 6px; padding: 8px 12px 4px; flex-wrap: wrap; }
-  .radius-btn { background: white; border: 2px solid #a0522d; border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 700; color: #6b3a2a; cursor: pointer; }
-  .radius-btn.active { background: #6b3a2a; color: white; }
-  .spot-list-dist { font-size: 11px; font-weight: 700; color: #a0522d; flex-shrink: 0; text-align: right; }
+  .radius-btn { background: white; border: 2px solid #c084fc; border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 700; color: #7c3aed; cursor: pointer; }
+  .radius-btn.active { background: #7c3aed; color: white; }
+  .spot-list-dist { font-size: 11px; font-weight: 700; color: #9333ea; flex-shrink: 0; text-align: right; }
   .spot-list-item {
     background: white;
     border-radius: 14px;
@@ -2074,7 +2075,7 @@
     <div class="member-tab-name">ユナ</div>
   </div>
   <div class="member-tab-item" onclick="filterMember(this, 'ミンジュ')" ondblclick="showOshiRanking('ミンジュ')">
-    <div class="member-tab-icon">🐿️</div>
+    <div class="member-tab-icon">🐰</div>
     <div class="member-tab-name">ミンジュ</div>
   </div>
   <div class="member-tab-item" onclick="filterMember(this, 'モカ')" ondblclick="showOshiRanking('モカ')">
@@ -2082,14 +2083,13 @@
     <div class="member-tab-name">モカ</div>
   </div>
   <div class="member-tab-item" onclick="filterMember(this, 'ウォンヒ')" ondblclick="showOshiRanking('ウォンヒ')">
-    <div class="member-tab-icon">🐰</div>
+    <div class="member-tab-icon">🐿️</div>
     <div class="member-tab-name">ウォンヒ</div>
   </div>
   <div class="member-tab-item" onclick="filterMember(this, 'イロハ')" ondblclick="showOshiRanking('イロハ')">
     <div class="member-tab-icon">🐢</div>
     <div class="member-tab-name">イロハ</div>
   </div>
-  
 </div>
 <div id="member-tabs-hint" style="display:none;background:#f0e8f8;text-align:center;font-size:11px;color:#7b4fa6;padding:4px 0;">
   👆 タップしてスポットのメンバーを選択
@@ -2099,6 +2099,17 @@
 
   <!-- MAP VIEW -->
   <div id="view-map">
+  <!-- お知らせバナー -->
+  <div id="notice-banner-wrap" style="display:none;margin:8px 8px 0;border-radius:12px;overflow:hidden;background:#1a0a2e;border:1px solid rgba(201,168,239,0.3);">
+    <div id="notice-banner-header" onclick="toggleNoticeBanner()" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;">
+      <span style="font-size:13px;font-weight:700;color:#c9a8ef;">📢 お知らせ <span id="notice-count-badge" style="background:rgba(201,168,239,0.2);color:#c9a8ef;padding:1px 8px;border-radius:20px;font-size:11px;"></span></span>
+      <span id="notice-banner-arrow" style="color:#c9a8ef;font-size:12px;">▼</span>
+    </div>
+    <div id="notice-banner-body" style="display:none;padding:0 14px 12px;">
+      <div id="notice-list-items"></div>
+    </div>
+  </div>
+
     <div class="map-container">
 
       <button id="list-view-toggle" onclick="toggleListView()">リスト</button>
@@ -2135,7 +2146,12 @@
         <button id="fbtn-shop"  class="filter-btn" onclick="filterPins(this,'ショップ')">🛍️ ショップ</button>
         <button class="filter-btn help-btn" onclick="openCategoryHelp()">？</button>
       </div>
-        <button id="nearest-spot-btn" onclick="goToNearestSpot()" style="position:fixed;bottom:90px;right:16px;z-index:1000;background:linear-gradient(135deg,#2d1b4e,#1a3a5c);color:#fff;border:none;border-radius:50px;padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);display:flex;align-items:center;gap:6px;">📍 最寄りスポット</button>
+      <div class="map-filter" style="top:50px; margin-top:0;">
+        <button id="vfbtn-all" class="radius-btn active" onclick="setVisitedFilter('all', this)">すべて</button>
+        <button id="vfbtn-visited" class="radius-btn" onclick="setVisitedFilter('visited', this)">✅ 訪問済み</button>
+        <button id="vfbtn-unvisited" class="radius-btn" onclick="setVisitedFilter('unvisited', this)">⬜ 未訪問</button>
+      </div>
+        <button id="nearest-spot-btn" onclick="goToNearestSpot()" style="position:fixed;bottom:90px;right:16px;z-index:1000;background:linear-gradient(135deg,#3d1a5e,#7b1a3e);color:#fff;border:none;border-radius:50px;padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);display:none;align-items:center;gap:6px;">📍 最寄りスポット</button>
 
       <!-- 下部カード -->
       <div class="map-bottom-card" id="map-card">
@@ -2149,6 +2165,14 @@
               <span class="badge badge-purple">東京</span>
             </div>
           </div>
+        </div>
+        <div class="card-actions" style="margin-top:14px;">
+          <button class="btn-primary" onclick="reportVisit()">📸 巡礼した！</button>
+          <button class="btn-primary" style="background:linear-gradient(135deg,#1a1a1a,#000);" onclick="shareX()">𝕏 シェア</button>
+        </div>
+        <div class="card-actions" style="margin-top:8px;">
+          <button id="btn-navi" onclick="openNavi()" style="flex:1;background:linear-gradient(135deg,#f3e8ff,#e8d5ff);border:2px solid #c084fc;border-radius:12px;padding:9px;font-size:13px;font-weight:700;color:#6b21a8;cursor:pointer;">🗺️ ナビ</button>
+          <button id="btn-set-origin" onclick="setOriginSpot()" style="flex:1;background:linear-gradient(135deg,#f3e8ff,#e8d5ff);border:2px solid #c084fc;border-radius:12px;padding:9px;font-size:13px;font-weight:700;color:#6b21a8;cursor:pointer;">📍 起点に設定</button>
         </div>
         <div class="card-detail" id="card-detail" style="display:none;">
           <div class="card-detail-row">
@@ -2197,20 +2221,14 @@
             <div class="eval-title">⚠️ BAD評価</div>
             <div class="eval-btns">
               <button class="eval-btn eval-bad" onclick="evalSpot('wrong')">❌ 場所が違う</button>
+              <button class="eval-btn eval-bad" onclick="reportLocationCorrection()">📍 正しい位置を報告</button>
+              <button class="eval-btn eval-bad" onclick="reportWrongInfo()">🛡️ 誤情報を報告</button>
               <button class="eval-btn eval-bad" onclick="evalSpot('unclear')">🤔 特定できない</button>
               <button class="eval-btn eval-bad" onclick="evalSpot('closed')">🚫 立入不可</button>
               <button class="eval-btn eval-bad" onclick="evalSpot('outdated')">⚠️ 情報が古い</button>
             </div>
           </div>
 
-          <div style="padding:12px 0 10px;">
-            <button id="btn-set-origin" onclick="setOriginSpot()" style="width:100%;background:linear-gradient(135deg,#f5ede8,#edddd4);border:2px solid #a0522d;border-radius:12px;padding:9px;font-size:13px;font-weight:700;color:#6b3a2a;cursor:pointer;">📍 ここを起点に周辺スポットを探す</button>
-          </div>
-          <div class="card-actions">
-            <button class="btn-primary" onclick="reportVisit()">📸 巡礼した！</button>
-            <button class="btn-secondary" id="btn-navi" onclick="openNavi()">🗺️ ナビ</button>
-            <button class="btn-secondary" onclick="shareX()">𝕏 シェア</button>
-          </div>
         </div>
       </div>
     </div>
@@ -2238,6 +2256,7 @@
       <div class="rtab" onclick="switchRankingPeriod(this,'half')">半年</div>
       <div class="rtab" onclick="switchRankingPeriod(this,'quarter')">3ヶ月</div>
       <div class="rtab" onclick="switchRankingPeriod(this,'month')">月間</div>
+      <div class="rtab" onclick="switchRankingPeriod(this,'achievement')">🏆 達成率</div>
       <div id="event-ranking-tabs"></div>
     </div>
 
@@ -2256,8 +2275,8 @@
 
     <!-- 推しメン熱量ランキング -->
     <div style="margin-top:28px;">
-      <div style="font-size:16px;font-weight:700;color:var(--purple-deep);margin-bottom:4px;">💜 推しメン熱量ランキング</div>
-      <div style="font-size:12px;color:var(--text-light);margin-bottom:14px;">巡礼数・投稿数・評価数の合計で算出</div>
+      <div style="font-size:16px;font-weight:700;color:var(--purple-deep);margin-bottom:4px;">💜 推し別 上位ファン</div>
+      <div style="font-size:12px;color:var(--text-light);margin-bottom:14px;">各メンバーを推しに設定しているファンの中で、巡礼報告数が多い上位3名を表示</div>
       <div id="oshi-ranking-list"></div>
     </div>
   </div>
@@ -2282,11 +2301,13 @@
         <div class="profile-avatar-img" id="profile-avatar">👤</div>
         <div class="profile-name-block">
           <div class="profile-name" id="profile-name">匿名ユーザー</div>
-          <div class="profile-handle" id="profile-handle">X未連携</div>
+          <div class="profile-handle" id="profile-handle">未連携</div>
         </div>
         <button class="profile-edit-btn" onclick="openProfileEdit()">編集</button>
       </div>
       <div class="profile-badges-row" id="profile-badges-row">
+        <span class="profile-badge pbadge-founder" id="pbadge-founder-el" style="display:none;">🏅 創設メンバー</span>
+        <span class="profile-badge pbadge-discoverer" id="pbadge-discoverer-el" style="display:none;">🥇 発見者バッジ</span>
       </div>
     </div>
 
@@ -2303,23 +2324,6 @@
         <div class="contrib-bar-fill" id="contrib-bar-fill" style="width:0%"></div>
       </div>
       <div class="contrib-next" id="contrib-next">ポイントを貯めてランクアップしよう</div>
-      <div class="contrib-breakdown">
-        <div class="contrib-item">
-          <span class="contrib-item-icon">🎯</span>
-          <span class="contrib-item-label">正確報告</span>
-          <span class="contrib-item-val" id="contrib-accurate">0pt</span>
-        </div>
-        <div class="contrib-item">
-          <span class="contrib-item-icon">🔍</span>
-          <span class="contrib-item-label">早期発見</span>
-          <span class="contrib-item-val" id="contrib-early">0pt</span>
-        </div>
-        <div class="contrib-item">
-          <span class="contrib-item-icon">⚡</span>
-          <span class="contrib-item-label">スピード報告</span>
-          <span class="contrib-item-val" id="contrib-speed">0pt</span>
-        </div>
-      </div>
     </div>
 
     <!-- 確定待ちポイント -->
@@ -2333,21 +2337,29 @@
 
     <div class="stats-row">
       <div class="stat-card">
-        <div class="stat-num" id="stat-spots">0</div>
-        <div class="stat-label">投稿スポット</div>
+        <div class="stat-num" id="stat-spots">—</div>
+        <div class="stat-label" style="white-space:nowrap;">投稿スポット</div>
+            <div style="font-size:9px;color:#b08a3e;background:rgba(212,175,55,0.15);border-radius:6px;padding:2px 6px;margin-top:4px;display:inline-block;">Coming Soon</div>
       </div>
       <div class="stat-card">
         <div class="stat-num" id="stat-pilgrim">0</div>
         <div class="stat-label">巡礼済み</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num" id="stat-likes">0</div>
+        <div class="stat-num" id="stat-likes">—</div>
         <div class="stat-label">獲得いいね</div>
+            <div style="font-size:9px;color:#b08a3e;background:rgba(212,175,55,0.15);border-radius:6px;padding:2px 6px;margin-top:4px;display:inline-block;">Coming Soon</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num" id="stat-discoverer">0</div>
+        <div class="stat-num" id="stat-discoverer">—</div>
         <div class="stat-label">発見者バッジ</div>
+            <div style="font-size:9px;color:#b08a3e;background:rgba(212,175,55,0.15);border-radius:6px;padding:2px 6px;margin-top:4px;display:inline-block;">Coming Soon</div>
       </div>
+    </div>
+
+    <div class="profile-section-title">📋 ポイント履歴</div>
+    <div id="point-log-list" style="max-height:200px;overflow-y:auto;">
+      <div style="color:var(--text-mid);font-size:13px;text-align:center;padding:16px;">履歴を読み込み中...</div>
     </div>
 
     <div class="profile-section-title">🏅 バッジコレクション</div>
@@ -2370,12 +2382,12 @@
       <div class="badge-card locked">
         <div class="badge-icon">🔥</div>
         <div class="badge-name">バズ投稿</div>
-        <div class="badge-desc">いいね100超え</div>
+        <div class="badge-desc">いいね合計500件</div>
       </div>
       <div class="badge-card locked">
         <div class="badge-icon">🎯</div>
         <div class="badge-name">正確レポーター</div>
-        <div class="badge-desc">正確報告100pt超え</div>
+        <div class="badge-desc">GOOD評価の実施で累計50pt以上獲得</div>
       </div>
       <div class="badge-card locked">
         <div class="badge-icon">👑</div>
@@ -2388,14 +2400,24 @@
         <div class="badge-desc">韓国スポット投稿</div>
       </div>
       <div class="badge-card locked">
-        <div class="badge-icon">⚡</div>
-        <div class="badge-name">スピードレポーター</div>
-        <div class="badge-desc">24h以内報告×10</div>
-      </div>
-      <div class="badge-card locked">
         <div class="badge-icon">🛡️</div>
         <div class="badge-name">ガーディアン</div>
         <div class="badge-desc">誤情報報告×5件確定</div>
+      </div>
+      <div class="badge-card locked">
+        <div class="badge-icon">🔗</div>
+        <div class="badge-name">つなぎ役</div>
+        <div class="badge-desc">友達紹介1人目</div>
+      </div>
+      <div class="badge-card locked">
+        <div class="badge-icon">🔭</div>
+        <div class="badge-name">Scout</div>
+        <div class="badge-desc">友達紹介5人達成</div>
+      </div>
+      <div class="badge-card locked">
+        <div class="badge-icon">📣</div>
+        <div class="badge-name">Evangelist</div>
+        <div class="badge-desc">友達紹介10人達成</div>
       </div>
     </div>
 
@@ -2404,15 +2426,23 @@
       <div style="text-align:center;padding:20px;color:var(--text-light);font-size:12px;">投稿したスポットはまだありません</div>
     </div>
 
-    <div class="x-connect-card" onclick="startXConnect()">
+    <div class="x-connect-card" onclick="startWithX()">
       <div style="width:40px;height:40px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;font-family:sans-serif;flex-shrink:0;">𝕏</div>
       <div class="x-connect-text">
-        <div class="x-connect-title" id="x-connect-title">Xアカウントを連携する</div>
-        <div class="x-connect-sub" id="x-connect-sub">連携するとポイントや発見者クレジットが保持されます</div>
+        <div class="x-connect-title" id="x-connect-title">𝕏 X連携</div>
+        <div class="x-connect-sub" id="x-connect-sub">発見者名がXで表示・#TraceIVE投稿連動ポイント・特別バッジ解放</div>
       </div>
       <div class="x-connect-arrow">›</div>
     </div>
 
+      <div class="x-connect-card" id="google-connect-card" onclick="startWithGoogle()" style="background:linear-gradient(135deg,#4285f4,#34a853);margin-top:8px;margin-bottom:0;">
+        <div style="width:40px;height:40px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;flex-shrink:0;">G</div>
+        <div class="x-connect-text">
+          <div class="x-connect-title" id="google-connect-title">G Google連携</div>
+          <div class="x-connect-sub" id="google-connect-sub" style="color:rgba(255,255,255,0.8);">ポイント・発見者クレジットが永続保持されます</div>
+        </div>
+        <div class="x-connect-arrow" id="google-connect-arrow" style="color:white;">›</div>
+      </div>
     <div class="profile-section-title">⚙️ 設定</div>
     <div class="settings-list">
       <div class="settings-item" onclick="showView('terms')">
@@ -2429,6 +2459,11 @@
         <div class="settings-item-icon">💜</div>
         <div class="settings-item-text">推し設定</div>
         <div class="settings-item-arrow" id="oshi-setting-preview" style="font-size:12px;color:var(--purple-deep);font-weight:700;">未設定</div>
+      </div>
+      <div class="settings-item" onclick="shareReferralLink()">
+        <div class="settings-item-icon">🔗</div>
+        <div class="settings-item-text">友達を紹介</div>
+        <div class="settings-item-arrow" style="font-size:12px;color:var(--purple-deep);font-weight:700;">+50pt</div>
       </div>
       <div class="settings-item" onclick="showView('route')">
         <div class="settings-item-icon">📂</div>
@@ -2461,14 +2496,9 @@
         <div class="settings-item-text">データ引き継ぎ</div>
         <div class="settings-item-arrow">›</div>
       </div>
-      <div class="settings-item" onclick="window.open('https://x.com/traceIVE4179','_blank')">
+      <div class="settings-item" onclick="window.open('https://x.com/traceILLIT','_blank')">
         <div class="settings-item-icon">❓</div>
         <div class="settings-item-text">ヘルプ・お問い合わせ</div>
-        <div class="settings-item-arrow">›</div>
-      </div>
-      <div class="settings-item" onclick="openAdminLogin()" style="border-top:1px solid var(--border);">
-        <div class="settings-item-icon">🛡️</div>
-        <div class="settings-item-text" style="color:var(--purple-deep);font-weight:600;">管理者パネル</div>
         <div class="settings-item-arrow">›</div>
       </div>
     </div>
@@ -2503,13 +2533,13 @@
       <div class="section-title" style="margin-bottom:0;">利用規約</div>
     </div>
     <div class="section-sub">TERMS OF SERVICE</div>
-    <div style="font-size:12px;color:var(--text-light);margin-bottom:20px;">最終更新日：2026年6月1日</div>
+    <div style="font-size:12px;color:var(--text-light);margin-bottom:20px;">最終更新日：2026年7月14日</div>
 
     <div style="display:flex;flex-direction:column;gap:20px;padding-bottom:40px;">
 
       <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
         <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">第1条（本サービスについて）</div>
-        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">Trace ILLITは、IVEゆかりの場所（聖地）に関する情報をファン同士で共有・記録するための非公式ファンアプリです。本サービスはBELIFT LAB及びILLITとは一切関係ありません。</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">Trace ILLITは、ILLITゆかりの場所（聖地）に関する情報をファン同士で共有・記録するための非公式ファンアプリです。本サービスはBELIFT LAB及びILLITとは一切関係ありません。</div>
       </div>
 
       <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
@@ -2524,7 +2554,7 @@
 
       <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
         <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">第3条（投稿コンテンツ）</div>
-        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">ユーザーが投稿したスポット情報は、Trace ILLITのデータベースに登録されます。投稿者には「発見者」クレジットが永続的に付与されます。運営は不適切な投稿を削除・修正する権限を持ちます。</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">ユーザーが投稿したスポット情報は、Trace ILLITのデータベースに登録されます。投稿者には「発見者」クレジットが永続的に付与されます。運営は不適切な投稿を削除・修正する権限を持ちます。スポットに紐づく元ネタ写真についても、運営の判断により別の写真への差し替えまたは削除を行う場合があります。この場合も、写真提供者に付与されたポイントが取り消されることはありません。</div>
       </div>
 
       <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
@@ -2547,8 +2577,28 @@
         <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">運営は予告なくサービス内容の変更・終了を行う場合があります。これにより生じた損害について責任を負いかねます。</div>
       </div>
 
+      <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
+        <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">第7条（位置情報について）</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">巡礼報告・位置修正報告・最寄りスポット表示などの機能では、端末のGPSにより取得した位置情報を利用します。GPSの性質上、位置情報には誤差が生じる場合があり、その正確性を保証するものではありません。</div>
+      </div>
+
+      <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
+        <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">第8条（ポイント・バッジの取消等）</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">不正な操作、本規約への違反、システムの不具合等が判明した場合、運営は事前の通知なくポイント・バッジ・ランクの一部または全部を調整・取り消すことがあります。</div>
+      </div>
+
+      <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
+        <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">第9条（アカウントの停止・削除）</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">本規約に違反した、または違反するおそれがあると運営が判断したユーザーについて、投稿の削除、アカウントの利用停止・削除を行うことがあります。ユーザー自身がアカウントやデータの削除を希望する場合は、お問い合わせ窓口までご連絡ください。</div>
+      </div>
+
+      <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
+        <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">第10条（準拠法・裁判管轄）</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">本規約の解釈にあたっては日本法を準拠法とします。本サービスに関して紛争が生じた場合には、運営者の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</div>
+      </div>
+
       <div style="background:var(--purple-pale);border-radius:14px;padding:16px;">
-        <div style="font-size:12px;color:var(--text-mid);line-height:1.8;">お問い合わせ：<a href="https://x.com/traceIVE4179" style="color:var(--purple-deep);">@missinglink4179</a>（X/Twitter）</div>
+        <div style="font-size:12px;color:var(--text-mid);line-height:1.8;">お問い合わせ：<a href="https://x.com/traceILLIT" style="color:var(--purple-deep);">@traceILLIT</a>（X/Twitter）</div>
       </div>
 
     </div>
@@ -2561,7 +2611,7 @@
       <div class="section-title" style="margin-bottom:0;">プライバシーポリシー</div>
     </div>
     <div class="section-sub">PRIVACY POLICY</div>
-    <div style="font-size:12px;color:var(--text-light);margin-bottom:20px;">最終更新日：2026年6月1日</div>
+    <div style="font-size:12px;color:var(--text-light);margin-bottom:20px;">最終更新日：2026年7月14日</div>
 
     <div style="display:flex;flex-direction:column;gap:20px;padding-bottom:40px;">
 
@@ -2569,9 +2619,12 @@
         <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">収集する情報</div>
         <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">本サービスでは以下の情報を収集する場合があります。<br><br>
         ・投稿されたスポット情報（スポット名・住所・説明・カテゴリー）<br>
-        ・評価・巡礼報告データ<br>
-        ・X連携時のユーザー名（任意）<br>
-        ・端末のlocalStorageに保存される設定情報</div>
+        ・投稿された元ネタ写真（スポットに紐づく画像データ。公開設定で保存され、アプリ内で誰でも閲覧できます）<br>
+        ・評価・巡礼報告データ、獲得ポイント・ランク<br>
+        ・巡礼報告・位置修正報告時に取得する位置情報（GPS）<br>
+        ・Googleログイン時のメールアドレス・表示名<br>
+        ・Xログイン時のユーザーID・表示名<br>
+        ・端末のlocalStorageに保存される一部の設定情報（推しメン設定・評価履歴の重複防止など）</div>
       </div>
 
       <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
@@ -2579,26 +2632,35 @@
         <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">収集した情報は以下の目的で使用します。<br><br>
         ・聖地情報の提供・管理<br>
         ・ポイント・ランキングシステムの運営<br>
+        ・位置情報は、巡礼報告時の到達確認、位置修正報告における正しい座標の取得、最寄りスポットの表示のために利用します。常時の位置追跡は行いません<br>
         ・サービスの改善・不正利用の防止</div>
       </div>
 
       <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
         <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">第三者への提供</div>
-        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">収集した個人情報を第三者に販売・提供することはありません。ただし法令に基づく場合を除きます。</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">収集した個人情報を、個人を特定できる形で第三者に販売・提供することはありません。<br><br>
+        運営者本人に加え、運営が認定したモデレーターが、投稿の承認・評価の確認・お知らせの管理等の運営業務のために、投稿内容やアカウント情報を閲覧・操作する場合があります。<br><br>
+        また、位置情報や巡礼行動等のデータを統計的に加工し、個人を特定できない形に集計した上で、将来的に観光関連事業者・自治体等への提供や共同研究等に利用する場合があります。この場合も、個人を特定できる情報が第三者に渡ることはありません。<br><br>
+        法令に基づく場合についても、この限りではありません。</div>
       </div>
 
       <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
         <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">使用技術</div>
-        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">本サービスはSupabase（データベース）、Google Maps API（地図表示）、GitHub Pages（ホスティング）を使用しています。各サービスのプライバシーポリシーもご確認ください。</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">本サービスはSupabase（データベース・認証）、Google Maps API（地図表示）、GitHub Pages（ホスティング）を使用しています。投稿内容・ポイント・巡礼報告・アカウント情報等はSupabaseのサーバーに保存されます。各サービスのプライバシーポリシーもご確認ください。</div>
       </div>
 
       <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
         <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">localStorageについて</div>
-        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">本サービスはブラウザのlocalStorageを使用して、ポイント・設定・評価履歴を端末に保存します。サーバーには送信されません。ブラウザの設定から削除可能です。</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">推しメン設定・評価履歴の重複防止・ポップアップの表示状態など、個人の利用体験に関わる一部の設定情報は、ブラウザのlocalStorageに端末内で保存されます。これらはサーバーには送信されません。一方、ポイント・巡礼報告・投稿内容・アカウント情報などはSupabaseのサーバーに保存され、複数端末間で同期されます。localStorageの情報はブラウザの設定から削除可能です。</div>
+      </div>
+
+      <div style="background:white;border-radius:14px;padding:16px;border:1px solid var(--border);">
+        <div style="font-size:14px;font-weight:700;color:var(--purple-deep);margin-bottom:8px;">データの保存期間・削除方法</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">アカウントやこれに紐づく情報の削除を希望する場合は、お問い合わせ窓口までご連絡ください。確認の上、対応いたします。なお、投稿されたスポット情報は本サービスの公共インフラとしての性質上、発見者クレジット等を匿名化した上で継続して保持される場合があります。</div>
       </div>
 
       <div style="background:var(--purple-pale);border-radius:14px;padding:16px;">
-        <div style="font-size:12px;color:var(--text-mid);line-height:1.8;">お問い合わせ：<a href="https://x.com/traceIVE4179" style="color:var(--purple-deep);">@missinglink4179</a>（X/Twitter）</div>
+        <div style="font-size:12px;color:var(--text-mid);line-height:1.8;">お問い合わせ：<a href="https://x.com/traceILLIT" style="color:var(--purple-deep);">@traceILLIT</a>（X/Twitter）</div>
       </div>
 
     </div>
@@ -2618,50 +2680,88 @@
       ⚙️ 数値は運営により随時調整されます
     </div>
 
+    <!-- 巡礼ポイント -->
+    <div class="pr-section-title">🚶 巡礼でもらえるポイント</div>
+    <div class="pr-card">
+      <div class="pr-row">
+        <span class="pr-label">巡礼報告（1スポットにつき初回のみ）</span>
+        <span class="pr-pt pr-pt-good">+100 pt</span>
+      </div>
+      <div class="pr-row">
+        <span class="pr-label" style="color:var(--text-light);font-size:11px;">誕生日/誕生月・推し設定・イベント期間中は倍率がかかります</span>
+      </div>
+    </div>
+
+    <!-- 紹介ポイント -->
+    <div class="pr-section-title">🔗 紹介でもらえるポイント</div>
+    <div class="pr-card">
+      <div class="pr-row">
+        <span class="pr-label">友達紹介（1人につき、初回巡礼報告完了時）</span>
+        <span class="pr-pt pr-pt-good">+50 pt</span>
+      </div>
+      <div class="pr-row">
+        <span class="pr-label">5人紹介達成（称号「Scout」）</span>
+        <span class="pr-pt pr-pt-good">+150 pt</span>
+      </div>
+      <div class="pr-row">
+        <span class="pr-label">10人紹介達成（称号「Evangelist」）</span>
+        <span class="pr-pt pr-pt-good">+400 pt</span>
+      </div>
+      <div class="pr-row">
+        <span class="pr-label">11人目以降（1人につき）</span>
+        <span class="pr-pt pr-pt-good">+30 pt</span>
+      </div>
+      <div class="pr-row">
+        <span class="pr-label" style="color:var(--text-light);font-size:11px;">紹介ポイントは、自分自身も巡礼に参加している場合のみ加算されます</span>
+      </div>
+    </div>
+
     <!-- ランク一覧 -->
     <div class="pr-section-title">🏆 ランク一覧</div>
     <div class="pr-card">
-      <div class="pr-rank-item">
+      <div class="pr-rank-item" data-rank="bronze">
         <div class="pr-rank-icon">🥉</div>
         <div class="pr-rank-info">
-          <div class="pr-rank-name">ブロンズ</div>
+          <div class="pr-rank-name">ブロンズ <span class="pr-current-badge" style="display:none;">現在</span></div>
           <div class="pr-rank-range">0〜199 pt</div>
         </div>
         <div class="pr-rank-desc">新規参加者</div>
       </div>
-      <div class="pr-rank-item">
+      <div class="pr-rank-item" data-rank="silver">
         <div class="pr-rank-icon">🥈</div>
         <div class="pr-rank-info">
-          <div class="pr-rank-name">シルバー</div>
-          <div class="pr-rank-range">200〜499 pt</div>
+          <div class="pr-rank-name">シルバー <span class="pr-current-badge" style="display:none;">現在</span></div>
+          <div class="pr-rank-range">200〜799 pt</div>
         </div>
         <div class="pr-rank-desc">アクティブ巡礼者</div>
       </div>
-      <div class="pr-rank-item pr-rank-current">
+      <div class="pr-rank-item" data-rank="gold">
         <div class="pr-rank-icon">🥇</div>
         <div class="pr-rank-info">
-          <div class="pr-rank-name">ゴールド <span class="pr-current-badge">現在</span></div>
-          <div class="pr-rank-range">500〜999 pt</div>
+          <div class="pr-rank-name">ゴールド <span class="pr-current-badge" style="display:none;">現在</span></div>
+          <div class="pr-rank-range">800〜2499 pt</div>
         </div>
         <div class="pr-rank-desc">熟練レポーター</div>
       </div>
-      <div class="pr-rank-item">
+      <div class="pr-rank-item" data-rank="platinum">
         <div class="pr-rank-icon">💎</div>
         <div class="pr-rank-info">
-          <div class="pr-rank-name">プラチナ</div>
-          <div class="pr-rank-range">1000〜2999 pt</div>
+          <div class="pr-rank-name">プラチナ <span class="pr-current-badge" style="display:none;">現在</span></div>
+          <div class="pr-rank-range">2500〜5999 pt</div>
         </div>
         <div class="pr-rank-desc">信頼された貢献者</div>
       </div>
-      <div class="pr-rank-item">
+      <div class="pr-rank-item" data-rank="diamond">
         <div class="pr-rank-icon">👑</div>
         <div class="pr-rank-info">
-          <div class="pr-rank-name">ダイヤモンド</div>
-          <div class="pr-rank-range">3000 pt〜</div>
+          <div class="pr-rank-name">ダイヤモンド <span class="pr-current-badge" style="display:none;">現在</span></div>
+          <div class="pr-rank-range">6000 pt〜</div>
+          <div style="font-size:10px;color:#c0392b;margin-top:2px;">🔒 友達紹介5人（称号「Scout」）以上が必要</div>
         </div>
         <div class="pr-rank-desc">準管理者候補</div>
       </div>
     </div>
+    <div class="pr-desc" style="margin-top:6px;">※ダイヤモンドだけはポイントに加えて友達紹介5人達成（称号「Scout」）が条件です。巡礼だけでなく、コミュニティを広げてくれた人だけが到達できる特別ランクです。</div>
 
     <!-- 投稿ポイント -->
     <div class="pr-section-title">📍 投稿でもらえるポイント</div>
@@ -2669,6 +2769,10 @@
       <div class="pr-row">
         <span class="pr-label">新規スポット投稿（承認後）</span>
         <span class="pr-pt pr-pt-good">+50 pt</span>
+      </div>
+      <div class="pr-row">
+        <span class="pr-label">同じスポットの重複報告（2件目以降）<br><span style="font-size:10px;color:var(--text-light);">最初の発見者クレジットは1人目のみ付与されます</span></span>
+        <span class="pr-pt pr-pt-good">+10 pt</span>
       </div>
       <div class="pr-row">
         <span class="pr-label">投稿が公式認定された</span>
@@ -2684,11 +2788,11 @@
       </div>
     </div>
 
-    <!-- 評価ポイント（確定待ち） -->
-    <div class="pr-section-title">✅ 評価でもらえるポイント <span class="pr-pending-note">確定待ち</span></div>
-    <div class="pr-desc">管理者が判定を確定した時点で付与されます。正しい評価をした人だけが得をする仕組みです。</div>
+    <!-- 評価ポイント -->
+    <div class="pr-section-title">✅ 評価でもらえるポイント</div>
 
-    <div class="pr-section-title" style="font-size:12px;margin-top:8px;">🏃 現地確認系（どちらか1つのみ）</div>
+    <div class="pr-section-title" style="font-size:12px;margin-top:8px;">🏃 現地確認系（どちらか1つのみ）<span class="pr-pending-note" style="background:#dcfce7;color:#15803d;">即時付与</span></div>
+    <div class="pr-desc">「巡礼した！」でGPS確認済みのスポットのみ評価できます。押すだけでポイントになる状態を防ぐための仕組みです。</div>
     <div class="pr-card">
       <div class="pr-row">
         <span class="pr-label">📸 行って確認（正しかった場合）</span>
@@ -2700,7 +2804,8 @@
       </div>
     </div>
 
-    <div class="pr-section-title" style="font-size:12px;margin-top:8px;">🔍 リモート確認系（複数可・合計上限10pt）</div>
+    <div class="pr-section-title" style="font-size:12px;margin-top:8px;">🔍 リモート確認系（複数可・合計上限10pt）<span class="pr-pending-note">確定待ち</span></div>
+    <div class="pr-desc">管理者が判定を確定した時点で付与されます。</div>
     <div class="pr-card">
       <div class="pr-row">
         <span class="pr-label">📱 SNSで確認（正しかった場合）</span>
@@ -2724,7 +2829,7 @@
       </div>
     </div>
 
-    <div class="pr-section-title" style="font-size:12px;margin-top:8px;">⚠️ BAD評価（正しかった場合）</div>
+    <div class="pr-section-title" style="font-size:12px;margin-top:8px;">⚠️ BAD評価（正しかった場合）<span class="pr-pending-note">確定待ち</span></div>
     <div class="pr-card">
       <div class="pr-row">
         <span class="pr-label">❌ 場所が違う</span>
@@ -2765,12 +2870,28 @@
       </div>
     </div>
 
+    <!-- Xシェアポイント -->
+    <div class="pr-section-title">𝕏 Xシェアでもらえるポイント</div>
+    <div class="pr-card">
+      <div class="pr-row">
+        <span class="pr-label">#TraceIVE をつけてXにシェア</span>
+        <span class="pr-pt pr-pt-good">+50 pt</span>
+      </div>
+      <div class="pr-row">
+        <span class="pr-label" style="color:var(--text-light);font-size:11px;">同じスポットへの投稿は1回のみ対象です。#TraceIVE タグなしの投稿は対象外です。</span>
+      </div>
+    </div>
+
     <!-- 制限ルール -->
     <div class="pr-section-title">🛡️ 制限ルール（荒らし対策）</div>
     <div class="pr-card">
       <div class="pr-row">
         <span class="pr-label">1日の投稿上限</span>
         <span class="pr-limit">3件</span>
+      </div>
+      <div class="pr-row" style="flex-direction:column;align-items:flex-start;gap:6px;">
+        <span class="pr-label">新規スポット投稿の月間上限（ランク別）</span>
+        <span class="pr-limit" style="white-space:normal;">ブロンズ/シルバー：1件・ゴールド/プラチナ：2件・ダイヤモンド：3件</span>
       </div>
       <div class="pr-row">
         <span class="pr-label">連続投稿クールダウン</span>
@@ -2834,21 +2955,14 @@
         <span class="pr-badge-icon">🔥</span>
         <div class="pr-badge-info">
           <div class="pr-badge-name">バズ投稿</div>
-          <div class="pr-badge-cond">1投稿でいいね100件以上</div>
+          <div class="pr-badge-cond">投稿＋巡礼報告のいいね合計500件以上</div>
         </div>
       </div>
       <div class="pr-badge-row">
         <span class="pr-badge-icon">🎯</span>
         <div class="pr-badge-info">
           <div class="pr-badge-name">正確レポーター</div>
-          <div class="pr-badge-cond">正確報告ポイント累計100pt以上</div>
-        </div>
-      </div>
-      <div class="pr-badge-row">
-        <span class="pr-badge-icon">⚡</span>
-        <div class="pr-badge-info">
-          <div class="pr-badge-name">スピードレポーター</div>
-          <div class="pr-badge-cond">24時間以内のスピード報告×10件確定</div>
+          <div class="pr-badge-cond">GOOD評価の実施で累計50pt以上獲得</div>
         </div>
       </div>
       <div class="pr-badge-row">
@@ -2872,6 +2986,27 @@
           <div class="pr-badge-cond">韓国スポットを1件以上投稿・承認</div>
         </div>
       </div>
+      <div class="pr-badge-row">
+        <span class="pr-badge-icon">🔗</span>
+        <div class="pr-badge-info">
+          <div class="pr-badge-name">つなぎ役</div>
+          <div class="pr-badge-cond">友達紹介1人目（紹介された人が初回巡礼報告完了）</div>
+        </div>
+      </div>
+      <div class="pr-badge-row">
+        <span class="pr-badge-icon">🔭</span>
+        <div class="pr-badge-info">
+          <div class="pr-badge-name">Scout</div>
+          <div class="pr-badge-cond">友達紹介5人達成</div>
+        </div>
+      </div>
+      <div class="pr-badge-row">
+        <span class="pr-badge-icon">📣</span>
+        <div class="pr-badge-info">
+          <div class="pr-badge-name">Evangelist</div>
+          <div class="pr-badge-cond">友達紹介10人達成</div>
+        </div>
+      </div>
     </div>
 
     <!-- ルート最適化ルール -->
@@ -2883,36 +3018,38 @@
         <div class="pr-route-col">最適化</div>
         <div class="pr-route-col">保存上限</div>
       </div>
-      <div class="pr-route-row">
+      <div class="pr-route-row" data-rank="bronze">
         <div class="pr-route-cell">🥉 ブロンズ<br><span class="pr-route-pt">0〜199pt</span></div>
         <div class="pr-route-cell pr-route-lock">🔒 不可</div>
         <div class="pr-route-cell">3件</div>
       </div>
-      <div class="pr-route-row">
-        <div class="pr-route-cell">🥈 シルバー<br><span class="pr-route-pt">200〜499pt</span></div>
+      <div class="pr-route-row" data-rank="silver">
+        <div class="pr-route-cell">🥈 シルバー<br><span class="pr-route-pt">200〜799pt</span></div>
         <div class="pr-route-cell pr-route-lock">🔒 不可</div>
         <div class="pr-route-cell">3件</div>
       </div>
-      <div class="pr-route-row pr-route-current">
-        <div class="pr-route-cell">🥇 ゴールド<br><span class="pr-route-pt">500〜999pt</span></div>
+      <div class="pr-route-row" data-rank="gold">
+        <div class="pr-route-cell">🥇 ゴールド<br><span class="pr-route-pt">800〜2499pt</span></div>
         <div class="pr-route-cell pr-route-ok">✅ 月1回</div>
         <div class="pr-route-cell">5件</div>
       </div>
-      <div class="pr-route-row">
-        <div class="pr-route-cell">💎 プラチナ<br><span class="pr-route-pt">1000〜2999pt</span></div>
+      <div class="pr-route-row" data-rank="platinum">
+        <div class="pr-route-cell">💎 プラチナ<br><span class="pr-route-pt">2500〜5999pt</span></div>
         <div class="pr-route-cell pr-route-ok">✅ 月1回</div>
         <div class="pr-route-cell">10件</div>
       </div>
-      <div class="pr-route-row">
-        <div class="pr-route-cell">👑 ダイヤモンド<br><span class="pr-route-pt">3000pt〜</span></div>
+      <div class="pr-route-row" data-rank="diamond">
+        <div class="pr-route-cell">👑 ダイヤモンド<br><span class="pr-route-pt">6000pt〜+紹介5人</span></div>
         <div class="pr-route-cell pr-route-ok">✅ 月2回</div>
         <div class="pr-route-cell">15件</div>
       </div>
+      <!-- 将来の課金プラン構想（削除せず非表示にする・6/18）
       <div class="pr-route-row">
         <div class="pr-route-cell">⭐ プレミアム<br><span class="pr-route-pt">課金プラン</span></div>
         <div class="pr-route-cell pr-route-ok">✅ 無制限</div>
         <div class="pr-route-cell">無制限</div>
       </div>
+      -->
     </div>
 
     <div class="pr-notice" style="margin-top:12px;">
@@ -3031,7 +3168,7 @@
     <div class="route-rank-banner">
       <div class="route-rank-left">
         <div class="route-rank-label">現在のランク</div>
-        <div class="route-rank-name">🥇 ゴールド</div>
+        <div class="route-rank-name" id="route-rank-name">🥉 ブロンズ</div>
       </div>
       <div class="route-rank-right">
         <div class="route-opt-label">最適化 残り</div>
@@ -3069,8 +3206,9 @@
     </div>
 
     <div id="route-spot-list" style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
-    <!-- ルート最適化ボタン -->
-    <div class="route-optimize-wrap" id="route-optimize-wrap">
+      </div>
+
+      <div class="route-optimize-wrap" id="route-optimize-wrap">
       <button class="btn-optimize" id="btn-optimize" onclick="optimizeRoute()">
         ✨ ルートを最適化する
         <span class="btn-optimize-sub">移動距離・時間を自動計算</span>
@@ -3139,10 +3277,14 @@
       <div class="form-group">
         <div class="form-label">住所 / 場所 <span>*</span></div>
         <input class="form-input" id="post-address" type="text" placeholder="例：東京都渋谷区道玄坂2丁目" maxlength="100">
+        <label style="display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:#9b8aab;cursor:pointer;">
+          <input type="checkbox" id="post-location-unsure" style="width:16px;height:16px;">
+          正確な位置がよく分からない（海外・情報不足など）→ 承認前に運営側で確認します
+        </label>
       </div>
       <div class="form-group">
         <div class="form-label">聖地の説明 <span>*</span> <span style="font-weight:400;color:#9b8aab;font-size:12px;">20文字以上</span></div>
-        <textarea class="form-input form-textarea" id="post-desc" placeholder="例：REBEL HEARTのMVでレイが映るシーン。0:42あたりで確認できます。" maxlength="300" oninput="updateDescCount(this)"></textarea>
+        <textarea class="form-input form-textarea" id="post-desc" placeholder="例：SUPER ILLITのMVでユナが映るシーン。0:42あたりで確認できます。" maxlength="300" oninput="updateDescCount(this)"></textarea>
         <div id="post-desc-count" style="font-size:11px;color:#9b8aab;text-align:right;margin-top:4px;">0 / 300</div>
       </div>
       <div class="form-group">
@@ -3158,20 +3300,32 @@
       <div class="form-group">
         <div class="form-label">メンバー <span>*</span></div>
         <div class="scene-chips" id="post-member-chips">
-          <div class="chip" onclick="toggleChip(this)" data-member="ユジン">ユナ</div>
-          <div class="chip" onclick="toggleChip(this)" data-member="ガウル">ミンジュ</div>
-          <div class="chip" onclick="toggleChip(this)" data-member="レイ">モカ</div>
-          <div class="chip" onclick="toggleChip(this)" data-member="ウォニョン">ウォンヒ</div>
-          <div class="chip" onclick="toggleChip(this)" data-member="リズ">イロハ</div>
-          <div class="chip" onclick="toggleChip(this)" data-member="イソ"></div>
-          <div class="chip" onclick="toggleChip(this)" data-member="IVE">IVE全体</div>
+          <div class="chip" onclick="toggleChip(this)" data-member="ユナ">ユナ</div>
+          <div class="chip" onclick="toggleChip(this)" data-member="ミンジュ">ミンジュ</div>
+          <div class="chip" onclick="toggleChip(this)" data-member="モカ">モカ</div>
+          <div class="chip" onclick="toggleChip(this)" data-member="ウォンヒ">ウォンヒ</div>
+          <div class="chip" onclick="toggleChip(this)" data-member="イロハ">イロハ</div>
+          <div class="chip" onclick="toggleChip(this)" data-member="全員">ILLIT全体</div>
         </div>
       </div>
       <div class="form-group">
-        <div class="form-label">参照元 X ポストURL <span style="font-weight:400;color:#9b8aab;font-size:12px;">（任意・あると信頼度UP）</span></div>
-        <input class="form-input" id="post-source-url" type="url" placeholder="https://x.com/username/status/...">
+        <div class="form-label">参照元 X / YouTube URL <span style="font-weight:400;color:#9b8aab;font-size:12px;">（任意・あると信頼度UP）</span></div>
+        <input class="form-input" id="post-source-url" type="url" placeholder="https://x.com/username/status/... または https://youtube.com/...">
         <div style="font-size:11px;color:#9b8aab;margin-top:6px;line-height:1.6;">
-          📌 聖地を特定するきっかけになったXのポストがあれば貼ってください。投稿者への感謝クレジットとして表示されます。
+          📌 聖地を特定するきっかけになったXのポストやYouTube動画があれば貼ってください。投稿者への感謝クレジットとして表示されます。
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-label">元ネタ写真 <span style="font-weight:400;color:#9b8aab;font-size:12px;">（任意・提供すると+30pt）</span></div>
+        <input type="file" id="post-photo-input" accept="image/jpeg,image/png,image/webp" style="display:none;" onchange="handlePostPhotoSelected(this)">
+        <div id="post-photo-preview-wrap" style="display:none;margin-bottom:8px;position:relative;width:120px;">
+          <img id="post-photo-preview" style="width:120px;height:120px;object-fit:cover;border-radius:12px;border:2px solid #e8d5ff;">
+          <button type="button" onclick="clearPostPhoto()" style="position:absolute;top:-8px;right:-8px;width:24px;height:24px;border-radius:50%;background:#f87171;color:#fff;border:none;font-size:14px;cursor:pointer;line-height:1;">✕</button>
+        </div>
+        <button type="button" class="btn-primary" style="background:linear-gradient(135deg,#f3e8ff,#e8d5ff);color:#6b21a8;width:auto;padding:10px 18px;font-size:13px;" onclick="document.getElementById('post-photo-input').click()">📷 写真を選ぶ</button>
+        <div id="post-photo-status" style="font-size:11px;color:#9b8aab;margin-top:6px;line-height:1.6;"></div>
+        <div style="font-size:11px;color:#9b8aab;margin-top:6px;line-height:1.6;">
+          📌 このスポットが登場したX・YouTube等の元ネタ写真。自動で圧縮されます。運営側で別の写真に差し替える場合があります。
         </div>
       </div>
       <div class="consent-box">
@@ -3343,7 +3497,7 @@
   </div>
   <div class="print-memo-box" id="print-route-memo"></div>
   <div id="print-spots-list"></div>
-  <div class="print-footer">Trace ILLIT — 聖地巡礼MAP | traceive.app</div>
+  <div class="print-footer">Trace ILLIT — 聖地巡礼MAP | traceillit.app</div>
 </div>
 
 <!-- Google Maps API -->
@@ -3352,35 +3506,35 @@
 // GROUP_CONFIG — 別グループへの転用時はここだけ書き換える
 // ════════════════════════════════════════
 const GROUP_CONFIG = {
-  groupName: 'IVE',
+  groupName: 'ILLIT',
   appName: 'Trace ILLIT',
   appHandle: '@TraceILLIT',
-  hashtags: ['#TraceILLIT', '#IVE', '#アイブ', '#聖地巡礼'],
+  hashtags: ['#TraceILLIT', '#ILLIT', '#아일릿', '#聖地巡礼'],
   pilgrimHashtag: '#TraceILLIT',
   officialDisclaimer: '非公式ファンアプリです。BELIFT LAB・ILLITとは一切関係ありません。',
 
   members: [
-      { name: 'ユナ',    nameEn: 'YUNAH',   birthday: { month: 1,  day: 15 }, hashtag: 'HAPPY_YUNAH_DAY',   tags: ['#ユナ', '#YUNAH', '#유나'], animal: '🐆', color: '#c8a876' },
-      { name: 'ミンジュ', nameEn: 'MINJU',   birthday: { month: 5,  day: 11 }, hashtag: 'HAPPY_MINJU_DAY',   tags: ['#ミンジュ', '#MINJU', '#김민주'], animal: '🐰', color: '#e8a0bf' },
-      { name: 'モカ',    nameEn: 'MOKA',    birthday: { month: 10, day: 8  }, hashtag: 'HAPPY_MOKA_DAY',    tags: ['#モカ', '#MOKA', '#모카'], animal: '☕', color: '#a07850' },
-      { name: 'ウォンヒ', nameEn: 'WONHEE',  birthday: { month: 6,  day: 26 }, hashtag: 'HAPPY_WONHEE_DAY',  tags: ['#ウォンヒ', '#WONHEE', '#원희'], animal: '🐿️', color: '#d4956a' },
-      { name: 'イロハ',  nameEn: 'IROHA',   birthday: { month: 2,  day: 4  }, hashtag: 'HAPPY_IROHA_DAY',   tags: ['#イロハ', '#IROHA', '#이로하'], animal: '🐢', color: '#7ab893' },
-    ],
+    { name: 'ユナ',    nameEn: 'YUNAH',   birthday: { month: 1,  day: 15 }, hashtag: 'HAPPY_YUNAH_DAY',   tags: ['#ユナ', '#YUNAH', '#유나'] },
+    { name: 'ミンジュ', nameEn: 'MINJU',   birthday: { month: 5,  day: 11 }, hashtag: 'HAPPY_MINJU_DAY',   tags: ['#ミンジュ', '#MINJU', '#김민주'] },
+    { name: 'モカ',    nameEn: 'MOKA',    birthday: { month: 10, day: 8  }, hashtag: 'HAPPY_MOKA_DAY',    tags: ['#モカ', '#MOKA', '#모카'] },
+    { name: 'ウォンヒ', nameEn: 'WONHEE',  birthday: { month: 6,  day: 26 }, hashtag: 'HAPPY_WONHEE_DAY',  tags: ['#ウォンヒ', '#WONHEE', '#원희'] },
+    { name: 'イロハ',  nameEn: 'IROHA',   birthday: { month: 2,  day: 4  }, hashtag: 'HAPPY_IROHA_DAY',   tags: ['#イロハ', '#IROHA', '#이로하'] },
+  ],
 
   // ポイント倍率
     birthdayMonthMultiplier: 1.2,  // 誕生月：1.2倍
     birthdayDayMultiplier: 1.5,    // 誕生当日：1.5倍
 
   // ── シーズンイベント（カムバ・ライブ等に合わせて追加）──
-  // 例: { id: 'tokyodome2025', name: '🏟️ 東京ドーム公演', start: '2025-06-20', end: '2025-06-30' }
   activeEvents: [
-    { id: 'tokyodome2025', name: '🏟️ 東京ドーム公演', start: '2025-06-20', end: '2025-06-30' },
+    { id: 'pressstart2026', name: '🎮 PRESS START in JAPAN 開催記念', start: '2026-06-13', end: '2026-07-26', multiplier: 1.5 },
   ],
 
   // — バージョン管理 —
   appVersion: '1.0.0',
   updateNotes: [
-    '📍 スポット収録',
+    '🎉 Trace ILLIT スタート！',
+    '📍 聖地スポット収録',
     '🎂 誕生日・誕生月ボーナスポイント追加',
   ],
 };
@@ -3415,7 +3569,7 @@ function showUpdateModal() {
   const overlay = document.createElement('div');
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:center;justify-content:center;';
   const notes = GROUP_CONFIG.updateNotes.map(n => `<li style="margin-bottom:6px">${n}</li>`).join('');
-  overlay.innerHTML = `<div style="background:#fff;border-radius:20px;padding:28px 24px;max-width:300px;width:88%;text-align:center;"><div style="font-size:22px;margin-bottom:8px;">🎉 アップデート</div><div style="font-size:13px;color:#666;margin-bottom:12px;">v${GROUP_CONFIG.appVersion}</div><ul style="text-align:left;font-size:13px;color:#333;padding-left:18px;margin-bottom:20px;">${notes}</ul><button onclick="this.closest('div').parentElement.remove()" style="background:linear-gradient(135deg,#2d1b4e,#1a3a5c);color:#fff;border:none;border-radius:12px;padding:10px 32px;font-size:14px;cursor:pointer;">OK</button></div>`;
+  overlay.innerHTML = `<div style="background:#fff;border-radius:20px;padding:28px 24px;max-width:300px;width:88%;text-align:center;"><div style="font-size:22px;margin-bottom:8px;">🎉 アップデート</div><div style="font-size:13px;color:#666;margin-bottom:12px;">v${GROUP_CONFIG.appVersion}</div><ul style="text-align:left;font-size:13px;color:#333;padding-left:18px;margin-bottom:20px;">${notes}</ul><button onclick="this.closest('div').parentElement.remove()" style="background:linear-gradient(135deg,#3d1a5e,#7b1a3e);color:#fff;border:none;border-radius:12px;padding:10px 32px;font-size:14px;cursor:pointer;">OK</button></div>`;
   document.body.appendChild(overlay);
 }
 
@@ -3434,6 +3588,80 @@ function getBirthdayEvent() {
     }
   }
   return null;
+}
+
+// ── ポップアップの「今日は表示しない」管理 ──
+function hasDismissedPopupToday(key) {
+  const today = new Date().toISOString().slice(0, 10);
+  return localStorage.getItem('traceillit_popup_dismissed_' + key) === today;
+}
+function dismissPopupToday(key) {
+  const today = new Date().toISOString().slice(0, 10);
+  localStorage.setItem('traceillit_popup_dismissed_' + key, today);
+}
+
+// ── シーズンイベント判定（東京ドーム公演など）──
+function getActiveEvent() {
+  const now = new Date();
+  const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  for (const ev of (GROUP_CONFIG.activeEvents || [])) {
+    if (todayStr >= ev.start && todayStr <= ev.end) return ev;
+  }
+  return null;
+}
+
+function getEventMultiplier() {
+  const ev = getActiveEvent();
+  return (ev && ev.multiplier) ? ev.multiplier : 1;
+}
+
+// ── シーズンイベントポップアップ表示 ──
+function showEventPopup(ev) {
+  const overlay = document.createElement('div');
+  overlay.id = 'event-overlay';
+  overlay.style.cssText = `
+    position:fixed;inset:0;z-index:9999;
+    background:rgba(61,26,94,0.85);
+    display:flex;align-items:center;justify-content:center;
+    animation:fadeInBd 0.4s ease;
+  `;
+  overlay.innerHTML = `
+    <div style="
+      background:linear-gradient(135deg,#3d1a5e,#7b1a3e);
+      border-radius:24px;padding:32px 28px;max-width:320px;width:90%;
+      text-align:center;color:#fff;position:relative;
+      box-shadow:0 20px 60px rgba(0,0,0,0.5);
+    ">
+      <button onclick="document.getElementById('event-overlay').remove()" style="
+        position:absolute;top:14px;right:16px;background:none;border:none;
+        color:rgba(255,255,255,0.6);font-size:22px;cursor:pointer;
+      ">×</button>
+      <div style="font-size:40px;margin-bottom:8px;">🏟️</div>
+      <div style="font-size:20px;font-weight:700;margin-bottom:4px;">${ev.name}</div>
+      <div style="font-size:14px;opacity:0.85;margin:10px 0 16px;">✨ リリース記念 ✨</div>
+      <div style="
+        background:rgba(255,255,255,0.15);border-radius:12px;
+        padding:12px 16px;margin-bottom:16px;font-size:13px;line-height:1.6;
+      ">
+        期間中の巡礼報告は<br>
+        <span style="font-size:20px;font-weight:700;color:#ffd700;">${ev.multiplier}倍</span>
+        ポイント！
+      </div>
+      <div style="
+        background:rgba(255,255,255,0.1);border-radius:10px;
+        padding:8px 12px;font-size:12px;color:#e8d0f8;
+      ">${ev.start} 〜 ${ev.end}</div>
+      <div onclick="dismissPopupToday('event_${ev.id}');document.getElementById('event-overlay').remove();" style="
+        margin-top:14px;font-size:12px;color:rgba(255,255,255,0.5);
+        cursor:pointer;text-decoration:underline;
+      ">今日は表示しない</div>
+    </div>
+    <style>
+      @keyframes fadeInBd { from{opacity:0;transform:scale(0.92)} to{opacity:1;transform:scale(1)} }
+    </style>
+  `;
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
 }
 
 // ── 誕生日ポップアップ表示 ──
@@ -3466,8 +3694,8 @@ function showBirthdayPopup(event) {
       <div style="font-size:40px;margin-bottom:8px;">${isDay ? '🎂' : '🌸'}</div>
       <div style="font-size:22px;font-weight:700;margin-bottom:4px;">
         ${isDay ? `Happy Birthday\n${member.name}！` : `${member.name}の誕生月🎉`}
-      </div>
           <div style="font-size:13px;color:rgba(255,255,255,0.8);margin-bottom:8px;">🎂 ${member.birthday.month}月${member.birthday.day}日</div>
+      </div>
       <div style="font-size:14px;opacity:0.85;margin:10px 0 16px;">${stars}</div>
       <div style="
         background:rgba(255,255,255,0.15);border-radius:12px;
@@ -3486,6 +3714,10 @@ function showBirthdayPopup(event) {
         border:none;border-radius:14px;padding:10px 20px;
         color:#fff;font-size:13px;font-weight:700;cursor:pointer;width:100%;
       ">𝕏 お祝いポストを送る</button>
+      <div onclick="dismissPopupToday('birthday');document.getElementById('birthday-overlay').remove();" style="
+        margin-top:14px;font-size:12px;color:rgba(255,255,255,0.5);
+        cursor:pointer;text-decoration:underline;
+      ">今日は表示しない</div>
     </div>
     <style>
       @keyframes fadeInBd { from{opacity:0;transform:scale(0.92)} to{opacity:1;transform:scale(1)} }
@@ -3531,7 +3763,7 @@ async function fetchSpotsFromDB() {
       address: s.address || '',
       member: s.member || 'IVE',
       discoverer: s.discoverer || '@missing_link',
-      likes: 0,
+      likes: s.likes_count || 0,
       badges: [s.category || ''],
       color: '#3d1a5e',
       trustScore: s.trust_score || 8,
@@ -3565,7 +3797,164 @@ async function saveSubmissionToDB(submission) {
   }
 }
 
-const SPOTS = [];
+// ── タイムライン（承認済み投稿＋巡礼報告をまとめて表示） ──
+function timeAgoLabel(iso) {
+  if (!iso) return '';
+  const diffMs = Date.now() - new Date(iso).getTime();
+  const min = Math.floor(diffMs / 60000);
+  if (min < 1) return 'たった今';
+  if (min < 60) return min + '分前';
+  const hour = Math.floor(min / 60);
+  if (hour < 24) return hour + '時間前';
+  return Math.floor(hour / 24) + '日前';
+}
+
+const LIKED_POSTS_KEY = 'traceillit_liked_posts_v1';
+function hasLikedPost(id) {
+  try {
+    const list = JSON.parse(localStorage.getItem(LIKED_POSTS_KEY) || '[]');
+    return list.includes(id);
+  } catch(e) { return false; }
+}
+function recordLikedPost(id) {
+  try {
+    const list = JSON.parse(localStorage.getItem(LIKED_POSTS_KEY) || '[]');
+    if (!list.includes(id)) list.push(id);
+    localStorage.setItem(LIKED_POSTS_KEY, JSON.stringify(list));
+  } catch(e) {}
+}
+
+async function toggleLike(id, btn, table) {
+  table = table || 'submissions';
+  const likeKey = table + ':' + id;
+  if (hasLikedPost(likeKey)) return; // 1人1回まで
+  if (btn) { btn.disabled = true; }
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${id}&select=likes_count`, {
+      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+    });
+    const [row] = await res.json();
+    const current = (row && row.likes_count) || 0;
+    const next = current + 1;
+    await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${id}`, {
+      method: 'PATCH',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ likes_count: next })
+    });
+    recordLikedPost(likeKey);
+    if (btn) {
+      btn.classList.add('liked');
+      btn.innerHTML = '❤️ ' + next + '件';
+    }
+  } catch(e) {
+    console.warn('いいね失敗:', e);
+    if (btn) { btn.disabled = false; }
+  }
+}
+
+async function loadFeed() {
+  const list = document.getElementById('feed-list');
+  if (!list) return;
+  list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--text-light);">読み込み中...</div>';
+
+  let posts = [];
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/submissions?status=eq.approved&type=is.null&order=created_at.desc&limit=20`, {
+      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+    });
+    const data = await res.json();
+    if (Array.isArray(data)) {
+      posts = data.map(s => ({
+        feedType: 'post',
+        id: s.id,
+        spot_name: s.spot_name,
+        description: s.description,
+        submitter: s.submitter || '匿名',
+        created_at: s.created_at,
+        likes_count: s.likes_count || 0,
+      }));
+    }
+  } catch(e) { console.warn('feed submissions取得失敗:', e); }
+
+  let visits = [];
+  try {
+    const client = getSupabaseClient();
+    const { data: vdata, error: verr } = await client
+      .from('visit_log')
+      .select('id, user_id, spot_name, visited_at, likes_count')
+      .order('visited_at', { ascending: false })
+      .limit(20);
+    if (verr) console.warn('visit_log取得エラー:', verr);
+    if (Array.isArray(vdata) && vdata.length) {
+      const userIds = [...new Set(vdata.map(v => v.user_id).filter(Boolean))];
+      let nameMap = {};
+      if (userIds.length) {
+        const { data: pdata } = await client
+          .from('profiles')
+          .select('id, display_name')
+          .in('id', userIds);
+        if (Array.isArray(pdata)) pdata.forEach(p => { nameMap[p.id] = p.display_name; });
+      }
+      visits = vdata.map(v => ({
+        feedType: 'visit',
+        id: v.id,
+        spot_name: v.spot_name,
+        display_name: nameMap[v.user_id] || '巡礼者',
+        created_at: v.visited_at,
+        likes_count: v.likes_count || 0,
+      }));
+    }
+  } catch(e) { console.warn('feed visit_log取得失敗:', e); }
+
+  const items = [...posts, ...visits]
+    .filter(i => i.created_at)
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    .slice(0, 30);
+
+  if (!items.length) {
+    list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--text-light);"><div style="font-size:32px;margin-bottom:8px;">📸</div><div style="font-size:14px;">巡礼報告が投稿されると表示されます</div></div>';
+    return;
+  }
+
+  list.innerHTML = items.map(item => {
+    if (item.feedType === 'visit') {
+      const liked = hasLikedPost('visit_log:' + item.id);
+      return `<div style="background:linear-gradient(135deg,#fff,var(--purple-pale));border-radius:18px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(123,79,166,0.08);border:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--purple-mid),var(--purple-deep));display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">🚩</div>
+          <div style="font-size:13px;color:var(--text);line-height:1.4;"><b style="color:var(--purple-deep);">${escHtml(item.display_name)}</b>さんが<br><b>「${escHtml(item.spot_name)}」</b>を巡礼しました 🌸</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+          <div style="font-size:11px;color:var(--text-light);">${timeAgoLabel(item.created_at)}</div>
+          <button class="${liked ? 'liked' : ''}" onclick="toggleLike('${item.id}', this, 'visit_log')" ${liked ? 'disabled' : ''} style="border:none;background:${liked ? 'rgba(224,60,110,0.15)' : 'var(--purple-pale)'};color:${liked ? '#e03c6e' : 'var(--purple-mid)'};border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:${liked ? 'default' : 'pointer'};display:flex;align-items:center;gap:5px;">
+            <span>${liked ? '❤️ いいね済み' : '🤍 いいね'}</span><span style="opacity:0.75;">${item.likes_count}件</span>
+          </button>
+        </div>
+      </div>`;
+    }
+    const liked = hasLikedPost('submissions:' + item.id);
+    return `<div style="background:linear-gradient(135deg,#fff,var(--purple-pale));border-radius:18px;padding:16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(123,79,166,0.08);border:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+        <span style="font-size:15px;">📍</span>
+        <span style="font-size:14px;font-weight:700;color:var(--purple-deep);">${escHtml(item.spot_name)}</span>
+        <span style="font-size:10px;background:var(--gold);color:#fff;border-radius:8px;padding:2px 8px;margin-left:auto;">🌟 新スポット</span>
+      </div>
+      ${item.description ? `<div style="font-size:13px;color:var(--text-mid);margin-bottom:8px;line-height:1.5;">${escHtml(item.description)}</div>` : ''}
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:11px;color:var(--text-light);">👤 ${escHtml(item.submitter)} · ${timeAgoLabel(item.created_at)}</div>
+        <button class="${liked ? 'liked' : ''}" onclick="toggleLike('${item.id}', this, 'submissions')" ${liked ? 'disabled' : ''} style="border:none;background:${liked ? 'rgba(224,60,110,0.15)' : 'var(--purple-pale)'};color:${liked ? '#e03c6e' : 'var(--purple-mid)'};border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:${liked ? 'default' : 'pointer'};display:flex;align-items:center;gap:5px;">
+          <span>${liked ? '❤️ いいね済み' : '🤍 いいね'}</span><span style="opacity:0.75;">${item.likes_count}件</span>
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+const SPOTS = []; // ILLIT: Supabaseから取得するため空配列（オフライン時フォールバックなし）
 
 let map;
 let markers = [];
@@ -3573,6 +3962,18 @@ let currentSpot = null;
 let cardOpen = false;
 let activeMember = 'all';
 let activeCategory = 'all';
+let activeVisitedFilter = 'all'; // 'all' | 'visited' | 'unvisited'
+let myVisitedSpots = [];
+
+function setVisitedFilter(f, btn) {
+  activeVisitedFilter = f;
+  document.querySelectorAll('#vfbtn-all, #vfbtn-visited, #vfbtn-unvisited').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  if (btn) btn.classList.add('active');
+  applyFilters();
+  if (listViewOpen) renderSpotList();
+}
 
 function applyFilters() {
   // カテゴリ別カウント
@@ -3586,13 +3987,15 @@ function applyFilters() {
   };
 
   markers.forEach(marker => {
-    const memberMatch = activeMember === 'all' || marker.spotData.member === activeMember;
+    const memberMatch = activeMember === 'all' || marker.spotData.member === '全員' || getSpotMemberList(marker.spotData.member).includes(activeMember);
     const categoryMatch = activeCategory === 'all' || marker.spotData.category === activeCategory;
-    const show = memberMatch && categoryMatch;
+    const isVisited = myVisitedSpots.includes(marker.spotData.name);
+    const visitedMatch = activeVisitedFilter === 'all' || (activeVisitedFilter === 'visited' && isVisited) || (activeVisitedFilter === 'unvisited' && !isVisited);
+    const show = memberMatch && categoryMatch && visitedMatch;
     marker.setVisible(show);
     if (show) catCount.all++;
     // メンバーフィルター適用時の各カテゴリ件数
-    if (memberMatch) {
+    if (memberMatch && visitedMatch) {
       const cat = marker.spotData.category;
       if (cat in catCount) catCount[cat]++;
     }
@@ -3667,14 +4070,6 @@ async function initMap() {
   if (dbSpots && dbSpots.length > 0) {
     SPOTS.length = 0;
     dbSpots.forEach(s => SPOTS.push(s));
-    // ルートスポットのdata-memberをDBデータで更新
-    dbSpots.forEach(s => {
-      const el = document.querySelector(`.route-spot-check[data-spot="${s.name}"]`);
-      if (el) el.dataset.member = (s.member || []).join(',');
-    });
-    // data-member設定後にフィルター再適用
-    const activeRegionEl = document.querySelector('.region-tabs .region-tab.active');
-    if (activeRegionEl) filterRouteRegion(activeRegionEl, activeRegionEl.dataset.region || 'all');
     console.log(`✅ Supabaseから${SPOTS.length}件取得`);
   } else {
     console.log(`⚠️ ローカルデータ${SPOTS.length}件で起動`);
@@ -3703,18 +4098,6 @@ async function initMap() {
 
   // ローディング非表示
   document.getElementById('map-loading').style.display = 'none';
-
-  // ルートスポットのdata-memberをDBから設定
-  fetchSpotsFromDB().then(dbSpots => {
-    const spotMap = {};
-    dbSpots.forEach(s => { spotMap[s.name] = s.member || ''; });
-    document.querySelectorAll('.route-spot-check').forEach(el => {
-      const spotName = el.dataset.spot;
-      if (spotMap[spotName] !== undefined) {
-        el.dataset.member = spotMap[spotName];
-      }
-    });
-  });
 
   // 初回起動チェック
   checkOnboarding();
@@ -3773,7 +4156,19 @@ function openCard(spot) {
   currentSpot = spot;
   document.getElementById('card-title').textContent = spot.name;
   document.getElementById('card-sub').textContent = spot.sub;
-  document.getElementById('card-thumb').textContent = spot.icon;
+        if (spot.image_url) {
+          const thumb = document.getElementById('card-thumb');
+          thumb.innerHTML = '';
+          const img = document.createElement('img');
+          img.src = spot.image_url;
+          img.style.width = '100%';
+          img.style.height = '100%';
+          img.style.objectFit = 'cover';
+          img.style.borderRadius = '8px';
+          thumb.appendChild(img);
+        } else {
+          document.getElementById('card-thumb').textContent = spot.icon;
+        }
   document.getElementById('card-address').textContent = spot.address;
   document.getElementById('card-discoverer').textContent = spot.discoverer;
   document.getElementById('card-likes').textContent = spot.likes + ' 件の巡礼報告';
@@ -3790,10 +4185,12 @@ function openCard(spot) {
     span.textContent = b;
     badgeEl.appendChild(span);
   });
-  const memberBadge = document.createElement('span');
-  memberBadge.className = 'badge badge-gold';
-  memberBadge.textContent = spot.member;
-  badgeEl.appendChild(memberBadge);
+  getSpotMemberList(spot.member).forEach(function(mName) {
+    const memberBadge = document.createElement('span');
+    memberBadge.className = 'badge badge-gold';
+    memberBadge.textContent = mName;
+    badgeEl.appendChild(memberBadge);
+  });
 
   // 信頼度UI
   updateTrustUI(spot);
@@ -3832,8 +4229,132 @@ function openCard(spot) {
   checkGpsBonus(spot);
 }
 
+// ── 位置修正報告 ──
+const LOCATION_CORRECTION_KEY = 'traceillit_loc_correction_v1';
+function hasReportedLocationCorrection(spotName) {
+  try {
+    const list = JSON.parse(localStorage.getItem(LOCATION_CORRECTION_KEY) || '[]');
+    return list.includes(spotName);
+  } catch(e) { return false; }
+}
+function recordLocationCorrectionReported(spotName) {
+  try {
+    const list = JSON.parse(localStorage.getItem(LOCATION_CORRECTION_KEY) || '[]');
+    if (!list.includes(spotName)) list.push(spotName);
+    localStorage.setItem(LOCATION_CORRECTION_KEY, JSON.stringify(list));
+  } catch(e) {}
+}
+async function reportLocationCorrection() {
+  if (!currentSpot) return;
+
+  if (hasReportedLocationCorrection(currentSpot.name)) {
+    showEvalToast('⚠️ このスポットの位置修正はすでに報告済みです');
+    return;
+  }
+
+  const ok = confirm('現在地を「' + currentSpot.name + '」の正しい位置として報告します。よろしいですか？');
+  if (!ok) return;
+
+  if (!navigator.geolocation) {
+    alert('お使いの環境では位置情報を取得できません。');
+    return;
+  }
+
+  // 報告者のユーザーIDを先に取得（バッジ集計に必須）
+  let reporterId = null;
+  try {
+    const { data } = await getSupabaseClient().auth.getSession();
+    reporterId = data && data.session ? data.session.user.id : null;
+  } catch(e) { console.warn('session取得失敗:', e); }
+
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+    const submission = {
+      spot_name: currentSpot.name,
+      target_spot_name: currentSpot.name,
+      type: 'location_correction',
+      lat: lat,
+      lng: lng,
+      category: currentSpot.category || null,
+      member: currentSpot.member || null,
+      description: '位置修正報告（GPS）',
+      submitter: '@anonymous',
+      submitter_id: reporterId,
+      status: 'pending',
+    };
+    saveSubmissionToDB(submission).then(function(ok2) {
+      if (ok2) {
+        recordLocationCorrectionReported(currentSpot.name);
+        showEvalToast('📍 位置修正の報告を受け付けました。管理者確認後に反映されます');
+      } else {
+        showEvalToast('⚠️ 送信に失敗しました。もう一度お試しください');
+      }
+    });
+  }, function(err) {
+    alert('位置情報を取得できませんでした。設定で位置情報の利用を許可してから、もう一度お試しください。');
+  });
+}
+
+// ── 誤情報報告 ──
+const WRONG_INFO_KEY = 'traceillit_wrong_info_v1';
+function hasReportedWrongInfo(spotName) {
+  try {
+    const list = JSON.parse(localStorage.getItem(WRONG_INFO_KEY) || '[]');
+    return list.includes(spotName);
+  } catch(e) { return false; }
+}
+function recordWrongInfoReported(spotName) {
+  try {
+    const list = JSON.parse(localStorage.getItem(WRONG_INFO_KEY) || '[]');
+    if (!list.includes(spotName)) list.push(spotName);
+    localStorage.setItem(WRONG_INFO_KEY, JSON.stringify(list));
+  } catch(e) {}
+}
+async function reportWrongInfo() {
+  if (!currentSpot) return;
+
+  if (hasReportedWrongInfo(currentSpot.name)) {
+    showEvalToast('⚠️ このスポットの誤情報報告はすでに送信済みです');
+    return;
+  }
+
+  const detail = prompt('「' + currentSpot.name + '」の何が違いますか？具体的に教えてください（例：メンバーが違う／スポットの説明が古い／写っている人物が別人 など）');
+  if (detail === null) return; // キャンセル
+  if (!detail.trim()) {
+    alert('内容を入力してください。空欄では報告できません。');
+    return;
+  }
+
+  // 報告者のユーザーIDを取得（バッジ集計に必須）
+  let reporterId = null;
+  try {
+    const { data } = await getSupabaseClient().auth.getSession();
+    reporterId = data && data.session ? data.session.user.id : null;
+  } catch(e) { console.warn('session取得失敗:', e); }
+
+  const submission = {
+    spot_name: currentSpot.name,
+    type: 'wrong_report',
+    category: currentSpot.category || null,
+    member: currentSpot.member || null,
+    description: detail.trim(),
+    submitter: '@anonymous',
+    submitter_id: reporterId,
+    status: 'pending',
+  };
+  saveSubmissionToDB(submission).then(function(ok2) {
+    if (ok2) {
+      recordWrongInfoReported(currentSpot.name);
+      showEvalToast('🛡️ 誤情報報告を受け付けました。管理者が確認します');
+    } else {
+      showEvalToast('⚠️ 送信に失敗しました。もう一度お試しください');
+    }
+  });
+}
+
 // ── GPS距離チェック＆ボーナスポイント ──
-const GPS_BONUS_KEY = 'traceive_gps_bonus_v1';
+const GPS_BONUS_KEY = 'traceillit_gps_bonus_v1';
 const GPS_BONUS_DISTANCE = 200; // メートル
 const GPS_BONUS_PT = 50;
 
@@ -3889,7 +4410,7 @@ function checkGpsBonus(spot) {
         distEl.textContent = `現在地から ${distKm} km 🎉 GPS到達ボーナス +${GPS_BONUS_PT}pt！`;
         distEl.style.color = '#15803d';
         distEl.style.fontWeight = '700';
-        addPendingPoint(spot.name, '📡 GPS到達ボーナス（200m以内）', GPS_BONUS_PT);
+        addPendingPoint(spot.name, '📡 GPS到達ボーナス（200m以内）', GPS_BONUS_PT, true);
         showEvalToast(`🎉 GPS到達ボーナス +${GPS_BONUS_PT}pt 獲得！`);
         setTimeout(() => {
           distEl.style.color = '';
@@ -3909,7 +4430,7 @@ function checkGpsBonus(spot) {
 
 
 // ── 投稿フォーム バリデーション・補助関数 ──
-const POST_DAILY_KEY = 'traceive_post_daily_v1';
+const POST_DAILY_KEY = 'traceillit_post_daily_v1';
 const POST_DAILY_LIMIT = 3;
 
 function getPostDailyCount() {
@@ -3996,6 +4517,84 @@ function initPostForm() {
   }
 }
 
+// ── 元ネタ写真：選択→自動圧縮→プレビュー ──
+let pendingPostPhotoBlob = null;
+
+function compressImageFile(file, maxDim, quality) {
+  return new Promise(function(resolve, reject) {
+    const img = new Image();
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      img.onload = function() {
+        let w = img.width, h = img.height;
+        if (w > maxDim || h > maxDim) {
+          if (w >= h) { h = Math.round(h * (maxDim / w)); w = maxDim; }
+          else { w = Math.round(w * (maxDim / h)); h = maxDim; }
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        canvas.toBlob(function(blob) {
+          if (blob) resolve(blob); else reject(new Error('画像の圧縮に失敗しました'));
+        }, 'image/jpeg', quality);
+      };
+      img.onerror = function() { reject(new Error('画像の読み込みに失敗しました')); };
+      img.src = e.target.result;
+    };
+    reader.onerror = function() { reject(new Error('ファイルの読み込みに失敗しました')); };
+    reader.readAsDataURL(file);
+  });
+}
+
+function handlePostPhotoSelected(inputEl) {
+  const file = inputEl.files && inputEl.files[0];
+  const statusEl = document.getElementById('post-photo-status');
+  if (!file) return;
+  if (statusEl) statusEl.textContent = '圧縮中...';
+  compressImageFile(file, 1280, 0.8).then(function(blob) {
+    if (blob.size > 1024 * 1024) {
+      if (statusEl) statusEl.textContent = '❌ 圧縮後も1MBを超えています。別の写真を選んでください。';
+      pendingPostPhotoBlob = null;
+      return;
+    }
+    pendingPostPhotoBlob = blob;
+    const url = URL.createObjectURL(blob);
+    const preview = document.getElementById('post-photo-preview');
+    const wrap = document.getElementById('post-photo-preview-wrap');
+    if (preview) preview.src = url;
+    if (wrap) wrap.style.display = 'block';
+    if (statusEl) statusEl.textContent = '✅ 圧縮完了（' + Math.round(blob.size / 1024) + 'KB）';
+  }).catch(function(e) {
+    console.warn('image compress error:', e);
+    if (statusEl) statusEl.textContent = '❌ 画像の処理に失敗しました';
+    pendingPostPhotoBlob = null;
+  });
+}
+
+function clearPostPhoto() {
+  pendingPostPhotoBlob = null;
+  const input = document.getElementById('post-photo-input');
+  const wrap = document.getElementById('post-photo-preview-wrap');
+  const statusEl = document.getElementById('post-photo-status');
+  if (input) input.value = '';
+  if (wrap) wrap.style.display = 'none';
+  if (statusEl) statusEl.textContent = '';
+}
+
+async function uploadSpotPhoto(blob) {
+  const client = getSupabaseClient();
+  const fileName = 'spot_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8) + '.jpg';
+  const { error } = await client.storage.from('spot-photos').upload(fileName, blob, {
+    contentType: 'image/jpeg',
+    cacheControl: '3600',
+  });
+  if (error) { console.warn('photo upload error:', error); return null; }
+  const { data } = client.storage.from('spot-photos').getPublicUrl(fileName);
+  return data && data.publicUrl ? data.publicUrl : null;
+}
+
 // ── 新規スポット投稿（Supabase保存） ──
 async function submitNewSpot() {
   clearPostError();
@@ -4033,19 +4632,69 @@ async function submitNewSpot() {
     return;
   }
 
+  // ランク別 月間投稿上限チェック（実際のDB記録を数える。localStorageではない）
+  try {
+    const { data: sessData } = await getSupabaseClient().auth.getSession();
+    const uid = sessData && sessData.session ? sessData.session.user.id : null;
+    if (uid) {
+      const monthlyLimit = SUBMIT_MONTHLY_LIMITS[currentUserRank] ?? SUBMIT_MONTHLY_LIMITS.bronze;
+      const now = new Date();
+      const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+      const cres = await fetch(`${SUPABASE_URL}/rest/v1/submissions?submitter_id=eq.${uid}&type=is.null&created_at=gte.${monthStart}&select=id`, {
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Prefer': 'count=exact',
+        }
+      });
+      const crange = cres.headers.get('content-range'); // 例: "0-1/3"
+      const usedCount = crange ? parseInt(crange.split('/')[1], 10) : (await cres.json()).length;
+      if (usedCount >= monthlyLimit) {
+        const tierName = (RANK_TIERS.find(t => t.key === currentUserRank) || {}).name || 'ブロンズ';
+        showPostError('⚠️ 今月の投稿上限（' + tierName + 'ランク：月' + monthlyLimit + '件）に達しています。来月またお願いします。');
+        return;
+      }
+    }
+  } catch(e) { console.warn('月間投稿数チェック失敗:', e); }
+
   const category = catChip.dataset.cat;
   const member = memberChip.dataset.member;
   const center = map ? map.getCenter() : null;
 
+  // 報告者のユーザーIDを取得（マッパー・海外遠征バッジ集計に必須）
+  let submitterId = null;
+  try {
+    const { data } = await getSupabaseClient().auth.getSession();
+    submitterId = data && data.session ? data.session.user.id : null;
+  } catch(e) { console.warn('session取得失敗:', e); }
+
+  const locationUnsure = document.getElementById('post-location-unsure')?.checked || false;
+
+  // 元ネタ写真のアップロード（選択されている場合のみ）
+  let uploadedImageUrl = null;
+  if (pendingPostPhotoBlob) {
+    const btnEarly = document.getElementById('post-submit-btn');
+    if (btnEarly) { btnEarly.disabled = true; btnEarly.textContent = '写真をアップロード中...'; }
+    try {
+      uploadedImageUrl = await uploadSpotPhoto(pendingPostPhotoBlob);
+    } catch (e) {
+      console.warn('photo upload failed:', e);
+    }
+  }
+
   const submission = {
     spot_name: name,
+    address: address,
     lat: center ? center.lat() : 35.6762,
     lng: center ? center.lng() : 139.7073,
     category: category,
     member: member,
     description: desc,
     source_url: sourceUrl || null,
+    image_url: uploadedImageUrl,
     submitter: '@anonymous',
+    submitter_id: submitterId,
+    location_confirmed: !locationUnsure,
     status: 'pending',
   };
 
@@ -4064,6 +4713,8 @@ async function submitNewSpot() {
     document.getElementById('post-address').value = '';
     document.getElementById('post-desc').value = '';
     document.getElementById('post-source-url').value = '';
+    clearPostPhoto();
+    if (document.getElementById('post-location-unsure')) document.getElementById('post-location-unsure').checked = false;
     document.querySelectorAll('#post-cat-chips .chip, #post-member-chips .chip').forEach(c => c.classList.remove('selected'));
     showView('map');
   } else {
@@ -4073,8 +4724,8 @@ async function submitNewSpot() {
 
 
   // ── オンボーディング ──
-  const OB_KEY = 'traceive_onboarding_v1';
-  const ANON_FIRST_KEY = 'traceive_anon_first_v1';
+  const OB_KEY = 'traceillit_onboarding_v1';
+  const ANON_FIRST_KEY = 'traceillit_anon_first_v1';
 
   function checkOnboarding() {
     const done = localStorage.getItem(OB_KEY);
@@ -4095,7 +4746,7 @@ async function submitNewSpot() {
   var _supabaseClient = null;
   function getSupabaseClient() {
     if (!_supabaseClient) {
-      _supabaseClient = window.supabase.createClient('https://aniuehncwpmwxdjrpqje.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFtcWN3b3B5dmZxbmJ5bHh0ZXJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1NjQ1OTQsImV4cCI6MjA5NjE0MDU5NH0.cjw1XNTBceYHb4KKTzHI4NWEGRuI09ykD4Fl6BStmxg');
+      _supabaseClient = window.supabase.createClient('https://qmqcwopyvfqnbylxterr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFtcWN3b3B5dmZxbmJ5bHh0ZXJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1NjQ1OTQsImV4cCI6MjA5NjE0MDU5NH0.cjw1XNTBceYHb4KKTzHI4NWEGRuI09ykD4Fl6BStmxg');
     }
     return _supabaseClient;
   }
@@ -4104,7 +4755,7 @@ async function submitNewSpot() {
     try {
       var client = getSupabaseClient();
       var result = await client.auth.signInWithOAuth({
-        provider: 'twitter',
+        provider: 'x',
         options: { redirectTo: window.location.href }
       });
       if (result.error) throw result.error;
@@ -4115,6 +4766,19 @@ async function submitNewSpot() {
     }
   }
 
+
+  async function startWithGoogle() {
+    try {
+      var client = getSupabaseClient();
+      await client.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: window.location.href }
+      });
+    } catch(e) {
+      alert('Googleログインに失敗しました。匿名モードで続けます。');
+      startAnonymous();
+    }
+  }
   async function handleAuthCallback() {
     try {
       var client = getSupabaseClient();
@@ -4123,12 +4787,16 @@ async function submitNewSpot() {
       if (session && session.user) {
         var user = session.user;
         var meta = user.user_metadata || {};
-        var xName = meta.full_name || meta.user_name || 'Xユーザー';
-        var xHandle = '@' + (meta.user_name || 'unknown');
+        var provider = (user.app_metadata && user.app_metadata.provider) || 'unknown';
+        var isGoogle = provider === 'google';
+        var xName = isGoogle ? (meta.full_name || meta.name || meta.email || 'Googleユーザー') : (meta.full_name || meta.name || meta.user_name || 'ユーザー');
+        var xHandle = isGoogle ? null : (meta.user_name ? '@' + meta.user_name : meta.email);
         var xAvatar = meta.avatar_url || '';
+        var xProviderId = (meta.provider_id || meta.sub || (user.identities && user.identities[0] && user.identities[0].id)) || null;
         localStorage.setItem(OB_KEY, JSON.stringify({
           method: 'x', date: new Date().toISOString(),
           xHandle: xHandle, xName: xName, xAvatar: xAvatar,
+          provider: isGoogle ? 'google' : 'x',
         }));
         var nameEl = document.getElementById('profile-name');
         if (nameEl) nameEl.textContent = xName;
@@ -4142,8 +4810,40 @@ async function submitNewSpot() {
         }
         var xTitle = document.getElementById('x-connect-title');
         var xSub = document.getElementById('x-connect-sub');
-        if (xTitle) xTitle.textContent = xHandle + ' で連携中';
-        if (xSub) xSub.textContent = 'ポイント・発見者クレジットが永続保持されます';
+        var googleTitle = document.getElementById('google-connect-title');
+        var googleSub = document.getElementById('google-connect-sub');
+        var googleArrow = document.getElementById('google-connect-arrow');
+        if (isGoogle) {
+          // Googleで連携中 → Googleカードを「連携中」表示に、Xカードは未連携表示に戻す
+          if (googleTitle) googleTitle.textContent = (xName || 'Googleアカウント') + ' で連携中';
+          if (googleSub) googleSub.textContent = 'ポイント・発見者クレジットが永続保持されます';
+          if (googleArrow) googleArrow.textContent = '✓';
+          if (xTitle) xTitle.textContent = '𝕏 X連携';
+          if (xSub) xSub.textContent = '発見者名がXで表示・#TraceIVE投稿連動ポイント・特別バッジ解放';
+        } else if (xHandle) {
+          // Xで連携中 → Xカードを「連携中」表示に、Googleカードは未連携表示に戻す
+          if (xTitle) xTitle.textContent = xHandle + ' で連携中';
+          if (xSub) xSub.textContent = 'ポイント・発見者クレジットが永続保持されます';
+          if (googleTitle) googleTitle.textContent = 'G Google連携';
+          if (googleSub) googleSub.textContent = 'ポイント・発見者クレジットが永続保持されます';
+          if (googleArrow) googleArrow.textContent = '›';
+        } else {
+          // どちらも未連携（匿名など）
+          if (xTitle) xTitle.textContent = '𝕏 X連携';
+          if (xSub) xSub.textContent = '発見者名がXで表示・#TraceIVE投稿連動ポイント・特別バッジ解放';
+          if (googleTitle) googleTitle.textContent = 'G Google連携';
+          if (googleSub) googleSub.textContent = 'ポイント・発見者クレジットが永続保持されます';
+          if (googleArrow) googleArrow.textContent = '›';
+        }
+        if (xName) {
+          client.from('profiles').update({
+            display_name: xName,
+            x_id: isGoogle ? null : (meta.user_name || null),
+            x_provider_id: isGoogle ? null : xProviderId,
+          }).eq('id', user.id).then().catch(function(e) {
+            console.warn('display_name update error:', e);
+          });
+        }
         closeOnboarding();
       }
     } catch(e) { console.warn('handleAuthCallback error:', e); }
@@ -4185,269 +4885,48 @@ async function submitNewSpot() {
   }
 
 
-  // ── 管理者パネル ──
-  const ADMIN_PW_KEY = 'traceive_admin_auth_v1';
-  // パスワードはSHA-256ハッシュで保存（平文をコードに書かない）
-  // 初期パスワード: traceive_admin_2025 → ハッシュ値
-  const ADMIN_PW_HASH = '8498145c2076fb703904e32ff5bca29394289202960a18ac1819c918035078ab';
 
-  async function sha256(message) {
-    const msgBuffer = new TextEncoder().encode(message);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+  function escapeHtml(s) {
+    if (!s) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  function openAdminLogin() {
-    const authed = sessionStorage.getItem(ADMIN_PW_KEY);
-    if (authed === 'true') {
-      openAdminPanel();
-    } else {
-      const loginModal = document.getElementById('admin-login-modal');
-      loginModal.style.display = 'flex';
-      loginModal.style.alignItems = 'center';
-      loginModal.style.justifyContent = 'center';
-      document.getElementById('admin-pw-input').value = '';
-      document.getElementById('admin-pw-error').textContent = '';
-      setTimeout(() => document.getElementById('admin-pw-input').focus(), 100);
-    }
-  }
-
-  async function verifyAdminPassword() {
-    const pw = document.getElementById('admin-pw-input').value;
-    const hash = await sha256(pw);
-    if (hash === ADMIN_PW_HASH) {
-      sessionStorage.setItem(ADMIN_PW_KEY, 'true');
-      document.getElementById('admin-login-modal').style.display = 'none';
-      openAdminPanel();
-    } else {
-      document.getElementById('admin-pw-error').textContent = '❌ パスワードが違います';
-      document.getElementById('admin-pw-input').value = '';
-    }
-  }
-
-  async function openAdminPanel() {
-    document.getElementById('admin-modal').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    document.getElementById('admin-role-label').textContent = 'super_admin: @missing_link';
-    await loadPendingSubmissions();
-    switchAdminTab('pending');
-  }
-
-  function closeAdminPanel() {
-    document.getElementById('admin-modal').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-
-  function switchAdminTab(tab) {
-    ['pending','spots','admins'].forEach(t => {
-      document.getElementById('admin-tab-' + t).style.display = t === tab ? 'block' : 'none';
-      const btn = document.getElementById('atab-' + t);
-      if (btn) {
-        btn.style.background = t === tab ? 'linear-gradient(135deg,#3d1a5e,#6b2d8b)' : 'rgba(255,255,255,0.08)';
-        btn.style.color = t === tab ? '#fff' : 'rgba(255,255,255,0.6)';
-        btn.style.fontWeight = t === tab ? '700' : '400';
-      }
-    });
-    if (tab === 'spots') loadAdminSpots();
-    if (tab === 'admins') loadAdminList();
-  }
-
-  async function loadPendingSubmissions() {
-    const list = document.getElementById('pending-list');
+  async function loadNotices() {
     try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/submissions?status=eq.pending&order=created_at.desc`, {
-        headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
-      });
-      const data = await res.json();
-      if (!Array.isArray(data)) {
-        list.innerHTML = '<div style="text-align:center;color:#f87171;padding:40px;">読み込みエラー（' + (data.message || JSON.stringify(data)) + '）</div>';
-        console.error('submissions fetch error:', data);
-        return;
-      }
-      const badge = document.getElementById('pending-count-badge');
+      const sb = getSupabaseClient();
+      const { data, error } = await sb.from('notices').select('*').eq('is_active', true).order('sort_order', { ascending: true });
+      const wrap = document.getElementById('notice-banner-wrap');
+      const list = document.getElementById('notice-list-items');
+      const badge = document.getElementById('notice-count-badge');
+      if (error || !data || data.length === 0) { if (wrap) wrap.style.display = 'none'; return; }
+      if (wrap) wrap.style.display = 'block';
       if (badge) badge.textContent = data.length + '件';
-      if (!data.length) {
-        list.innerHTML = '<div style="text-align:center;color:rgba(255,255,255,0.4);padding:40px;">承認待ちの投稿はありません</div>';
-        return;
-      }
-      list.innerHTML = data.map(s => `
-        <div style="background:rgba(255,255,255,0.06);border-radius:14px;padding:16px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.1);">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
-            <div>
-              <div style="font-size:15px;font-weight:700;color:#fff;">${escHtml(s.spot_name)}</div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;">${s.category || ''} · ${s.member || ''} · ${s.submitter || ''}</div>
-            </div>
-            <div style="font-size:10px;color:rgba(255,255,255,0.3);">${new Date(s.created_at).toLocaleDateString('ja-JP')}</div>
-          </div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:8px;line-height:1.6;">${escHtml(s.description || '')}</div>
-          ${s.source_url ? `<a href="${escHtml(s.source_url)}" target="_blank" style="font-size:11px;color:#c9a84c;">🔗 出典を確認</a>` : ''}
-          <div style="display:flex;gap:8px;margin-top:12px;">
-            <button onclick="approveSubmission('${s.id}')" style="flex:1;padding:10px;background:linear-gradient(135deg,#15803d,#16a34a);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">✅ 承認</button>
-            <button onclick="rejectSubmission('${s.id}')" style="flex:1;padding:10px;background:rgba(220,38,38,0.3);color:#fca5a5;border:1px solid rgba(220,38,38,0.4);border-radius:10px;font-size:13px;cursor:pointer;">❌ 却下</button>
-            <button onclick="holdSubmission('${s.id}')" style="padding:10px 14px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5);border:none;border-radius:10px;font-size:13px;cursor:pointer;">⏸</button>
-          </div>
-        </div>
-      `).join('');
-    } catch(e) {
-      list.innerHTML = '<div style="text-align:center;color:#f87171;padding:40px;">通信エラー：' + e.message + '</div>';
-      console.error('loadPendingSubmissions error:', e);
-    }
+      if (list) list.innerHTML = data.map(function(n) {
+        return '<div style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.08)"><div style="font-size:13px;font-weight:700;color:#e9d5ff">' + escapeHtml(n.title) + '</div>' + (n.body ? '<div style="font-size:12px;color:rgba(255,255,255,0.6)">' + escapeHtml(n.body) + '</div>' : '') + '</div>';
+      }).join('');
+    } catch(e) { console.warn('loadNotices error:', e); }
   }
 
-  async function approveSubmission(id) {
-    // submissionsから取得
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/submissions?id=eq.${id}`, {
-      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
-    });
-    const [s] = await res.json();
-    if (!s) return;
-
-    // spotsに追加
-    const spotRes = await fetch(`${SUPABASE_URL}/rest/v1/spots`, {
-      method: 'POST',
-      headers: {
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-        'Prefer': 'return=minimal',
-      },
-      body: JSON.stringify({
-        name: s.spot_name,
-        lat: s.lat,
-        lng: s.lng,
-        sub: s.description,
-        icon: '📍',
-        category: s.category,
-        address: '',
-        member: s.member,
-        discoverer: s.submitter,
-        trust_score: 5,
-        good_count: 0,
-        bad_count: 0,
-        admin_level: 'pending_review',
-      })
-    });
-
-    // submissionをapprovedに更新
-    await fetch(`${SUPABASE_URL}/rest/v1/submissions?id=eq.${id}`, {
-      method: 'PATCH',
-      headers: {
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ status: 'approved' })
-    });
-
-    await loadPendingSubmissions();
-    showEvalToast('✅ 承認しました！スポットに追加されました');
+  function toggleNoticeBanner() {
+    var body = document.getElementById('notice-banner-body');
+    var arrow = document.getElementById('notice-banner-arrow');
+    if (!body) return;
+    var isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : 'block';
+    if (arrow) arrow.textContent = isOpen ? '▼' : '▲';
   }
 
-  async function rejectSubmission(id) {
-    await fetch(`${SUPABASE_URL}/rest/v1/submissions?id=eq.${id}`, {
-      method: 'PATCH',
-      headers: {
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ status: 'rejected' })
-    });
-    await loadPendingSubmissions();
-    showEvalToast('❌ 却下しました');
-  }
-
-  async function holdSubmission(id) {
-    await fetch(`${SUPABASE_URL}/rest/v1/submissions?id=eq.${id}`, {
-      method: 'PATCH',
-      headers: {
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ status: 'hold' })
-    });
-    await loadPendingSubmissions();
-    showEvalToast('⏸ 保留にしました');
-  }
-
-  async function loadAdminSpots() {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/spots?select=id,name,category,member,admin_level&order=created_at.desc&limit=50`, {
-      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
-    });
-    const data = await res.json();
-    const list = document.getElementById('admin-spots-list');
-    list.innerHTML = data.map(s => `
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:rgba(255,255,255,0.05);border-radius:10px;margin-bottom:6px;">
-        <div>
-          <div style="font-size:13px;color:#fff;font-weight:600;">${escHtml(s.name)}</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.4);">${s.category || ''} · ${s.member || ''}</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span style="font-size:10px;padding:3px 8px;background:rgba(255,255,255,0.1);border-radius:20px;color:rgba(255,255,255,0.5);">${s.admin_level}</span>
-          <button onclick="deleteSpot('${s.id}','${escHtml(s.name)}')" style="background:rgba(220,38,38,0.2);border:none;color:#fca5a5;padding:5px 10px;border-radius:8px;font-size:12px;cursor:pointer;">削除</button>
-        </div>
-      </div>
-    `).join('');
-  }
-
-  async function deleteSpot(id, name) {
-    if (!confirm('「' + name + '」を削除しますか？')) return;
-    await fetch(`${SUPABASE_URL}/rest/v1/spots?id=eq.${id}`, {
-      method: 'DELETE',
-      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
-    });
-    loadAdminSpots();
-    showEvalToast('🗑️ 削除しました');
-  }
-
-  async function loadAdminList() {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/admins?select=*&order=created_at.asc`, {
-      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
-    });
-    const data = await res.json();
-    const list = document.getElementById('admin-list');
-    list.innerHTML = data.map(a => `
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:rgba(255,255,255,0.05);border-radius:10px;margin-bottom:8px;">
-        <div>
-          <div style="font-size:14px;color:#fff;font-weight:600;">${escHtml(a.username)}</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.4);">${new Date(a.created_at).toLocaleDateString('ja-JP')} 登録</div>
-        </div>
-        <span style="font-size:12px;padding:4px 10px;border-radius:20px;font-weight:700;
-          background:${a.role === 'super_admin' ? 'linear-gradient(135deg,#c9a84c,#e8c96b)' : 'rgba(61,26,94,0.5)'};
-          color:${a.role === 'super_admin' ? '#1a0a2e' : '#c9a8e8'};">
-          ${a.role === 'super_admin' ? '👑 super_admin' : '🛡️ moderator'}
-        </span>
-      </div>
-    `).join('');
-  }
-
-  async function addModerator() {
-    const username = document.getElementById('new-mod-username').value.trim();
-    if (!username) { alert('ユーザー名を入力してください'); return; }
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/admins`, {
-      method: 'POST',
-      headers: {
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-        'Prefer': 'return=minimal',
-      },
-      body: JSON.stringify({ username, role: 'moderator' })
-    });
-    if (res.ok) {
-      document.getElementById('new-mod-username').value = '';
-      loadAdminList();
-      showEvalToast('🛡️ ' + username + ' をモデレーターに追加しました');
-    } else {
-      alert('追加に失敗しました（重複の可能性）');
-    }
-  }
 
   function escHtml(str) {
     if (!str) return '';
     return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // スポットのmember文字列（単一 or カンマ区切りの複数）を配列に変換
+  function getSpotMemberList(memberStr) {
+    if (!memberStr) return [];
+    return String(memberStr).split(',').map(function(m){ return m.trim(); }).filter(Boolean);
   }
 
 function toggleCard() {
@@ -4463,6 +4942,47 @@ function toggleCard() {
   }
 }
 
+
+
+function renderRouteSpotList() {
+  var container = document.getElementById('route-spot-list');
+  if (!container) return;
+  var catIcon = {'カフェ・飲食店':'🍜','撮影スポット':'📸','ライブ・イベント会場':'🎤','観光・名所':'🏯','ショップ':'🛍️'};
+  var currentRegion = container.dataset.region || 'all';
+  var filtered = SPOTS.filter(function(s) {
+    if (activeMember !== 'all' && s.member !== '全員' && !getSpotMemberList(s.member).includes(activeMember)) return false;
+    if (currentRegion === 'all') return true;
+    var addr = s.address || '';
+    var koreaKeys = ['韓国', 'ソウル', '済州', '釜山', '弘大', 'COEX', '江南', '梨泰院', '明洞'];
+    var tokyoKeys = ['東京都', '渋谷区', '新宿区', '港区', '中央区', '千代田区', '豊島区', '品川区', '目黒区', '世田谷区', '杉並区', '文京区', '台東区', '墨田区', '江東区', '足立区', '葛飾区', '北区', '中野区', '板橋区', '練馬区'];
+    var isKorea = koreaKeys.some(function(k){ return addr.indexOf(k) !== -1; });
+    var isTokyo = tokyoKeys.some(function(k){ return addr.indexOf(k) !== -1; });
+    if (currentRegion === 'korea') return isKorea;
+    if (currentRegion === 'tokyo') return isTokyo && !isKorea;
+    if (currentRegion === 'japan_other') return !isTokyo && !isKorea;
+    return true;
+  });
+  var html = '';
+  filtered.forEach(function(s) {
+    var icon = catIcon[s.category] || s.icon || '📍';
+    var meta = (s.category || '') + (s.address ? ' · ' + s.address.substring(0, 10) : '');
+    var koreaKeys2 = ['韓国', 'ソウル', '釜山', '済州', '仁川', '大邱', '光州', '大田'];
+        var tokyoKeys2 = ['東京都', '渋谷区', '新宿区', '港区', '中央区', '千代田区', '豊島区', '品川区'];
+        var addr2 = s.address || '';
+        var isKorea2 = koreaKeys2.some(function(k){ return addr2.indexOf(k) !== -1; });
+        var isTokyo2 = tokyoKeys2.some(function(k){ return addr2.indexOf(k) !== -1; });
+        var spotRegion2 = isKorea2 ? 'korea' : (isTokyo2 ? 'tokyo' : 'japan_other');
+        html += '<div class="route-spot-check" data-spot="' + s.name + '" data-region="' + spotRegion2 + '" data-meta="' + meta + '" data-icon="' + icon + '" data-lat="' + s.lat + '" data-lng="' + s.lng + '" data-member="' + getSpotMemberList(s.member).join(',') + '">'
+      + '<div class="rsc-left">'
+      + '<div class="rsc-check" onclick="toggleRouteSpot(this)">□</div>'
+      + '<div class="rsc-icon">' + icon + '</div>'
+      + '<div class="rsc-info"><div class="rsc-name">' + s.name + '</div><div class="rsc-meta">' + meta + '</div></div>'
+      + '</div>'
+      + '<div class="rsc-memo-wrap"><input class="rsc-memo" type="text" placeholder="メモ（任意）"></div>'
+      + '</div>';
+  });
+  container.innerHTML = html;
+}
 
 // リストビュー
 var listViewOpen = false;
@@ -4516,13 +5036,14 @@ function toggleListView() {
     btn.textContent = 'リスト';
   }
 }
-
 function renderSpotList() {
   var container = document.getElementById('spot-list-container');
   var catIcon = {'カフェ・飲食店':'🍜','撮影スポット':'📸','ライブ・イベント会場':'🎤','観光・名所':'🏯','ショップ':'🛍️'};
   var filtered = SPOTS.filter(function(s) {
     if (activeCategory !== 'all' && s.category !== activeCategory) return false;
-    if (activeMember !== 'all' && !(s.member || []).includes(activeMember) && !(s.member || []).includes('全員')) return false;
+    if (activeMember !== 'all' && s.member !== '全員' && !getSpotMemberList(s.member).includes(activeMember)) return false;
+    if (activeVisitedFilter === 'visited' && !myVisitedSpots.includes(s.name)) return false;
+    if (activeVisitedFilter === 'unvisited' && myVisitedSpots.includes(s.name)) return false;
     if (originSpot) {
       if (s.name === originSpot.name) return false;
       if (activeRadius > 0) {
@@ -4561,8 +5082,8 @@ function renderSpotList() {
     div.className = 'spot-list-item';
     div.innerHTML = '<div class="spot-list-icon">' + icon + '</div>'
       + '<div class="spot-list-info">'
-      + '<div class="spot-list-name">' + s.name + '</div>'
-      + '<div class="spot-list-addr">' + (s.address || '') + '</div>'
+      + '<div class="spot-list-name">' + escHtml(s.name) + '</div>'
+      + '<div class="spot-list-addr">' + escHtml(s.address || '') + '</div>'
       + '</div>' + distHtml;
     div.onclick = (function(spot) { return function() { selectSpotFromList(spot.name); }; })(s);
     frag.appendChild(div);
@@ -4601,27 +5122,111 @@ function jumpToSpot(name) {
   }, 100);
 }
 
+async function incrementSpotLikes(dbId) {
+  if (!dbId) return;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/spots?id=eq.${dbId}&select=likes_count`, {
+      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+    });
+    const [row] = await res.json();
+    const current = (row && row.likes_count) || 0;
+    const next = current + 1;
+    await fetch(`${SUPABASE_URL}/rest/v1/spots?id=eq.${dbId}`, {
+      method: 'PATCH',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ likes_count: next })
+    });
+    if (currentSpot && currentSpot.db_id === dbId) {
+      currentSpot.likes = next;
+      const likesEl = document.getElementById('card-likes');
+      if (likesEl) likesEl.textContent = next + ' 件の巡礼報告';
+    }
+  } catch(e) {
+    console.warn('スポットlikes更新失敗:', e);
+  }
+}
+
 // ── 巡礼報告 ──
-function reportVisit() {
-    if (!currentSpot) return;
-    const session = supabase.auth.session ? supabase.auth.session() : null;
-    if (!session) {
-      alert(`「${currentSpot.name}」の巡礼を報告しました！\n\n🌸 ありがとうございます！`);
+  const REPORT_VISIT_MAX_DISTANCE = 300; // メートル
+
+  function reportVisit() {
+      if (window._reportVisitInProgress) return;
+      window._reportVisitInProgress = true;
+    const spotId = currentSpot && currentSpot.name;
+    if (!spotId) { window._reportVisitInProgress = false; return; }
+    if (!navigator.geolocation) {
+      alert('お使いの環境では位置情報を取得できません。巡礼報告には位置情報の利用が必要です。');
+      window._reportVisitInProgress = false;
       return;
     }
-    const userId = session.user.id;
-    supabase.from('profiles').select('points').eq('id', userId).single()
-      .then(({ data, error }) => {
-        if (error || !data) {
-          alert(`「${currentSpot.name}」の巡礼を報告しました！\n\n🌸 ありがとうございます！`);
+    navigator.geolocation.getCurrentPosition(
+      function(pos) {
+        const dist = calcDistance(pos.coords.latitude, pos.coords.longitude, currentSpot.lat, currentSpot.lng);
+        if (dist > REPORT_VISIT_MAX_DISTANCE) {
+          alert('現在地がスポットから離れすぎています（約' + Math.round(dist) + 'm）。現地で改めて報告してください。');
+          window._reportVisitInProgress = false;
           return;
         }
-        const newPoints = (data.points || 0) + 100;
-        supabase.from('profiles').update({ points: newPoints }).eq('id', userId)
-          .then(() => {
-            alert(`「${currentSpot.name}」の巡礼を報告しました！\n\n🌸 +100pt 獲得！（合計: ${newPoints}pt）`);
-          });
+        doReportVisit(spotId, pos.coords.latitude, pos.coords.longitude);
+      },
+      function(err) {
+        alert('位置情報を取得できませんでした。設定で位置情報の利用を許可してから、もう一度お試しください。');
+        window._reportVisitInProgress = false;
+      },
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+  }
+
+  function doReportVisit(spotId, visitLat, visitLng) {
+    const client = getSupabaseClient();
+    client.auth.getSession().then(async ({ data }) => {
+      const session = data && data.session;
+      if (!session) { window._reportVisitInProgress = false; return; }
+      const userId = session.user.id;
+      const { data: profile } = await client.from('profiles').select('points, visited_spots, referred_by').eq('id', userId).single();
+      if (!profile) { window._reportVisitInProgress = false; return; }
+      const visited = profile.visited_spots || [];
+      const isFirstEverReport = visited.length === 0;
+      if (visited.includes(spotId)) {
+        alert('このスポットはすでに巡礼済みです。');
+        window._reportVisitInProgress = false;
+        return;
+      }
+      const spotMembersForBd = getSpotMemberList(currentSpot.member);
+      const bdEventForVisit = getBirthdayEvent();
+      const isBdMemberForVisit = bdEventForVisit && (spotMembersForBd.includes(bdEventForVisit.member.name) || spotMembersForBd.includes(bdEventForVisit.member.nameEn));
+      const multiplier = isBdMemberForVisit ? bdEventForVisit.multiplier : 1;
+      const eventMultiplier = (typeof getEventMultiplier === 'function') ? getEventMultiplier() : 1;
+      const oshiMultiplier = (typeof getOshiMultiplier === 'function') ? getOshiMultiplier(currentSpot.member) : 1;
+      const basePoints = 100;
+      const earned = Math.round(basePoints * multiplier * eventMultiplier * oshiMultiplier);
+      const newPoints = (profile.points || 0) + earned;
+      const newVisited = [...visited, spotId];
+      const { error: updateError } = await client.from('profiles').update({ points: newPoints, visited_spots: newVisited }).eq('id', userId);
+      if (updateError) { alert('保存エラー: ' + updateError.message); window._reportVisitInProgress = false; return; }
+      // 行動分析用：いつ・どこで巡礼したかのログ（ヒートマップ・動線分析用。失敗してもメイン処理は止めない）
+      client.from('visit_log').insert({
+        user_id: userId, spot_name: spotId, visited_at: new Date().toISOString(),
+        lat: (typeof visitLat === 'number') ? visitLat : null,
+        lng: (typeof visitLng === 'number') ? visitLng : null,
+      }).then().catch(function(e) {
+        console.warn('visit_log insert error:', e);
       });
+      // スポットの巡礼報告カウント（likes_count）を+1
+      incrementSpotLikes(currentSpot.db_id);
+      // 友達紹介：初回の巡礼報告完了時のみ、紹介者に+50pt
+      if (isFirstEverReport && profile.referred_by) {
+        awardReferralBonus(profile.referred_by);
+      }
+      alert('巡礼を記録しました！ +' + earned + 'pt獲得');
+      toggleCard();
+      loadProfileData();
+        window._reportVisitInProgress = false;
+    });
   }
 
 // ── ナビ ──
@@ -4632,18 +5237,119 @@ function openNavi() {
 }
 
 // ── Xシェア ──
+const X_SHARE_BONUS_KEY = 'traceillit_xshare_bonus_v1';
+const X_SHARE_BONUS_PT = 50;
+
+function getXShareBonusHistory() {
+  try { return JSON.parse(localStorage.getItem(X_SHARE_BONUS_KEY) || '[]'); }
+  catch(e) { return []; }
+}
+
+function hasXShareBonusReceived(spotName) {
+  return getXShareBonusHistory().includes(spotName);
+}
+
+function recordXShareBonus(spotName) {
+  const h = getXShareBonusHistory();
+  if (!h.includes(spotName)) {
+    h.push(spotName);
+    localStorage.setItem(X_SHARE_BONUS_KEY, JSON.stringify(h));
+  }
+}
+
 function shareX() {
   if (!currentSpot) return;
+  const spotName = currentSpot.name;
+
+  if (!hasXShareBonusReceived(spotName)) {
+    alert(`#TraceIVE をつけて投稿すると +${X_SHARE_BONUS_PT}pt もらえます！\n\nXの投稿画面に移動します。投稿してアプリに戻ってきてね。`);
+  }
+
   const tags = GROUP_CONFIG.hashtags.join(' ');
-  const text = encodeURIComponent(`【聖地巡礼】${currentSpot.name}\n${currentSpot.sub}\n\n${tags}`);
+  const spotMemberNames = getSpotMemberList(currentSpot.member);
+  const memberTagList = GROUP_CONFIG.members.filter(m => spotMemberNames.includes(m.name)).map(m => m.tags.join(' '));
+  const memberTags = memberTagList.length ? memberTagList.join(' ') + ' ' : '';
+  const text = encodeURIComponent(`【聖地巡礼】${currentSpot.name}\n${currentSpot.sub}\n\n${memberTags}${tags}`);
   window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
+
+  // Xの投稿画面から戻ってきたタイミングで「投稿しましたか？」と確認（自動付与ではなく自己申告制）
+  let asked = false;
+  const onReturn = () => {
+    if (document.visibilityState !== 'visible' || asked) return;
+    asked = true;
+    document.removeEventListener('visibilitychange', onReturn);
+    window.removeEventListener('focus', onReturn);
+    if (hasXShareBonusReceived(spotName)) return;
+    setTimeout(() => {
+      const posted = confirm(`#TraceIVE をつけて投稿しましたか？\n\n投稿していれば「OK」を押してポイントを受け取ってください。`);
+      if (posted && !hasXShareBonusReceived(spotName)) {
+        recordXShareBonus(spotName);
+        addPendingPoint(spotName, '𝕏 #TraceIVEシェア', X_SHARE_BONUS_PT, true);
+        showEvalToast(`𝕏 シェアありがとう！ +${X_SHARE_BONUS_PT}pt 獲得！`);
+      }
+    }, 300);
+  };
+  document.addEventListener('visibilitychange', onReturn);
+  window.addEventListener('focus', onReturn);
+}
+
+// ── 友達紹介（土台部分・6/19実装） ──
+function getReferrerIdFromUrl() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('ref') || null;
+  } catch(e) { return null; }
+}
+
+function getMyReferralLink() {
+  const uid = localStorage.getItem('traceillit_uid');
+  if (!uid) return null;
+  return 'https://trace-series.github.io/trace-ive/trace-ive.html?ref=' + uid;
+}
+
+function shareReferralLink() {
+  const link = getMyReferralLink();
+  if (!link) { alert('まずログイン（連携）してください。'); return; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(link).then(function() {
+      alert('紹介リンクをコピーしました！\n友達に送って、初めての巡礼報告で+50pt獲得します。');
+    }).catch(function() {
+      prompt('このリンクをコピーしてください:', link);
+    });
+  } else {
+    prompt('このリンクをコピーしてください:', link);
+  }
+}
+
+function awardReferralBonus(referrerId) {
+  if (!referrerId) return;
+  const client = getSupabaseClient();
+  client.from('profiles').select('points, referral_count, visited_spots').eq('id', referrerId).single().then(function(r) {
+    if (!r.data) return;
+    // 不正対策：紹介者自身が未活動（巡礼ゼロ）の場合はボーナスを見送る
+    const referrerVisited = r.data.visited_spots || [];
+    if (referrerVisited.length === 0) {
+      console.log('referral bonus skipped: referrer inactive');
+      return;
+    }
+    const newCount = (r.data.referral_count || 0) + 1;
+    let bonus = newCount <= 10 ? 50 : 30;
+    if (newCount === 5) bonus += 150;   // 称号「Scout」
+    if (newCount === 10) bonus += 400;  // 称号「Evangelist」
+    const newPts = (r.data.points || 0) + bonus;
+    client.from('profiles').update({ points: newPts, referral_count: newCount }).eq('id', referrerId).then().catch(function(e) {
+      console.warn('referral bonus update error:', e);
+    });
+  }).catch(function(e) {
+    console.warn('referral bonus fetch error:', e);
+  });
 }
 
 // ── ビュー切り替え ──
 let activeView = 'map';
 
 function showView(name) {
-  ['map','ranking','feed','post','profile','route','pointrules','terms','privacy','howto'].forEach(v => {
+  ['map','ranking','feed','post','profile','route','pointrules','terms','privacy','howto','settings'].forEach(v => {
     const el = document.getElementById('view-'+v);
     if (el) el.style.display = 'none';
     const nav = document.getElementById('nav-'+v);
@@ -4652,7 +5358,14 @@ function showView(name) {
   const target = document.getElementById('view-'+name);
   if (target) target.style.display = 'block';
   if (name === 'post') setTimeout(initPostForm, 50);
+  if (name === 'feed') loadFeed();
+  if (name === 'route') renderRouteSpotList();
+  if (name === 'ranking') {
+    loadFounderCount();
+    renderSpotRanking(currentRankingPeriod);
+  }
   const nav = document.getElementById('nav-'+name);
+  if (name === 'profile') setTimeout(loadProfileData, 50);
   if (nav) nav.classList.add('active');
   activeView = name;
 
@@ -4695,7 +5408,7 @@ function filterMember(el, member) {
     el.classList.add('active');
     // フォームのメンバーchipsを連動
     document.querySelectorAll('#view-post .chip[data-member]').forEach(c => {
-      c.classList.toggle('selected', c.dataset.member === member);
+      c.classList.toggle('selected', c.dataset.member === member || c.dataset.member.split(',').map(m=>m.trim()).includes(member));
     });
     // メンバー名テキストchipsも連動（data-member未設定の場合テキスト一致）
     document.querySelectorAll('#view-post .scene-chips .chip').forEach(c => {
@@ -5010,7 +5723,7 @@ function showLangComingSoon() {
   }
 
   // 評価済み履歴管理
-  const EVAL_HISTORY_KEY = 'traceive_eval_history_v1';
+  const EVAL_HISTORY_KEY = 'traceillit_eval_history_v1';
 
   function getEvalHistory() {
     try { return JSON.parse(localStorage.getItem(EVAL_HISTORY_KEY) || '{}'); }
@@ -5055,6 +5768,13 @@ function showLangComingSoon() {
 
   function evalSpot(type) {
     if (!currentSpot) return;
+
+    // 現地系（行って確認／構図一致）は、GPS確認済みの「巡礼した！」報告がないと評価できない
+    // （現地確認の信頼性をGPS実績で担保し、押すだけでポイントになる状態を防ぐ）
+    if (ONSITE_TYPES.has(type) && !myVisitedSpots.includes(currentSpot.name)) {
+      showEvalToast('📍 先に「巡礼した！」ボタンでGPS確認をしてから評価してください');
+      return;
+    }
 
     const evaled = getEvaledTypes(currentSpot.name);
 
@@ -5141,13 +5861,12 @@ function showLangComingSoon() {
     }
 
     let multiplier = 1;
+    const spotMembers = getSpotMemberList(currentSpot.member);
 
     // 誕生日倍率
     const bdEvent = getBirthdayEvent();
-    if (bdEvent && currentSpot.member) {
-      const isBdMember = bdEvent.member.name === currentSpot.member || bdEvent.member.nameEn === currentSpot.member;
-      if (isBdMember) multiplier *= bdEvent.multiplier;
-    }
+    const isBdMember = bdEvent && (spotMembers.includes(bdEvent.member.name) || spotMembers.includes(bdEvent.member.nameEn));
+    if (isBdMember) multiplier *= bdEvent.multiplier;
 
     // 推し倍率
     const oshiMult = getOshiMultiplier(currentSpot.member);
@@ -5155,12 +5874,13 @@ function showLangComingSoon() {
 
     const finalPt = Math.round(basePt * multiplier);
     const notes = [];
-    if (bdEvent && bdEvent.member && (bdEvent.member.name === currentSpot.member || bdEvent.member.nameEn === currentSpot.member)) {
+    if (isBdMember) {
       notes.push(`誕生${bdEvent.type === 'day' ? '日' : '月'}`);
     }
-    if (oshiMult > 1) notes.push(oshi1 === currentSpot.member ? '💜1推し' : '🩷2推し');
+    if (oshiMult > 1) notes.push((oshi1 && spotMembers.includes(oshi1)) ? '💜1推し' : '🩷2推し');
     const multiplierNote = multiplier > 1 ? ` (×${multiplier.toFixed(1)} ${notes.join('・')})` : '';
-    addPendingPoint(currentSpot.name, labelMap[type] + multiplierNote, finalPt);
+    // 現地系（GPS確認済み）は即時付与。リモート確認・誤情報報告系は引き続き確定待ち。
+    addPendingPoint(currentSpot.name, labelMap[type] + multiplierNote, finalPt, ONSITE_TYPES.has(type));
 
     // スコア表示を一瞬色変え
     const scoreEl = document.getElementById('card-trust-score');
@@ -5168,8 +5888,8 @@ function showLangComingSoon() {
     setTimeout(() => { scoreEl.style.color = ''; }, 1500);
   }
 
-  function addPendingPoint(spotName, typeLabel, pt) {
-    const list = document.getElementById('pending-list');
+  function _origAddPendingPoint(spotName, typeLabel, pt) {
+    const list = document.getElementById('admin-pending-list');
     if (!list) return;
     const item = document.createElement('div');
     item.className = 'pending-item';
@@ -5185,7 +5905,7 @@ function showLangComingSoon() {
     left.appendChild(type);
     const ptEl = document.createElement('div');
     ptEl.className = 'pending-item-pt';
-    ptEl.textContent = `+${pt}pt?`;
+    ptEl.textContent = `+${pt}pt`;
     item.appendChild(left);
     item.appendChild(ptEl);
     list.prepend(item);
@@ -5196,24 +5916,15 @@ function showLangComingSoon() {
   document.querySelectorAll('#route-member-tabs .region-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   activeMember = member;
-  document.querySelectorAll('.route-spot-check').forEach(item => {
-    const mAttr = item.dataset.member || '';
-    const mList = mAttr ? mAttr.split(',') : [];
-    const mOk = activeMember === 'all' || mList.includes(activeMember) || mList.includes('全員');
-    if (mOk) item.style.display = '';
-    else item.style.display = 'none';
-  });
+  renderRouteSpotList();
 }
 
 function filterRouteRegion(el, region) {
     document.querySelectorAll('.region-tab').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
     document.querySelectorAll('.route-spot-check').forEach(item => {
-      const r = item.getAttribute('data-region') || 'tokyo';
-      const mAttr = item.dataset.member || '';
-      const mList = mAttr ? mAttr.split(',') : [];
-      const mOk = activeMember === 'all' || mList.includes(activeMember) || mList.includes('全員');
-      item.style.display = (mOk && (region === 'all' || r === region)) ? 'block' : 'none';
+      const r = item.getAttribute('data-region') || 'japan_other';
+      item.style.display = (region === 'all' || r === region) ? 'block' : 'none';
     });
   }
 
@@ -5244,12 +5955,76 @@ function filterRouteRegion(el, region) {
     premium:  { optimizePerMonth: 999, saveMax: 999 },
   };
 
-  let currentUserRank = 'gold';
+  // ランクしきい値（6/18バランス調整）。ダイヤモンドのみポイントに加えて
+  // 友達紹介5人（称号「Scout」）以上が必須。紹介機能実装までreferralCountは常に0として扱う。
+  const RANK_TIERS = [
+    { key: 'bronze',   minPt: 0,    name: 'ブロンズ',     requiresScout: false },
+    { key: 'silver',   minPt: 200,  name: 'シルバー',     requiresScout: false },
+    { key: 'gold',     minPt: 800,  name: 'ゴールド',     requiresScout: false },
+    { key: 'platinum', minPt: 2500, name: 'プラチナ',     requiresScout: false },
+    { key: 'diamond',  minPt: 6000, name: 'ダイヤモンド', requiresScout: true  },
+  ];
+
+  // 新規スポット投稿の月間上限（ランク別）
+  const SUBMIT_MONTHLY_LIMITS = {
+    bronze:   1,
+    silver:   1,
+    gold:     2,
+    platinum: 2,
+    diamond:  3,
+    premium:  999,
+  };
+
+  function getRankKey(points, referralCount) {
+    const pt = points || 0;
+    const refCount = referralCount || 0;
+    let result = 'bronze';
+    for (const tier of RANK_TIERS) {
+      if (pt < tier.minPt) break;
+      if (tier.requiresScout && refCount < 5) continue;
+      result = tier.key;
+    }
+    return result;
+  }
+
+  let currentUserRank = 'bronze';
   let optimizeUsedThisMonth = 0;
+  // ── 開発者モード設定（自分のアカウントのみに適用） ──
+  let hideFromRankingActive = false; // true: 達成率/推しファン/トップ貢献者バッジの集計から自分を除外
+  let devBypassRankActive = false;   // true: ランク制限を無視して全ランクの機能を利用可能にする(表示上はダイヤモンド扱い)
+  let lastKnownPoints = 0;
+  let lastKnownReferralCount = 0;
 
   function getRouteLimit() {
     return ROUTE_LIMITS[currentUserRank] || ROUTE_LIMITS.bronze;
   }
+
+  function updateUserRank(points, referralCount) {
+    lastKnownPoints = points || 0;
+    lastKnownReferralCount = referralCount || 0;
+    currentUserRank = devBypassRankActive ? 'diamond' : getRankKey(points, referralCount);
+    const tier = RANK_TIERS.find(t => t.key === currentUserRank);
+    const badgeEl = document.getElementById('contrib-rank-badge');
+    if (badgeEl && tier) badgeEl.textContent = tier.name;
+    document.querySelectorAll('.pr-rank-item').forEach(function(el) {
+      const isCurrent = el.dataset.rank === currentUserRank;
+      el.classList.toggle('pr-rank-current', isCurrent);
+      const badge = el.querySelector('.pr-current-badge');
+      if (badge) badge.style.display = isCurrent ? 'inline' : 'none';
+    });
+    document.querySelectorAll('.pr-route-row[data-rank]').forEach(function(el) {
+      el.classList.toggle('pr-route-current', el.dataset.rank === currentUserRank);
+    });
+    if (typeof updateOptimizeBtn === 'function') updateOptimizeBtn();
+  }
+
+  const RANK_DISPLAY = {
+    bronze:   '🥉 ブロンズ',
+    silver:   '🥈 シルバー',
+    gold:     '🥇 ゴールド',
+    platinum: '💎 プラチナ',
+    diamond:  '👑 ダイヤモンド'
+  };
 
   function updateOptimizeBtn() {
     const limit = getRouteLimit();
@@ -5257,6 +6032,8 @@ function filterRouteRegion(el, region) {
     const remaining = limit.optimizePerMonth - optimizeUsedThisMonth;
     const remEl = document.getElementById('route-opt-remaining');
     if (remEl) remEl.textContent = `${Math.max(0, remaining)} / ${limit.optimizePerMonth}回`;
+    const rankNameEl = document.getElementById('route-rank-name');
+    if (rankNameEl) rankNameEl.textContent = RANK_DISPLAY[currentUserRank] || RANK_DISPLAY.bronze;
     if (!btn) return;
     if (limit.optimizePerMonth === 0) {
       btn.className = 'btn-optimize locked';
@@ -5276,7 +6053,7 @@ function filterRouteRegion(el, region) {
     const limit = getRouteLimit();
     const remaining = limit.optimizePerMonth - optimizeUsedThisMonth;
     if (limit.optimizePerMonth === 0) {
-      alert('🔒 ルート最適化はゴールドランク（500pt）以上で使用できます。');
+      alert('🔒 ルート最適化はゴールドランク（800pt）以上で使用できます。');
       showView('pointrules');
       return;
     }
@@ -5408,16 +6185,64 @@ function filterRouteRegion(el, region) {
       setTimeout(() => showUpdateModal(), 800);
     }
     localStorage.setItem('traceillit_version', currentVer);
+    // image_urlをSupabaseからSPOTSにマージ
+    (async () => {
+      try {
+        const { data } = await getSupabaseClient().from('spots').select('name, image_url');
+        if (data) {
+          data.forEach(row => {
+            const spot = SPOTS.find(s => s.name === row.name);
+            if (spot && row.image_url) spot.image_url = row.image_url;
+          });
+        }
+      } catch(e) { console.warn('image_url merge error:', e); }
+    })();
 
     // 誕生日ポップアップ（500ms遅延でページ表示後に出す）
     setTimeout(() => {
       const bdEvent = getBirthdayEvent();
-      if (bdEvent) showBirthdayPopup(bdEvent);
+      if (bdEvent && !hasDismissedPopupToday('birthday')) {
+        showBirthdayPopup(bdEvent);
+      } else if (!bdEvent) {
+        const ev = getActiveEvent();
+        if (ev && !hasDismissedPopupToday('event_' + ev.id)) showEventPopup(ev);
+      }
     }, 500);
     // 推し設定を読み込む
     loadOshiSettings();
     loadProfileData();
     handleAuthCallback();
+    setTimeout(loadNotices, 1500);
+    // 匿名ログイン（独立実行・マップに影響しない）
+    setTimeout(function() {
+      try {
+        var client = getSupabaseClient();
+        client.auth.getSession().then(function(r) {
+          var existingUser = r.data && r.data.session && r.data.session.user;
+        if (existingUser) { localStorage.setItem("traceillit_uid", existingUser.id); }
+          if (existingUser) {
+            client.from('profiles').upsert({
+              id: existingUser.id,
+              display_name: '巡礼者',
+              points: 0,
+              referred_by: getReferrerIdFromUrl()
+            }, { onConflict: 'id', ignoreDuplicates: true }).then(function(r2){console.log('profile upsert ok:', r2);}).catch(function(e2){console.warn('profile upsert error:', e2);});
+          } else {
+            client.auth.signInAnonymously().then(function(res) {
+              if (res.data && res.data.user) {
+                localStorage.setItem("traceillit_uid", res.data.user.id);
+                client.from('profiles').upsert({
+                  id: res.data.user.id,
+                  display_name: '巡礼者',
+                  points: 0,
+                  referred_by: getReferrerIdFromUrl()
+                }, { onConflict: 'id', ignoreDuplicates: true }).then(function(r2){console.log('profile upsert ok:', r2);}).catch(function(e2){console.warn('profile upsert error:', e2);});
+              }
+            });
+          }
+        });
+      } catch(e) { console.warn('anon error:', e); }
+    }, 2000);
     // ランキング メンバータブを生成
     buildRankingMemberTabs();
     // 推しメン熱量ランキングを生成
@@ -5474,7 +6299,7 @@ function filterRouteRegion(el, region) {
 // ════════════════════════════════════════
 // 推し設定システム
 // ════════════════════════════════════════
-const MEMBER_ICONS = { 'ユジン':'🐕','ガウル':'🐿️','レイ':'🐥','ウォニョン':'🐰','リズ':'🐱','イソ':'🐯' };
+const MEMBER_ICONS = { 'ユナ':'🐆','ミンジュ':'🐰','モカ':'☕','ウォンヒ':'🐿️','イロハ':'🐢' };
 const OSHI_MULTIPLIER_1 = 1.5;
 const OSHI_MULTIPLIER_2 = 1.2;
 
@@ -5483,21 +6308,210 @@ let oshi2 = null; // 2推しメンバー名
 
 
 // ── プロフィール編集 ──
-const PROFILE_KEY = 'traceive_profile_v1';
+const PROFILE_KEY = 'traceillit_profile_v1';
 
 function loadProfileData() {
   try {
-    const d = JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}');
-    if (d.name) {
-      document.getElementById('profile-name').textContent = d.name;
-    }
+    const d = JSON.parse(localStorage.getItem(PROFILE_KEY) || "{}");
+    if (d.name) document.getElementById("profile-name").textContent = d.name;
     if (d.icon) {
-      document.getElementById('profile-avatar').textContent = d.icon;
-      // ヘッダーのアバターも更新
-      const headerAvatar = document.querySelector('.avatar');
+      document.getElementById("profile-avatar").textContent = d.icon;
+      const headerAvatar = document.querySelector(".avatar");
       if (headerAvatar) headerAvatar.textContent = d.icon;
     }
   } catch(e) {}
+  try {
+    const ob = JSON.parse(localStorage.getItem(OB_KEY) || 'null');
+    const handleEl = document.getElementById('profile-handle');
+    if (handleEl) {
+      if (!ob || ob.method === 'anonymous') {
+        handleEl.textContent = '未連携';
+      } else if (ob.provider === 'google' || (!ob.provider && !ob.xHandle)) {
+        handleEl.textContent = 'Google連携済み';
+      } else if (ob.xHandle) {
+        handleEl.textContent = ob.xHandle + ' で連携中';
+      } else {
+        handleEl.textContent = '未連携';
+      }
+    }
+  } catch(e) {}
+  var sb = getSupabaseClient();
+  if (!sb) return;
+  sb.auth.getSession().then(function(res) {
+    var session = res.data && res.data.session;
+    if (!session) return;
+    sb.from("profiles").select("points, visited_spots, referral_count, is_founder, hide_from_ranking, dev_bypass_rank").eq("id", session.user.id).single()
+      .then(function(r) {
+        if (!r.data) return;
+          if (r.data.is_founder) {
+            var founderCard = document.querySelector('#badge-grid .badge-card.locked');
+            if (founderCard) founderCard.classList.remove('locked');
+            var founderPill = document.getElementById('pbadge-founder-el');
+            if (founderPill) founderPill.style.display = 'inline-block';
+          }
+          hideFromRankingActive = !!r.data.hide_from_ranking;
+          devBypassRankActive = !!r.data.dev_bypass_rank;
+        var pts = r.data.points || 0;
+        var el = document.getElementById("profile-contrib-total");
+        if (el) el.textContent = pts + " pt";
+        if (typeof updateUserRank === 'function') updateUserRank(pts, r.data.referral_count || 0);
+        var visited = (r.data.visited_spots || []).length;
+        myVisitedSpots = r.data.visited_spots || [];
+        if (typeof applyFilters === 'function') applyFilters();
+        if (typeof listViewOpen !== 'undefined' && listViewOpen && typeof renderSpotList === 'function') renderSpotList();
+        var vel = document.getElementById("profile-visited");
+        if (vel) vel.textContent = visited;
+        var pel = document.getElementById("stat-pilgrim");
+        if (pel) pel.textContent = visited;
+
+        // ポイント履歴表示 & バッジ解除(.thenチェーンのみ使用。awaitは使わない)
+        var supabase3 = getSupabaseClient();
+        supabase3.from('point_log').select('category, amount, spot_name, created_at').eq('user_id', session.user.id)
+          .then(function(plRes) {
+            var plData = plRes.data;
+            var logEl = document.getElementById('point-log-list');
+            if (logEl) {
+              if (!plData || plData.length === 0) {
+                logEl.innerHTML = '<div style="color:var(--text-mid);font-size:13px;text-align:center;padding:16px;">まだ履歴がありません</div>';
+              } else {
+                var sorted = plData.slice().sort(function(a,b){ return new Date(b.created_at||0) - new Date(a.created_at||0); });
+                logEl.innerHTML = sorted.slice(0,20).map(function(p) {
+                  return '<div style="display:flex;justify-content:space-between;padding:8px 4px;border-bottom:1px solid var(--border);font-size:13px;"><span>' + p.category + (p.spot_name ? ' · ' + p.spot_name : '') + '</span><span style="color:var(--accent);">+' + p.amount + 'pt</span></div>';
+                }).join('');
+              }
+            }
+            // バッジ解除: 最初の発見者
+            if (plData && plData.some(function(p){ return p.category === '早期発見'; })) {
+              document.querySelectorAll('.badge-card').forEach(function(elx) {
+                var nameEl = elx.querySelector('.badge-name');
+                if (nameEl && nameEl.textContent === '最初の発見者') elx.classList.remove('locked');
+              });
+            }
+
+            // 発見者バッジの件数を集計して表示（プロフィール上部のピル + 統計カード）
+            var discovererCount = (plData || []).filter(function(p){ return p.category === '早期発見'; }).length;
+            var discovererPill = document.getElementById('pbadge-discoverer-el');
+            if (discovererPill) {
+              if (discovererCount > 0) {
+                discovererPill.textContent = '🥇 発見者バッジ ×' + discovererCount;
+                discovererPill.style.display = 'inline-block';
+              } else {
+                discovererPill.style.display = 'none';
+              }
+            }
+            var discovererStatEl = document.getElementById('stat-discoverer');
+            if (discovererStatEl) {
+              discovererStatEl.textContent = discovererCount;
+              var statCardEl = discovererStatEl.closest('.stat-card');
+              if (statCardEl) {
+                statCardEl.querySelectorAll('div').forEach(function(dv) {
+                  if (dv.textContent.trim() === 'Coming Soon') dv.remove();
+                });
+              }
+            }
+
+            // バッジ解除: 正確レポーター（GOOD評価累計50pt以上）
+            // ※GOOD評価のpoint_logカテゴリはevalSpot()内のlabelMapのラベル(+倍率注記)として保存されるため前方一致で判定
+            var goodEvalPrefixes = ['📸 行って確認と報告','🎯 構図一致を報告','📱 SNSで確認と報告','🎬 動画で確認と報告','📰 メディア掲載を報告','🔗 出典ありを報告'];
+            if (plData) {
+              var accurateTotal = plData
+                .filter(function(p){ return goodEvalPrefixes.some(function(prefix){ return (p.category||'').indexOf(prefix) === 0; }); })
+                .reduce(function(sum, p){ return sum + (p.amount || 0); }, 0);
+              if (accurateTotal >= 50) {
+                document.querySelectorAll('.badge-card').forEach(function(elx) {
+                  var nameEl = elx.querySelector('.badge-name');
+                  if (nameEl && nameEl.textContent === '正確レポーター') elx.classList.remove('locked');
+                });
+              }
+            }
+
+            // バッジ解除: マッパー(承認済み5件以上)
+            var supabase4 = getSupabaseClient();
+            supabase4.from('submissions').select('id', { count: 'exact', head: true }).eq('submitter_id', session.user.id).eq('status', 'approved')
+              .then(function(subRes) {
+                var approvedCount = subRes.count || 0;
+                if (approvedCount >= 5) {
+                  document.querySelectorAll('.badge-card').forEach(function(elx) {
+                    var nameEl = elx.querySelector('.badge-name');
+                    if (nameEl && nameEl.textContent === 'マッパー') elx.classList.remove('locked');
+                  });
+                }
+                // バッジ解除: つなぎ役・Scout・Evangelist(紹介数)
+                var ref = r.data.referral_count || 0;
+                var badgeRefMap = { 'つなぎ役': 1, 'Scout': 5, 'Evangelist': 10 };
+                Object.keys(badgeRefMap).forEach(function(name) {
+                  if (ref >= badgeRefMap[name]) {
+                    document.querySelectorAll('.badge-card').forEach(function(elx) {
+                      var nameEl = elx.querySelector('.badge-name');
+                      if (nameEl && nameEl.textContent === name) elx.classList.remove('locked');
+                    });
+                  }
+                });
+              })
+              .catch(function(e4) { console.warn('submissions count error:', e4); });
+          })
+          .catch(function(e3) { console.warn('point_log fetch error:', e3); });
+
+        // バッジ解除: バズ投稿（いいね合計500件以上、新規スポット投稿＋巡礼報告の合計）
+        var supabase5 = getSupabaseClient();
+        Promise.all([
+          supabase5.from('submissions').select('likes_count').eq('submitter_id', session.user.id),
+          supabase5.from('visit_log').select('likes_count').eq('user_id', session.user.id),
+        ]).then(function(buzzResArr) {
+          var subLikes = (buzzResArr[0].data || []).reduce(function(sum, r) { return sum + (r.likes_count || 0); }, 0);
+          var visitLikes = (buzzResArr[1].data || []).reduce(function(sum, r) { return sum + (r.likes_count || 0); }, 0);
+          if ((subLikes + visitLikes) >= 500) {
+            document.querySelectorAll('.badge-card').forEach(function(elx) {
+              var nameEl = elx.querySelector('.badge-name');
+              if (nameEl && nameEl.textContent === 'バズ投稿') elx.classList.remove('locked');
+            });
+          }
+        })
+          .catch(function(e5) { console.warn('buzz badge error:', e5); });
+
+        // バッジ解除: 海外遠征（韓国スポット投稿）
+        var supabase7 = getSupabaseClient();
+        supabase7.from('submissions').select('id', { count: 'exact', head: true }).eq('submitter_id', session.user.id).eq('country', 'Korea').eq('status', 'approved')
+          .then(function(koreaRes) {
+            if ((koreaRes.count || 0) > 0) {
+              document.querySelectorAll('.badge-card').forEach(function(elx) {
+                var nameEl = elx.querySelector('.badge-name');
+                if (nameEl && nameEl.textContent === '海外遠征') elx.classList.remove('locked');
+              });
+            }
+          })
+          .catch(function(e7) { console.warn('overseas badge error:', e7); });
+
+        // バッジ解除: トップ貢献者（当月1位）
+        var supabase8 = getSupabaseClient();
+        var now = new Date();
+        var monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+        supabase8.from('profiles').select('id, hide_from_ranking').gte('updated_at', monthStart).order('points', { ascending: false }).limit(10)
+          .then(function(topRes) {
+            var topRows = (topRes.data || []).filter(function(p) { return !p.hide_from_ranking; });
+            if (topRows.length > 0 && topRows[0].id === session.user.id) {
+              document.querySelectorAll('.badge-card').forEach(function(elx) {
+                var nameEl = elx.querySelector('.badge-name');
+                if (nameEl && nameEl.textContent === 'トップ貢献者') elx.classList.remove('locked');
+              });
+            }
+          })
+          .catch(function(e8) { console.warn('top contributor badge error:', e8); });
+
+        // バッジ解除: ガーディアン（誤情報報告確定×5件）
+        var supabase9 = getSupabaseClient();
+        supabase9.from('point_log').select('id', { count: 'exact', head: true }).eq('user_id', session.user.id).eq('category', 'wrong_info_confirmed')
+          .then(function(guardRes) {
+            if ((guardRes.count || 0) >= 5) {
+              document.querySelectorAll('.badge-card').forEach(function(elx) {
+                var nameEl = elx.querySelector('.badge-name');
+                if (nameEl && nameEl.textContent === 'ガーディアン') elx.classList.remove('locked');
+              });
+            }
+          })
+          .catch(function(e9) { console.warn('guardian badge error:', e9); });
+      });
+  });
 }
 
 function openProfileEdit() {
@@ -5562,7 +6576,7 @@ function saveProfileEdit() {
 
 function loadOshiSettings() {
   try {
-    const raw = localStorage.getItem('traceive_oshi_v1');
+    const raw = localStorage.getItem('traceillit_oshi_v1');
     if (raw) {
       const d = JSON.parse(raw);
       oshi1 = d.oshi1 || null;
@@ -5627,9 +6641,18 @@ function selectOshi(rank, name) {
 }
 
 function saveOshiSettings() {
-  localStorage.setItem('traceive_oshi_v1', JSON.stringify({ oshi1, oshi2 }));
+  localStorage.setItem('traceillit_oshi_v1', JSON.stringify({ oshi1, oshi2 }));
   updateOshiPreview();
   buildOshiRanking();
+  const _oshiClient = getSupabaseClient();
+  _oshiClient.auth.getSession().then(function(r) {
+    const session = r.data && r.data.session;
+    if (session) {
+      _oshiClient.from('profiles').update({ oshi1: oshi1, oshi2: oshi2 }).eq('id', session.user.id).then().catch(function(e) {
+        console.warn('oshi save (server) error:', e);
+      });
+    }
+  });
   const msg = document.getElementById('oshi-save-msg');
   msg.textContent = '✅ 保存しました！';
   setTimeout(() => {
@@ -5640,10 +6663,11 @@ function saveOshiSettings() {
 }
 
 // 推し倍率をポイント計算に適用（evalSpotから呼ばれる）
-function getOshiMultiplier(memberName) {
-  if (!memberName) return 1;
-  if (oshi1 && oshi1 === memberName) return OSHI_MULTIPLIER_1;
-  if (oshi2 && oshi2 === memberName) return OSHI_MULTIPLIER_2;
+function getOshiMultiplier(memberField) {
+  const members = getSpotMemberList(memberField);
+  if (members.length === 0) return 1;
+  if (oshi1 && members.includes(oshi1)) return OSHI_MULTIPLIER_1;
+  if (oshi2 && members.includes(oshi2)) return OSHI_MULTIPLIER_2;
   return 1;
 }
 
@@ -5653,20 +6677,6 @@ function getOshiMultiplier(memberName) {
 
 
 // ── メンバータブ1タップで推しランキング直接切り替え ──
-function filterMemberAndOshi(el, member) {
-  const modal = document.getElementById('oshi-ranking-modal');
-  const isOpen = modal && modal.style.display !== 'none';
-  filterMember(el, member);
-  if (isOpen) {
-    // モーダルが開いている → そのまま切り替え
-    showOshiRanking(member);
-  } else {
-    // モーダルが閉じている → 開く
-    showOshiRanking(member);
-  }
-}
-
-
 // ── メンバータブ1タップで推しランキング直接切り替え ──
 function filterMemberAndOshi(el, member) {
   const modal = document.getElementById('oshi-ranking-modal');
@@ -5715,11 +6725,51 @@ function showOshiRanking(member) {
 
 function renderOshiRankingList(member, period) {
   const list = document.getElementById('oshi-ranking-modal-list');
-  const periodMult = {year:1, half:0.55, quarter:0.28, month:0.1};
-  const mult = periodMult[period] || 1;
+  if (!list) return;
   const medals = ['🥇','🥈','🥉'];
-
-  list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--text-light);"><div style="font-size:32px;margin-bottom:8px;">🌸</div><div style="font-size:14px;">巡礼データが集まるとランキングが表示されます</div></div>';
+  const emptyHtml = '<div style="text-align:center;padding:40px 20px;color:var(--text-light);"><div style="font-size:32px;margin-bottom:8px;">🌸</div><div style="font-size:14px;">この期間の巡礼データはまだありません</div></div>';
+  list.innerHTML = '<div style="text-align:center;padding:30px;color:var(--text-light);">読み込み中...</div>';
+  const cutoff = getPeriodCutoffISO(period);
+  const client = getSupabaseClient();
+  let visitQuery = client.from('visit_log').select('user_id, spot_name, visited_at');
+  if (cutoff) visitQuery = visitQuery.gte('visited_at', cutoff);
+  Promise.all([
+    visitQuery,
+    client.from('profiles').select('id, display_name, oshi1, oshi2')
+  ]).then(function(results) {
+    const visits = (results[0] && results[0].data) || [];
+    const profiles = (results[1] && results[1].data) || [];
+    const profileMap = {};
+    profiles.forEach(function(p) { profileMap[p.id] = p; });
+    const userCounts = {};
+    visits.forEach(function(v) {
+      const p = profileMap[v.user_id];
+      if (member !== 'all') {
+        if (!p || (p.oshi1 !== member && p.oshi2 !== member)) return;
+      }
+      userCounts[v.user_id] = (userCounts[v.user_id] || 0) + 1;
+    });
+    let rows = Object.keys(userCounts).map(function(uid) {
+      const p = profileMap[uid];
+      return { name: (p && p.display_name) || '巡礼者', count: userCounts[uid] };
+    });
+    rows = rows.sort(function(a, b) { return b.count - a.count; }).slice(0, 20);
+    if (!rows.length) { list.innerHTML = emptyHtml; return; }
+    let html = '';
+    rows.forEach(function(row, i) {
+      const rankDisplay = medals[i] || (i + 1) + '位';
+      const name = escapeText(row.name);
+      html += '<div style="display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid rgba(0,0,0,0.06);">';
+      html += '<div style="font-size:16px;min-width:32px;">' + rankDisplay + '</div>';
+      html += '<div style="flex:1;font-size:14px;font-weight:700;">' + name + '</div>';
+      html += '<div style="font-size:13px;color:var(--purple-deep);font-weight:700;">' + row.count + '件</div>';
+      html += '</div>';
+    });
+    list.innerHTML = html;
+  }).catch(function(e) {
+    console.warn('oshi ranking error:', e);
+    list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:#f87171;">読み込みエラー</div>';
+  });
 }
 
 function switchOshiRankingPeriod(el, period) {
@@ -5769,32 +6819,72 @@ function initEventRankingTabs() {
 function renderSpotRanking(period) {
   var list = document.getElementById('ranking-list');
   if (!list) return;
-  var spots = SPOTS.slice().sort(function(a,b){ return (b.goodCount||0)-(a.goodCount||0); }).slice(0,20);
-  if (!spots.length) {
-    list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--text-light);"><div style="font-size:32px;margin-bottom:8px;">🗺️</div><div style="font-size:14px;">巡礼報告が集まるとランキングが表示されます</div></div>';
-    return;
-  }
-  var html = '';
-  for (var i = 0; i < spots.length; i++) {
-    var spot = spots[i];
-    var rankClass = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
-    var safeName = spot.name.replace(/'/g,"\\'");
-    html += '<div class="ranking-item" data-member="' + (spot.member||'') + '" onclick="jumpToSpot(\'' + safeName + '\')">';
-    html += '<div class="rank-num ' + rankClass + '">' + (i+1) + '</div>';
-    html += '<div class="rank-thumb">' + (spot.icon||'📍') + '</div>';
-    html += '<div class="rank-info">';
-    html += '<div class="rank-name">' + spot.name + '</div>';
-    html += '<div class="rank-meta">' + (spot.member||'') + ' · ' + (spot.category||'') + '</div>';
-    html += '</div>';
-    html += '<div class="rank-score">';
-    html += '<div class="rank-score-num">' + (spot.goodCount||0) + '</div>';
-    html += '<div class="rank-score-label">報告数</div>';
-    html += '</div></div>';
-  }
-  list.innerHTML = html;
+  list.innerHTML = '<div style="text-align:center;padding:30px;color:var(--text-light);">読み込み中...</div>';
+  var isEvent = period && period.startsWith('event:');
+  var cutoff = isEvent ? null : getPeriodCutoffISO(period);
+  var client = getSupabaseClient();
+  var query = client.from('visit_log').select('spot_name, visited_at');
+  if (cutoff) query = query.gte('visited_at', cutoff);
+  query.then(function(r) {
+    var rows = r.data || [];
+    var counts = {};
+    rows.forEach(function(row) { counts[row.spot_name] = (counts[row.spot_name] || 0) + 1; });
+    var ranked = SPOTS.map(function(s) { return { spot: s, count: counts[s.name] || 0 }; })
+      .filter(function(x) { return x.count > 0; })
+      .sort(function(a, b) { return b.count - a.count; })
+      .slice(0, 20);
+    if (!ranked.length) {
+      list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--text-light);"><div style="font-size:32px;margin-bottom:8px;">🗺️</div><div style="font-size:14px;">この期間の巡礼報告はまだありません</div></div>';
+      return;
+    }
+    var html = '';
+    for (var i = 0; i < ranked.length; i++) {
+      var spot = ranked[i].spot;
+      var rankClass = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
+      var safeName = spot.name.replace(/'/g,"\\'");
+      var memberDisplay = getSpotMemberList(spot.member).join(' / ');
+      html += '<div class="ranking-item" data-member="' + escHtml(spot.member||'') + '" onclick="jumpToSpot(\'' + safeName + '\')">';
+      html += '<div class="rank-num ' + rankClass + '">' + (i+1) + '</div>';
+      html += '<div class="rank-thumb">' + (spot.icon||'📍') + '</div>';
+      html += '<div class="rank-info">';
+      html += '<div class="rank-name">' + escHtml(spot.name) + '</div>';
+      html += '<div class="rank-meta">' + escHtml(memberDisplay) + ' · ' + escHtml(spot.category||'') + '</div>';
+      html += '</div>';
+      html += '<div class="rank-score">';
+      html += '<div class="rank-score-num">' + ranked[i].count + '</div>';
+      html += '<div class="rank-score-label">報告数</div>';
+      html += '</div></div>';
+    }
+    list.innerHTML = html;
+  }).catch(function(e) {
+    console.warn('spot ranking error:', e);
+    list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:#f87171;">読み込みエラー</div>';
+  });
 }
 
 var currentRankingPeriod = 'year';
+
+function getPeriodCutoffISO(period) {
+  const days = { month: 30, quarter: 90, half: 182, year: 365 }[period];
+  if (!days) return null;
+  return new Date(Date.now() - days * 86400000).toISOString();
+}
+
+function loadFounderCount() {
+  const countEl = document.getElementById('founder-count');
+  const barEl = document.getElementById('founder-progress-bar');
+  if (!countEl) return;
+  const client = getSupabaseClient();
+  client.from('profiles').select('id, is_founder').then(function(r) {
+    const rows = r.data || [];
+    const activeCount = rows.filter(function(row) { return row.is_founder === true; }).length;
+    const filled = Math.min(activeCount, 20);
+    countEl.textContent = filled + ' / 20 名 参加済み';
+    if (barEl) barEl.style.width = (filled / 20 * 100) + '%';
+  }).catch(function(e) {
+    console.warn('founder count error:', e);
+  });
+}
 
 function switchRankingPeriod(el, period) {
   // イベント期間の場合
@@ -5805,17 +6895,57 @@ function switchRankingPeriod(el, period) {
     renderSpotRanking(period);
     return;
   }
-  // イベント期間の場合
-  if (period && period.startsWith('event:')) {
-    document.querySelectorAll('.rtab').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-    currentRankingPeriod = period;
-    renderSpotRanking(period);
-    return;
-  }
   document.querySelectorAll('#ranking-period-tabs .rtab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
-  // バックエンド実装後にperiodに応じたデータ取得を追加
+  currentRankingPeriod = period;
+  if (period === 'achievement') {
+    renderAchievementRanking();
+    return;
+  }
+  renderSpotRanking(period);
+}
+
+function renderAchievementRanking() {
+  var list = document.getElementById('ranking-list');
+  if (!list) return;
+  list.innerHTML = '<div style="text-align:center;padding:30px;color:var(--text-light);">読み込み中...</div>';
+  var client = getSupabaseClient();
+  var totalSpots = SPOTS.length;
+  client.from('profiles').select('id, display_name, avatar_url, visited_spots, hide_from_ranking').then(function(r) {
+    var rows = (r.data || []).filter(function(p) { return !p.hide_from_ranking; });
+    var ranked = rows.map(function(p) {
+      var count = (p.visited_spots || []).length;
+      var rate = totalSpots > 0 ? Math.round((count / totalSpots) * 1000) / 10 : 0;
+      return { name: p.display_name || '匿名ユーザー', icon: p.avatar_url || '👤', count: count, rate: rate };
+    })
+      .filter(function(x) { return x.count > 0; })
+      .sort(function(a, b) { return b.rate - a.rate || b.count - a.count; })
+      .slice(0, 20);
+    if (!ranked.length) {
+      list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--text-light);"><div style="font-size:32px;margin-bottom:8px;">🏆</div><div style="font-size:14px;">まだ巡礼報告データがありません</div></div>';
+      return;
+    }
+    var html = '';
+    for (var i = 0; i < ranked.length; i++) {
+      var u = ranked[i];
+      var rankClass = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
+      html += '<div class="ranking-item">';
+      html += '<div class="rank-num ' + rankClass + '">' + (i+1) + '</div>';
+      html += '<div class="rank-thumb">' + escHtml(u.icon.length <= 2 ? u.icon : '👤') + '</div>';
+      html += '<div class="rank-info">';
+      html += '<div class="rank-name">' + escHtml(u.name) + '</div>';
+      html += '<div class="rank-meta">' + u.count + ' / ' + totalSpots + ' スポット巡礼済み</div>';
+      html += '</div>';
+      html += '<div class="rank-score">';
+      html += '<div class="rank-score-num">' + u.rate + '%</div>';
+      html += '<div class="rank-score-label">達成率</div>';
+      html += '</div></div>';
+    }
+    list.innerHTML = html;
+  }).catch(function(e) {
+    console.warn('achievement ranking error:', e);
+    list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:#f87171;">読み込みエラー</div>';
+  });
 }
 
 // ── メンバータブ長押しで推しランキングへ ──
@@ -5832,39 +6962,84 @@ function initMemberTabLongPress() {
   });
 }
 
-// ── 推しメン熱量ランキング（既存のbuildOshiRankingを上書き） ──
+// ── 推しメン別・上位ファン表示（メンバー間の順位比較はせず、各メンバーの上位ファンを個別表示） ──
 function buildOshiRanking() {
   const wrap = document.getElementById('oshi-ranking-list');
   if (!wrap) return;
 
-  const myOshi1 = oshi1;
-  const myOshi2 = oshi2;
+  wrap.innerHTML = '<div style="text-align:center;padding:30px;color:var(--text-light);">読み込み中...</div>';
 
-  wrap.innerHTML = GROUP_CONFIG.members.map(m => {
-    const isMyOshi1 = myOshi1 === m.name;
-    const isMyOshi2 = myOshi2 === m.name;
-    const oshiBadge = isMyOshi1
-      ? '<span style="background:#3d1a5e;color:#fff;font-size:10px;padding:2px 6px;border-radius:8px;margin-left:6px;">💜 1推し</span>'
-      : isMyOshi2
-      ? '<span style="background:#9b8aab;color:#fff;font-size:10px;padding:2px 6px;border-radius:8px;margin-left:6px;">🩷 2推し</span>'
-      : '';
+  const client = getSupabaseClient();
+  Promise.all([
+    client.from('visit_log').select('user_id'),
+    client.from('profiles').select('id, display_name, oshi1, oshi2, hide_from_ranking')
+  ]).then(function(results) {
+    const visits = (results[0] && results[0].data) || [];
+    const profiles = ((results[1] && results[1].data) || []).filter(function(p) { return !p.hide_from_ranking; });
+    const profileMap = {};
+    profiles.forEach(function(p) { profileMap[p.id] = p; });
 
-    return `
-    <div style="background:#fff;border-radius:16px;margin-bottom:14px;box-shadow:0 2px 10px rgba(61,26,94,0.08);overflow:hidden;">
-      <div style="
-        background:${isMyOshi1 ? 'linear-gradient(135deg,#3d1a5e,#7b1a3e)' : isMyOshi2 ? 'linear-gradient(135deg,#6b3a8e,#9b4a6e)' : 'linear-gradient(135deg,#f0e8f8,#e8d8f0)'};
-        padding:12px 16px;display:flex;align-items:center;gap:10px;
-      ">
-        <div style="font-size:28px;">${MEMBER_ICONS[m.name]||'💜'}</div>
-        <div style="font-size:15px;font-weight:700;color:${isMyOshi1||isMyOshi2 ? '#fff' : '#3d1a5e'};">
-          ${m.name}${oshiBadge}
+    // ユーザーごとの総巡礼報告数を集計
+    const userVisitCounts = {};
+    visits.forEach(function(v) {
+      userVisitCounts[v.user_id] = (userVisitCounts[v.user_id] || 0) + 1;
+    });
+
+    // メンバーごとに「そのメンバーを推し（1推し or 2推し、区別なし）にしているユーザー」の上位3名を抽出
+    const topFansByMember = {};
+    GROUP_CONFIG.members.forEach(function(m) {
+      const fans = profiles.filter(function(p) { return p.oshi1 === m.name || p.oshi2 === m.name; })
+        .map(function(p) { return { name: p.display_name || '巡礼者', count: userVisitCounts[p.id] || 0 }; })
+        .filter(function(f) { return f.count > 0; })
+        .sort(function(a, b) { return b.count - a.count; })
+        .slice(0, 3);
+      topFansByMember[m.name] = fans;
+    });
+
+    const myOshi1 = oshi1;
+    const myOshi2 = oshi2;
+    const medals = ['🥇', '🥈', '🥉'];
+
+    // メンバー同士の順位は付けず、GROUP_CONFIGの並び順のまま表示
+    wrap.innerHTML = GROUP_CONFIG.members.map(function(m) {
+      const isMyOshi1 = myOshi1 === m.name;
+      const isMyOshi2 = myOshi2 === m.name;
+      const oshiBadge = isMyOshi1
+        ? '<span style="background:#3d1a5e;color:#fff;font-size:10px;padding:2px 6px;border-radius:8px;margin-left:6px;">💜 1推し</span>'
+        : isMyOshi2
+        ? '<span style="background:#9b8aab;color:#fff;font-size:10px;padding:2px 6px;border-radius:8px;margin-left:6px;">🩷 2推し</span>'
+        : '';
+      const fans = topFansByMember[m.name] || [];
+      const bodyHtml = fans.length > 0
+        ? fans.map(function(f, i) {
+            return '<div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:4px 0;">'
+              + '<span style="font-size:14px;">' + (medals[i] || (i+1) + '位') + '</span>'
+              + '<span style="font-size:13px;font-weight:700;color:var(--purple-deep);">' + escHtml(f.name) + '</span>'
+              + '<span style="font-size:11px;color:var(--text-mid);">' + f.count + '件</span>'
+              + '</div>';
+          }).join('')
+        : '<div style="color:var(--text-light);font-size:12px;">推しファンの巡礼データが集まるとランキングが表示されます 🌸</div>';
+
+      return `
+      <div style="background:#fff;border-radius:16px;margin-bottom:14px;box-shadow:0 2px 10px rgba(61,26,94,0.08);overflow:hidden;">
+        <div style="
+          background:${isMyOshi1 ? 'linear-gradient(135deg,#3d1a5e,#7b1a3e)' : isMyOshi2 ? 'linear-gradient(135deg,#6b3a8e,#9b4a6e)' : 'linear-gradient(135deg,#f0e8f8,#e8d8f0)'};
+          padding:12px 16px;display:flex;align-items:center;gap:10px;
+        ">
+          <div style="font-size:28px;">${MEMBER_ICONS[m.name]||'💜'}</div>
+          <div style="font-size:15px;font-weight:700;color:${isMyOshi1||isMyOshi2 ? '#fff' : '#3d1a5e'};">
+            ${escHtml(m.name)}${oshiBadge}
+          </div>
         </div>
-      </div>
-      <div style="padding:16px 12px;text-align:center;color:var(--text-light);font-size:12px;">
-        巡礼データが集まるとランキングが表示されます 🌸
-      </div>
-    </div>`;
-  }).join('');
+        <div style="padding:14px 12px;">
+          ${bodyHtml}
+        </div>
+      </div>`;
+    }).join('');
+  }).catch(function(e) {
+    console.warn('oshi ranking error:', e);
+    wrap.innerHTML = '<div style="text-align:center;padding:30px;color:#f87171;">読み込みエラー</div>';
+  });
 }
 
 // ── ランキング メンバーフィルター ──
@@ -5894,7 +7069,7 @@ function filterRankingMember(el, member) {
   let visibleCount = 0;
   items.forEach((item, i) => {
     const m = item.getAttribute('data-member') || '';
-    const show = member === 'all' || m === member;
+    const show = member === 'all' || getSpotMemberList(m).includes(member);
     item.style.display = show ? 'flex' : 'none';
     if (show) {
       visibleCount++;
@@ -5923,7 +7098,7 @@ document.querySelectorAll('.rtab').forEach(t => {
 // localStorage 保存・復元システム
 // ════════════════════════════════════════
 
-const LS_KEY = 'traceive_userdata_v1';
+const LS_KEY = 'traceillit_userdata_v1';
 
 // 保存するデータをまとめて取得
 function collectUserData() {
@@ -5989,7 +7164,7 @@ function loadUserData(data) {
 
   // 確定待ちポイント復元
   if (Array.isArray(data.pending) && data.pending.length > 0) {
-    const list = document.getElementById('pending-list');
+    const list = document.getElementById('admin-pending-list');
     if (list) {
       list.innerHTML = '';
       data.pending.forEach(p => {
@@ -6008,10 +7183,31 @@ function loadUserData(data) {
 // evalSpot 後に自動保存（既存関数をラップ）
 const _origEvalSpot = evalSpot;
 // evalSpot は既に定義済みなので、保存フックを追加
-const _origAddPendingPoint = addPendingPoint;
-function addPendingPoint(spotName, typeLabel, pt) {
-  _origAddPendingPoint(spotName, typeLabel, pt);
-  setTimeout(saveUserData, 100);
+function addPendingPoint(spotName, typeLabel, pt, applyNow) {
+  getSupabaseClient().auth.getUser().then(({ data }) => {
+    if (!data.user) return;
+    getSupabaseClient().from('point_log').insert({
+      user_id: data.user.id,
+      category: typeLabel,
+      amount: pt,
+      spot_name: spotName,
+      status: applyNow ? 'confirmed' : 'pending',
+      created_at: new Date().toISOString()
+    }).then(({ error }) => {
+      if (error) console.error('point_log insert error:', error);
+    });
+    // applyNow=true の場合、即時付与としてポイント総数にも反映する
+    // （GPS到達ボーナス／Xシェアなど「獲得しました」と即時表示するもの向け。
+    //   評価(GOOD/BAD)系は「確定待ち」設計のため対象外）
+    if (applyNow) {
+      getSupabaseClient().from('profiles').select('points').eq('id', data.user.id).single().then(function(r) {
+        const current = (r.data && r.data.points) || 0;
+        getSupabaseClient().from('profiles').update({ points: current + pt }).eq('id', data.user.id).then().catch(function(e) {
+          console.warn('points update error:', e);
+        });
+      }).catch(function(e) { console.warn('points fetch error:', e); });
+    }
+  });
 }
 
 // ════════════════════════════════════════
@@ -6181,8 +7377,8 @@ function applyTransferCode() {
     <!-- ヘッダー -->
     <div id="oshi-ranking-header" style="padding:20px 20px 16px;background:linear-gradient(135deg,#3d1a5e,#c0392b);color:#fff;position:relative;">
       <button onclick="document.getElementById('oshi-ranking-modal').style.display='none';" style="position:absolute;top:14px;right:16px;background:none;border:none;color:rgba(255,255,255,0.7);font-size:22px;cursor:pointer;">×</button>
-      <div id="oshi-ranking-icon" style="font-size:36px;margin-bottom:6px;">🐕</div>
-      <div id="oshi-ranking-title" style="font-size:18px;font-weight:700;">ユジン 推しランキング</div>
+      <div id="oshi-ranking-icon" style="font-size:36px;margin-bottom:6px;">🐆</div>
+      <div id="oshi-ranking-title" style="font-size:18px;font-weight:700;">ユナ 推しランキング</div>
       <div style="font-size:12px;opacity:0.8;margin-top:2px;">推しポイント累計ランキング</div>
     </div>
 
@@ -6307,21 +7503,31 @@ function applyTransferCode() {
       </div>
 
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <button onclick="showObPage(2)" style="
+        <button onclick="startWithX()" style="
+        padding:16px;background:#000000;
+        color:#ffffff;border:1.5px solid rgba(255,255,255,0.25);border-radius:16px;font-size:15px;
+        font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;
+        display:flex;align-items:center;justify-content:center;gap:8px;">
+        <span style="font-size:18px;font-weight:900;">𝕏</span>Xアカウントで始める
+      </button>
+      <button onclick="startWithGoogle()" style="
           padding:16px;background:linear-gradient(135deg,#c9a84c,#e8c96b);
           color:#1a0a2e;border:none;border-radius:16px;font-size:15px;
           font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;
           display:flex;align-items:center;justify-content:center;gap:10px;">
-          Xアカウントで始める <span style="font-size:11px;background:rgba(0,0,0,0.15);padding:3px 8px;border-radius:20px;">おすすめ</span>
+            <img src="https://www.google.com/favicon.ico" style="width:18px;height:18px;margin-right:8px;">Googleアカウントで始める
         </button>
         <button onclick="showObPage(3)" style="
           padding:16px;background:rgba(255,255,255,0.12);
           color:rgba(255,255,255,0.85);border:1.5px solid rgba(255,255,255,0.25);
           border-radius:16px;font-size:14px;font-weight:600;cursor:pointer;
           font-family:'Noto Sans JP',sans-serif;">
-          匿名で始める
+          まず覗いてみる（匿名）
         </button>
+      <div onclick="showObPage(2)" style="text-align:center;font-size:12px;color:rgba(255,255,255,0.55);cursor:pointer;padding-top:4px;">
+        なぜX連携がおすすめ？ →
       </div>
+    </div>
     </div>
 
     <!-- ページ2：X連携のメリット -->
@@ -6330,7 +7536,7 @@ function applyTransferCode() {
 
       <div style="text-align:center;margin-bottom:28px;">
         <div style="font-size:44px;margin-bottom:10px;">𝕏</div>
-        <div style="font-size:20px;font-weight:700;color:#fff;">X連携でできること</div>
+        <div style="font-size:20px;font-weight:700;color:#fff;">X連携で解放されること</div>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
@@ -6338,31 +7544,54 @@ function applyTransferCode() {
           <div style="font-size:24px;flex-shrink:0;">🏅</div>
           <div>
             <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">発見者クレジットが永続</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;">投稿した聖地に「最初の発見者」として名前が残ります</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;">Xアカウント名が発見者として表示され、ファンコミュニティに貢献度が証明されます</div>
           </div>
         </div>
         <div style="background:rgba(255,255,255,0.08);border-radius:14px;padding:16px;display:flex;gap:14px;align-items:flex-start;">
           <div style="font-size:24px;flex-shrink:0;">⭐</div>
           <div>
             <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">ポイントが端末をまたいで保持</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;">スマホを変えてもランクとポイントが引き継がれます</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;">#TraceIVE投稿・引用・リポストでポイント獲得。推しへの愛が数字になる</div>
           </div>
         </div>
+    <div style="background:rgba(255,255,255,0.08);border-radius:14px;padding:16px;display:flex;gap:14px;align-items:flex-start;">
+      <div style="font-size:24px;flex-shrink:0;">📝</div>
+      <div>
+        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">巡礼報告をワンタップでX投稿</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;">発見スポット名とハッシュタグ入りの投稿文を自動生成。ボタン一つでシェアできます</div>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.08);border-radius:14px;padding:16px;display:flex;gap:14px;align-items:flex-start;">
+      <div style="font-size:24px;flex-shrink:0;">🏆</div>
+      <div>
+        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">月間投稿ランキングに参加</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;">X投稿数・反応数でランキング化。トップ貢献者は特別バッジを獲得</div>
+      </div>
+    </div>
 
       </div>
 
       <div style="background:rgba(255,255,255,0.06);border-radius:12px;padding:14px;margin-bottom:24px;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;">
-        ℹ️ X連携はXのOAuth認証を使用します。パスワードはTrace ILLITには送信されません。フォロワー情報・DM等へのアクセスは行いません。
+        ℹ️ X連携はXのOAuth認証を使用します。パスワードはTrace ILLITには送信されません。フォロワー情報・DM等へのアクセスは行いません。<br><br>🏆創設メンバーバッジ（最初の20名）はX連携済みの方のみが対象です。
       </div>
 
-      <button onclick="startWithX()" style="
-        width:100%;padding:16px;background:linear-gradient(135deg,#c9a84c,#e8c96b);
-        color:#1a0a2e;border:none;border-radius:16px;font-size:15px;
-        font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">
-        Xアカウントで始める
+        <button onclick="startWithX()" style="width:100%;padding:16px;background:#000000;
+      color:#ffffff;border:1.5px solid rgba(255,255,255,0.25);border-radius:16px;font-size:15px;
+      font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;
+      display:flex;align-items:center;justify-content:center;gap:8px;">
+      <span style="font-size:18px;font-weight:900;">𝕏</span>Xアカウントで始める
+      </button>
+      <button onclick="startWithGoogle()" style="width:100%;padding:16px;background:linear-gradient(135deg,#c9a84c,#e8c96b);
+      color:#1a0a2e;border:none;border-radius:16px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;
+      display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;">
+      <img src="https://www.google.com/favicon.ico" style="width:18px;height:18px;">Googleアカウントで始める
       </button>
       <div style="text-align:center;margin-top:14px;">
-        <button onclick="showObPage(3)" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">匿名で始める（機能制限あり）</button>
+        <div style="padding:10px 16px;background:rgba(255,255,255,0.07);border-radius:12px;border:1px solid rgba(255,255,255,0.12);text-align:center;">
+          <button onclick="showObPage(3)" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;">まず覗いてみる（匿名）（機能制限あり）</button>
+        </div>
+        <div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.45);">✨ X連携は今すぐご利用いただけます</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.28);margin-top:3px;">発見者クレジット・投稿連動ポイントが解放されます</div>
       </div>
     </div>
 
@@ -6372,7 +7601,7 @@ function applyTransferCode() {
 
       <div style="text-align:center;margin-bottom:28px;">
         <div style="font-size:44px;margin-bottom:10px;">👤</div>
-        <div style="font-size:20px;font-weight:700;color:#fff;">匿名で始める</div>
+        <div style="font-size:20px;font-weight:700;color:#fff;">まず覗いてみる（匿名）</div>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
@@ -6405,86 +7634,16 @@ function applyTransferCode() {
         color:#fff;border:1.5px solid rgba(255,255,255,0.3);
         border-radius:16px;font-size:15px;font-weight:700;
         cursor:pointer;font-family:'Noto Sans JP',sans-serif;">
-        匿名で始める
+        まず覗いてみる（匿名）
       </button>
       <div style="text-align:center;margin-top:14px;">
-        <button onclick="showObPage(2)" style="background:none;border:none;color:#c9a84c;font-size:12px;cursor:pointer;font-weight:700;">X連携に切り替える →</button>
+        <button onclick="startWithX()" style="background:none;border:none;color:#fff;font-size:12px;cursor:pointer;font-weight:700;">Xアカウントで始める →</button>
+        <div style="margin-top:8px;">
+          <button onclick="startWithGoogle()" style="background:none;border:none;color:#c9a84c;font-size:12px;cursor:pointer;font-weight:700;">Googleアカウントで始める →</button>
+        </div>
       </div>
     </div>
 
-  </div>
-</div>
-
-<!-- ── 管理者画面モーダル ── -->
-<div id="admin-modal" style="display:none;position:fixed;inset:0;z-index:800;background:#0f0720;overflow-y:auto;">
-  <div style="max-width:600px;margin:0 auto;padding:24px 16px 80px;">
-
-    <!-- ヘッダー -->
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.1);">
-      <div>
-        <div style="font-size:18px;font-weight:700;color:#fff;">🛡️ 管理者パネル</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;" id="admin-role-label"></div>
-      </div>
-      <button onclick="closeAdminPanel()" style="background:rgba(255,255,255,0.1);border:none;color:#fff;padding:8px 14px;border-radius:10px;font-size:13px;cursor:pointer;">閉じる</button>
-    </div>
-
-    <!-- タブ -->
-    <div style="display:flex;gap:8px;margin-bottom:20px;">
-      <button onclick="switchAdminTab('pending')" id="atab-pending" style="flex:1;padding:10px;background:linear-gradient(135deg,#3d1a5e,#6b2d8b);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">
-        承認待ち <span id="pending-count-badge" style="background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:20px;font-size:11px;"></span>
-      </button>
-      <button onclick="switchAdminTab('spots')" id="atab-spots" style="flex:1;padding:10px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:none;border-radius:10px;font-size:13px;cursor:pointer;">
-        スポット管理
-      </button>
-      <button onclick="switchAdminTab('admins')" id="atab-admins" style="flex:1;padding:10px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:none;border-radius:10px;font-size:13px;cursor:pointer;">
-        管理者
-      </button>
-    </div>
-
-    <!-- 承認待ちタブ -->
-    <div id="admin-tab-pending">
-      <div id="admin-pending-list">
-        <div style="text-align:center;color:rgba(255,255,255,0.4);padding:40px;">読み込み中...</div>
-      </div>
-    </div>
-
-    <!-- スポット管理タブ -->
-    <div id="admin-tab-spots" style="display:none;">
-      <div style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:12px;">登録済みスポット一覧（クリックで削除・編集）</div>
-      <div id="admin-spots-list">
-        <div style="text-align:center;color:rgba(255,255,255,0.4);padding:40px;">読み込み中...</div>
-      </div>
-    </div>
-
-    <!-- 管理者タブ -->
-    <div id="admin-tab-admins" style="display:none;">
-      <div style="margin-bottom:16px;">
-        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:12px;">🛡️ 管理者一覧</div>
-        <div id="admin-list">読み込み中...</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.06);border-radius:14px;padding:16px;margin-top:16px;">
-        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;">準管理者を追加</div>
-        <input id="new-mod-username" type="text" placeholder="@username" style="width:100%;padding:10px 12px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;color:#fff;font-size:13px;margin-bottom:10px;box-sizing:border-box;">
-        <button onclick="addModerator()" style="width:100%;padding:10px;background:linear-gradient(135deg,#3d1a5e,#6b2d8b);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">
-          🛡️ モデレーターとして追加
-        </button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- 管理者ログインモーダル -->
-<div id="admin-login-modal" style="display:none;position:fixed;inset:0;z-index:900;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
-  <div style="background:#1a0a2e;border-radius:20px;padding:28px 24px;width:300px;border:1px solid rgba(255,255,255,0.1);">
-    <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">🔐 管理者認証</div>
-    <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:20px;">管理者専用エリアです</div>
-    <input id="admin-pw-input" type="password" placeholder="パスワードを入力" style="width:100%;padding:12px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;color:#fff;font-size:14px;margin-bottom:12px;box-sizing:border-box;" onkeydown="if(event.key==='Enter')verifyAdminPassword()">
-    <div id="admin-pw-error" style="font-size:12px;color:#f87171;min-height:16px;margin-bottom:8px;"></div>
-    <button onclick="verifyAdminPassword()" style="width:100%;padding:12px;background:linear-gradient(135deg,#3d1a5e,#c0392b);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;">
-      ログイン
-    </button>
-    <button onclick="document.getElementById('admin-login-modal').style.display='none';" style="width:100%;padding:10px;background:none;border:none;color:rgba(255,255,255,0.3);font-size:12px;cursor:pointer;margin-top:8px;">キャンセル</button>
   </div>
 </div>
 
