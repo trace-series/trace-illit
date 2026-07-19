@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trace ILLIT — 聖地巡礼MAP</title>
-<meta name="description" content="IVEメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
+<meta name="description" content="ILLITメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
 
 <!-- OGP -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Trace ILLIT — 聖地巡礼MAP">
-<meta property="og:description" content="IVEメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
-<meta property="og:url" content="https://missinglink4179.github.io/trace-ive/trace-ive.html">
-<meta property="og:image" content="https://missinglink4179.github.io/trace-ive/ogp.png">
+<meta property="og:description" content="ILLITメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
+<meta property="og:url" content="https://trace-series.github.io/trace-illit/trace-illit.html">
+<meta property="og:image" content="https://trace-series.github.io/trace-illit/ogp.png">
 <meta property="og:site_name" content="Trace ILLIT">
 <meta property="og:locale" content="ja_JP">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Trace ILLIT — 聖地巡礼MAP">
-<meta name="twitter:description" content="IVEメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
+<meta name="twitter:description" content="ILLITメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
 <meta name="twitter:image" content="https://missinglink4179.github.io/trace-ive/ogp.png">
 
 
@@ -404,7 +404,12 @@
     display: flex;
     gap: 8px;
     margin-bottom: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
+  .ranking-tabs::-webkit-scrollbar { display: none; }
+  .ranking-tabs .rtab { flex-shrink: 0; }
 
   .rtab {
     padding: 6px 14px;
@@ -866,7 +871,7 @@
   }
 
   .profile-hero::before {
-    content: 'IVE';
+    content: 'ILLIT';
     position: absolute;
     right: -10px;
     top: -10px;
@@ -2430,7 +2435,7 @@
       <div style="width:40px;height:40px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;font-family:sans-serif;flex-shrink:0;">𝕏</div>
       <div class="x-connect-text">
         <div class="x-connect-title" id="x-connect-title">𝕏 X連携</div>
-        <div class="x-connect-sub" id="x-connect-sub">発見者名がXで表示・#TraceIVE投稿連動ポイント・特別バッジ解放</div>
+        <div class="x-connect-sub" id="x-connect-sub">発見者名がXで表示・#TraceILLIT投稿連動ポイント・特別バッジ解放</div>
       </div>
       <div class="x-connect-arrow">›</div>
     </div>
@@ -2874,11 +2879,11 @@
     <div class="pr-section-title">𝕏 Xシェアでもらえるポイント</div>
     <div class="pr-card">
       <div class="pr-row">
-        <span class="pr-label">#TraceIVE をつけてXにシェア</span>
+        <span class="pr-label">#TraceILLIT をつけてXにシェア</span>
         <span class="pr-pt pr-pt-good">+50 pt</span>
       </div>
       <div class="pr-row">
-        <span class="pr-label" style="color:var(--text-light);font-size:11px;">同じスポットへの投稿は1回のみ対象です。#TraceIVE タグなしの投稿は対象外です。</span>
+        <span class="pr-label" style="color:var(--text-light);font-size:11px;">同じスポットへの投稿は1回のみ対象です。#TraceILLIT タグなしの投稿は対象外です。</span>
       </div>
     </div>
 
@@ -3179,7 +3184,7 @@
 
     <div class="form-group" style="margin-bottom:16px;">
       <div class="form-label">ルート名</div>
-      <input class="form-input" id="route-name-input" type="text" placeholder="例：東京IVE遠征2024">
+      <input class="form-input" id="route-name-input" type="text" placeholder="例：東京ILLIT遠征2024">
     </div>
 
     <div class="form-group" style="margin-bottom:16px;">
@@ -3732,7 +3737,7 @@ function showBirthdayPopup(event) {
 function shareBirthdayX(nameJa, nameEn, tag) {
   const text = encodeURIComponent(
     `🎂 Happy Birthday ${nameJa}！\n` +
-    `${tag} #${nameEn} ${GROUP_CONFIG.hashtags[0]} #IVE\n\n` +
+    `${tag} #${nameEn} ${GROUP_CONFIG.hashtags[0]}\n\n` +
     `Trace ILLITで${nameJa}の聖地を巡ろう🌸`
   );
   window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
@@ -3762,7 +3767,7 @@ async function fetchSpotsFromDB() {
       icon: s.icon || '📍',
       category: s.category || '',
       address: s.address || '',
-      member: s.member || 'IVE',
+      member: s.member || '全員',
       discoverer: s.discoverer || '@missing_link',
       likes: s.likes_count || 0,
       badges: [s.category || ''],
@@ -4820,7 +4825,7 @@ async function submitNewSpot() {
           if (googleSub) googleSub.textContent = 'ポイント・発見者クレジットが永続保持されます';
           if (googleArrow) googleArrow.textContent = '✓';
           if (xTitle) xTitle.textContent = '𝕏 X連携';
-          if (xSub) xSub.textContent = '発見者名がXで表示・#TraceIVE投稿連動ポイント・特別バッジ解放';
+          if (xSub) xSub.textContent = '発見者名がXで表示・#TraceILLIT投稿連動ポイント・特別バッジ解放';
         } else if (xHandle) {
           // Xで連携中 → Xカードを「連携中」表示に、Googleカードは未連携表示に戻す
           if (xTitle) xTitle.textContent = xHandle + ' で連携中';
@@ -4831,7 +4836,7 @@ async function submitNewSpot() {
         } else {
           // どちらも未連携（匿名など）
           if (xTitle) xTitle.textContent = '𝕏 X連携';
-          if (xSub) xSub.textContent = '発見者名がXで表示・#TraceIVE投稿連動ポイント・特別バッジ解放';
+          if (xSub) xSub.textContent = '発見者名がXで表示・#TraceILLIT投稿連動ポイント・特別バッジ解放';
           if (googleTitle) googleTitle.textContent = 'G Google連携';
           if (googleSub) googleSub.textContent = 'ポイント・発見者クレジットが永続保持されます';
           if (googleArrow) googleArrow.textContent = '›';
@@ -5263,7 +5268,7 @@ function shareX() {
   const spotName = currentSpot.name;
 
   if (!hasXShareBonusReceived(spotName)) {
-    alert(`#TraceIVE をつけて投稿すると +${X_SHARE_BONUS_PT}pt もらえます！\n\nXの投稿画面に移動します。投稿してアプリに戻ってきてね。`);
+    alert(`#TraceILLIT をつけて投稿すると +${X_SHARE_BONUS_PT}pt もらえます！\n\nXの投稿画面に移動します。投稿してアプリに戻ってきてね。`);
   }
 
   const tags = GROUP_CONFIG.hashtags.join(' ');
@@ -5282,10 +5287,10 @@ function shareX() {
     window.removeEventListener('focus', onReturn);
     if (hasXShareBonusReceived(spotName)) return;
     setTimeout(() => {
-      const posted = confirm(`#TraceIVE をつけて投稿しましたか？\n\n投稿していれば「OK」を押してポイントを受け取ってください。`);
+      const posted = confirm(`#TraceILLIT をつけて投稿しましたか？\n\n投稿していれば「OK」を押してポイントを受け取ってください。`);
       if (posted && !hasXShareBonusReceived(spotName)) {
         recordXShareBonus(spotName);
-        addPendingPoint(spotName, '𝕏 #TraceIVEシェア', X_SHARE_BONUS_PT, true);
+        addPendingPoint(spotName, '𝕏 #TraceILLITシェア', X_SHARE_BONUS_PT, true);
         showEvalToast(`𝕏 シェアありがとう！ +${X_SHARE_BONUS_PT}pt 獲得！`);
       }
     }, 300);
@@ -7498,7 +7503,7 @@ function applyTransferCode() {
 
       <div style="background:rgba(255,255,255,0.08);border-radius:16px;padding:20px;margin-bottom:24px;">
         <div style="font-size:14px;color:rgba(255,255,255,0.9);line-height:1.8;">
-          IVEの軌跡を、地図に刻もう。
+          ILLITの軌跡を、地図に刻もう。
           コミュニティで聖地を育て、ポイントを貯めてランクアップしよう。
         </div>
       </div>
@@ -7552,7 +7557,7 @@ function applyTransferCode() {
           <div style="font-size:24px;flex-shrink:0;">⭐</div>
           <div>
             <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">ポイントが端末をまたいで保持</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;">#TraceIVE投稿・引用・リポストでポイント獲得。推しへの愛が数字になる</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;">#TraceILLIT投稿・引用・リポストでポイント獲得。推しへの愛が数字になる</div>
           </div>
         </div>
     <div style="background:rgba(255,255,255,0.08);border-radius:14px;padding:16px;display:flex;gap:14px;align-items:flex-start;">
@@ -7677,7 +7682,7 @@ function applyTransferCode() {
     <!-- 名前入力 -->
     <div style="margin-bottom:20px;">
       <div style="font-size:13px;font-weight:700;color:#3d1a5e;margin-bottom:8px;">表示名</div>
-      <input id="profile-edit-name" type="text" maxlength="20" placeholder="例：IVEファン太郎"
+      <input id="profile-edit-name" type="text" maxlength="20" placeholder="例：ILLITファン太郎"
         style="width:100%;padding:12px 14px;border:2px solid #c9a8e8;border-radius:12px;font-size:14px;font-family:'Noto Sans JP',sans-serif;outline:none;box-sizing:border-box;">
       <div style="font-size:11px;color:#9b8aab;margin-top:4px;">20文字以内</div>
     </div>
