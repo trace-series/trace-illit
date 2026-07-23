@@ -4003,7 +4003,7 @@ function applyFilters() {
   markers.forEach(marker => {
     const memberMatch = activeMember === 'all' || marker.spotData.member === '全員' || getSpotMemberList(marker.spotData.member).includes(activeMember);
     const categoryMatch = activeCategory === 'all' || marker.spotData.category === activeCategory;
-    const isVisited = myVisitedSpots.includes(marker.spotData.name);
+    const isVisited = myVisitedSpots.includes(marker.spotData.db_id);
     const visitedMatch = activeVisitedFilter === 'all' || (activeVisitedFilter === 'visited' && isVisited) || (activeVisitedFilter === 'unvisited' && !isVisited);
     const show = memberMatch && categoryMatch && visitedMatch;
     marker.setVisible(show);
@@ -5133,8 +5133,8 @@ function renderSpotList() {
   var filtered = SPOTS.filter(function(s) {
     if (activeCategory !== 'all' && s.category !== activeCategory) return false;
     if (activeMember !== 'all' && s.member !== '全員' && !getSpotMemberList(s.member).includes(activeMember)) return false;
-    if (activeVisitedFilter === 'visited' && !myVisitedSpots.includes(s.name)) return false;
-    if (activeVisitedFilter === 'unvisited' && myVisitedSpots.includes(s.name)) return false;
+    if (activeVisitedFilter === 'visited' && !myVisitedSpots.includes(s.db_id)) return false;
+    if (activeVisitedFilter === 'unvisited' && myVisitedSpots.includes(s.db_id)) return false;
     if (originSpot) {
       if (s.name === originSpot.name) return false;
       if (activeRadius > 0) {
@@ -5247,7 +5247,7 @@ async function incrementSpotLikes(dbId) {
   function reportVisit() {
       if (window._reportVisitInProgress) return;
       window._reportVisitInProgress = true;
-    const spotId = currentSpot && currentSpot.name;
+    const spotId = currentSpot && currentSpot.db_id;
     if (!spotId) { window._reportVisitInProgress = false; return; }
     if (!navigator.geolocation) {
       alert('お使いの環境では位置情報を取得できません。巡礼報告には位置情報の利用が必要です。');
@@ -5301,7 +5301,7 @@ async function incrementSpotLikes(dbId) {
       if (updateError) { alert('保存エラー: ' + updateError.message); window._reportVisitInProgress = false; return; }
       // 行動分析用：いつ・どこで巡礼したかのログ（ヒートマップ・動線分析用。失敗してもメイン処理は止めない）
       client.from('visit_log').insert({
-        user_id: userId, spot_name: spotId, visited_at: new Date().toISOString(),
+        user_id: userId, spot_name: currentSpot.name, visited_at: new Date().toISOString(),
         lat: (typeof visitLat === 'number') ? visitLat : null,
         lng: (typeof visitLng === 'number') ? visitLng : null,
       }).then().catch(function(e) {
@@ -5862,7 +5862,7 @@ function showLangComingSoon() {
 
     // 現地系（行って確認／構図一致）は、GPS確認済みの「巡礼した！」報告がないと評価できない
     // （現地確認の信頼性をGPS実績で担保し、押すだけでポイントになる状態を防ぐ）
-    if (ONSITE_TYPES.has(type) && !myVisitedSpots.includes(currentSpot.name)) {
+    if (ONSITE_TYPES.has(type) && !myVisitedSpots.includes(currentSpot.db_id)) {
       showEvalToast('📍 先に「巡礼した！」ボタンでGPS確認をしてから評価してください');
       return;
     }
