@@ -4579,7 +4579,13 @@ function initPostForm() {
 
   const remaining = POST_DAILY_LIMIT - getPostDailyCount();
   if (limitBox) {
-    if (remaining <= 0) {
+    if (devBypassRankActive) {
+      limitBox.textContent = '🛠️ 開発者バイパス中：投稿上限なし';
+      limitBox.style.background = '#f0fdf4';
+      limitBox.style.borderColor = '#86efac';
+      limitBox.style.color = '#15803d';
+      if (btn) { btn.disabled = false; btn.style.opacity = '1'; btn.textContent = '投稿する 🌸'; }
+    } else if (remaining <= 0) {
       limitBox.textContent = '⚠️ 本日の投稿上限（' + POST_DAILY_LIMIT + '件）に達しています。明日またお願いします。';
       limitBox.style.background = '#fef2f2';
       limitBox.style.borderColor = '#fca5a5';
@@ -4710,13 +4716,14 @@ async function submitNewSpot() {
   const dup = SPOTS.find(s => s.name === name);
   if (dup) { showPostError('⚠️ 「' + name + '」はすでに登録されています'); return; }
 
-  // 1日上限チェック
-  if (getPostDailyCount() >= POST_DAILY_LIMIT) {
+  // 1日上限チェック（開発者バイパスON中は無制限）
+  if (!devBypassRankActive && getPostDailyCount() >= POST_DAILY_LIMIT) {
     showPostError('⚠️ 本日の投稿上限（' + POST_DAILY_LIMIT + '件）に達しています');
     return;
   }
 
-  // ランク別 月間投稿上限チェック（実際のDB記録を数える。localStorageではない）
+  // ランク別 月間投稿上限チェック（実際のDB記録を数える。localStorageではない／開発者バイパスON中はスキップ）
+  if (!devBypassRankActive)
   try {
     const { data: sessData } = await getSupabaseClient().auth.getSession();
     const uid = sessData && sessData.session ? sessData.session.user.id : null;
