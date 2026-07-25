@@ -2234,6 +2234,12 @@
             </div>
           </div>
 
+          <!-- 元ネタ写真（ボタン操作の邪魔にならないよう最下部に配置） -->
+          <div id="card-source-photo-wrap" style="display:none;margin-top:14px;">
+            <div style="font-size:12px;font-weight:700;color:var(--text-light);margin-bottom:6px;">📷 元ネタ写真</div>
+            <img id="card-source-photo" src="" style="width:100%;border-radius:12px;display:block;" loading="lazy">
+          </div>
+
         </div>
       </div>
     </div>
@@ -2243,6 +2249,7 @@
   <div id="view-ranking">
     <div class="section-title">Ranking</div>
     <div class="section-sub">人気スポットランキング</div>
+
 
     <div class="founder-banner">
       <div class="founder-banner-title">🏅 創設メンバー募集中</div>
@@ -3887,6 +3894,8 @@ async function loadFeed() {
         id: s.id,
         spot_name: s.spot_name,
         description: s.description,
+        image_url: s.image_url || null,
+        source_url: s.source_url || null,
         submitter: s.submitter || '匿名',
         created_at: s.created_at,
         likes_count: s.likes_count || 0,
@@ -3958,6 +3967,8 @@ async function loadFeed() {
         <span style="font-size:10px;background:var(--gold);color:#fff;border-radius:8px;padding:2px 8px;margin-left:auto;">🌟 新スポット</span>
       </div>
       ${item.description ? `<div style="font-size:13px;color:var(--text-mid);margin-bottom:8px;line-height:1.5;">${escHtml(item.description)}</div>` : ''}
+      ${item.image_url ? `<img src="${item.image_url}" style="width:100%;max-height:260px;object-fit:cover;border-radius:12px;margin-bottom:8px;display:block;" loading="lazy">` : ''}
+      ${item.source_url ? `<a href="${escHtml(item.source_url)}" target="_blank" rel="noopener" style="display:inline-block;font-size:11px;color:var(--purple-mid);margin-bottom:8px;text-decoration:underline;">🔗 元ネタを見る</a>` : ''}
       <div style="display:flex;justify-content:space-between;align-items:center;">
         <div style="font-size:11px;color:var(--text-light);">👤 ${escHtml(item.submitter)} · ${timeAgoLabel(item.created_at)}</div>
         <button class="${liked ? 'liked' : ''}" onclick="toggleLike('${item.id}', this, 'submissions')" ${liked ? 'disabled' : ''} style="border:none;background:${liked ? 'rgba(224,60,110,0.15)' : 'var(--purple-pale)'};color:${liked ? '#e03c6e' : 'var(--purple-mid)'};border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:${liked ? 'default' : 'pointer'};display:flex;align-items:center;gap:5px;">
@@ -4182,6 +4193,15 @@ function openCard(spot) {
           thumb.appendChild(img);
         } else {
           document.getElementById('card-thumb').textContent = spot.icon;
+        }
+        const photoWrap = document.getElementById('card-source-photo-wrap');
+        if (photoWrap) {
+          if (spot.image_url) {
+            document.getElementById('card-source-photo').src = spot.image_url;
+            photoWrap.style.display = 'block';
+          } else {
+            photoWrap.style.display = 'none';
+          }
         }
   document.getElementById('card-address').textContent = spot.address;
   document.getElementById('card-discoverer').textContent = spot.discoverer;
