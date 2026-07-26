@@ -2239,6 +2239,9 @@
             <div style="font-size:12px;font-weight:700;color:var(--text-light);margin-bottom:6px;">📷 元ネタ写真</div>
             <img id="card-source-photo" src="" style="width:100%;border-radius:12px;display:block;" loading="lazy">
           </div>
+          <div id="card-source-link-wrap" style="display:none;margin-top:10px;">
+            <a id="card-source-link" href="#" target="_blank" rel="noopener" style="display:inline-block;font-size:12px;color:var(--purple-mid);text-decoration:underline;">🔗 元ネタ（YouTube/X）を見る</a>
+          </div>
 
         </div>
       </div>
@@ -4203,6 +4206,15 @@ function openCard(spot) {
             photoWrap.style.display = 'none';
           }
         }
+        const linkWrap = document.getElementById('card-source-link-wrap');
+        if (linkWrap) {
+          if (spot.source_url) {
+            document.getElementById('card-source-link').href = spot.source_url;
+            linkWrap.style.display = 'block';
+          } else {
+            linkWrap.style.display = 'none';
+          }
+        }
   document.getElementById('card-address').textContent = spot.address;
   document.getElementById('card-discoverer').textContent = spot.discoverer;
   document.getElementById('card-likes').textContent = spot.likes + ' 件の巡礼報告';
@@ -4723,8 +4735,8 @@ async function submitNewSpot() {
   const catChip = document.querySelector('#post-cat-chips .chip.selected');
   if (!catChip) { showPostError('❌ カテゴリーを選択してください'); return; }
 
-  const memberChip = document.querySelector('#post-member-chips .chip.selected');
-  if (!memberChip) { showPostError('❌ メンバーを選択してください'); return; }
+  const memberChips = document.querySelectorAll('#post-member-chips .chip.selected');
+  if (memberChips.length === 0) { showPostError('❌ メンバーを選択してください'); return; }
 
   // 7日間待機チェック
   if (!canSubmitPost()) {
@@ -4769,7 +4781,7 @@ async function submitNewSpot() {
   } catch(e) { console.warn('月間投稿数チェック失敗:', e); }
 
   const category = catChip.dataset.cat;
-  const member = memberChip.dataset.member;
+  const member = Array.from(memberChips).map(c => c.dataset.member).join(',');
   const pinPos = postMiniMarker ? postMiniMarker.getPosition() : (map ? map.getCenter() : null);
 
   // 報告者のユーザーIDとXハンドルを取得（マッパー・海外遠征バッジ集計、発見者表示に必須）
@@ -6303,14 +6315,15 @@ function filterRouteRegion(el, region) {
       setTimeout(() => showUpdateModal(), 800);
     }
     localStorage.setItem('traceillit_version', currentVer);
-    // image_urlをSupabaseからSPOTSにマージ
+    // image_url・source_urlをSupabaseからSPOTSにマージ
     (async () => {
       try {
-        const { data } = await getSupabaseClient().from('spots').select('name, image_url');
+        const { data } = await getSupabaseClient().from('spots').select('name, image_url, source_url');
         if (data) {
           data.forEach(row => {
             const spot = SPOTS.find(s => s.name === row.name);
             if (spot && row.image_url) spot.image_url = row.image_url;
+            if (spot && row.source_url) spot.source_url = row.source_url;
           });
         }
       } catch(e) { console.warn('image_url merge error:', e); }
@@ -6386,6 +6399,19 @@ function filterRouteRegion(el, region) {
   };
 
   function toggleChip(el) {
+    const member = el.getAttribute('data-member');
+    if (member) {
+      const chips = el.closest('.scene-chips');
+      const isNowSelected = !el.classList.contains('selected');
+      if (member === '全員') {
+        if (isNowSelected && chips) {
+          chips.querySelectorAll('.chip.selected').forEach(function(c) { if (c !== el) c.classList.remove('selected'); });
+        }
+      } else if (isNowSelected && chips) {
+        const zenin = chips.querySelector('.chip[data-member="全員"].selected');
+        if (zenin) zenin.classList.remove('selected');
+      }
+    }
     el.classList.toggle('selected');
     const box = document.getElementById('cat-desc-box');
     if (box) {
