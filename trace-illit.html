@@ -2237,7 +2237,22 @@
           <!-- 元ネタ写真（ボタン操作の邪魔にならないよう最下部に配置） -->
           <div id="card-source-photo-wrap" style="display:none;margin-top:14px;">
             <div style="font-size:12px;font-weight:700;color:var(--text-light);margin-bottom:6px;">📷 元ネタ写真</div>
-            <img id="card-source-photo" src="" style="width:100%;border-radius:12px;display:block;" loading="lazy">
+            <div style="position:relative;">
+              <img id="card-source-photo" src="" style="width:100%;border-radius:12px;display:block;" loading="lazy">
+              <button onclick="saveCardPhoto(document.getElementById('card-source-photo').src)" style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.55);color:#fff;border:none;border-radius:20px;padding:6px 12px;font-size:12px;display:flex;align-items:center;gap:4px;">📥 保存</button>
+            </div>
+            <div style="position:relative;margin-top:8px;">
+              <img id="card-source-photo-2" src="" style="width:100%;border-radius:12px;display:none;" loading="lazy">
+              <button onclick="saveCardPhoto(document.getElementById('card-source-photo-2').src)" style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.55);color:#fff;border:none;border-radius:20px;padding:6px 12px;font-size:12px;display:none;" id="save-btn-2">📥 保存</button>
+            </div>
+            <div style="position:relative;margin-top:8px;">
+              <img id="card-source-photo-3" src="" style="width:100%;border-radius:12px;display:none;" loading="lazy">
+              <button onclick="saveCardPhoto(document.getElementById('card-source-photo-3').src)" style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.55);color:#fff;border:none;border-radius:20px;padding:6px 12px;font-size:12px;display:none;" id="save-btn-3">📥 保存</button>
+            </div>
+            <div style="position:relative;margin-top:8px;">
+              <img id="card-source-photo-4" src="" style="width:100%;border-radius:12px;display:none;" loading="lazy">
+              <button onclick="saveCardPhoto(document.getElementById('card-source-photo-4').src)" style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.55);color:#fff;border:none;border-radius:20px;padding:6px 12px;font-size:12px;display:none;" id="save-btn-4">📥 保存</button>
+            </div>
           </div>
           <div id="card-source-link-wrap" style="display:none;margin-top:10px;">
             <a id="card-source-link" href="#" target="_blank" rel="noopener" style="display:inline-block;font-size:12px;color:var(--purple-mid);text-decoration:underline;">🔗 元ネタ（YouTube/X）を見る</a>
@@ -3563,6 +3578,44 @@ const GROUP_CONFIG = {
   ],
 };
 
+// — 元ネタ写真の保存 —
+function showSaveToast(msg) {
+  let toast = document.getElementById('save-photo-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'save-photo-toast';
+    toast.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#141414;color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;font-family:\'Noto Sans JP\',sans-serif;z-index:999;opacity:0;transition:opacity 0.2s;white-space:nowrap;pointer-events:none;';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.style.opacity = '1';
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+}
+
+async function saveCardPhoto(url) {
+  if (!url) return;
+  try {
+    const res = await fetch(url, { mode: 'cors' });
+    if (!res.ok) throw new Error('fetch failed');
+    const blob = await res.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    const ext = (url.split('.').pop() || 'jpg').split('?')[0].slice(0, 4);
+    a.download = 'trace-illit-' + Date.now() + '.' + ext;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 2000);
+    showSaveToast('写真を保存しました');
+  } catch (err) {
+    // CORS等で取得できない場合は新しいタブで開き、長押し保存を案内
+    window.open(url, '_blank');
+    showSaveToast('新しいタブで開きました。長押しで保存してください');
+  }
+}
+
 // — 最寄りスポット —
 function goToNearestSpot() {
   if (!navigator.geolocation) { alert("位置情報が使えません"); return; }
@@ -4205,6 +4258,21 @@ function openCard(spot) {
           } else {
             photoWrap.style.display = 'none';
           }
+          ['2','3','4'].forEach(function(n) {
+            const el = document.getElementById('card-source-photo-' + n);
+            const btn = document.getElementById('save-btn-' + n);
+            const url = spot['image_url_' + n];
+            if (el) {
+              if (url) {
+                el.src = url;
+                el.style.display = 'block';
+                if (btn) btn.style.display = 'flex';
+              } else {
+                el.style.display = 'none';
+                if (btn) btn.style.display = 'none';
+              }
+            }
+          });
         }
         const linkWrap = document.getElementById('card-source-link-wrap');
         if (linkWrap) {
