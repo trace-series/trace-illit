@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Trace ILLIT — 聖地巡礼MAP">
 <meta name="twitter:description" content="ILLITメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
-<meta name="twitter:image" content="https://missinglink4179.github.io/trace-ive/ogp.png">
+<meta name="twitter:image" content="https://trace-series.github.io/trace-illit/ogp.png">
 
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -3916,21 +3916,17 @@ async function toggleLike(id, btn, table) {
   if (hasLikedPost(likeKey)) return; // 1人1回まで
   if (btn) { btn.disabled = true; }
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${id}&select=likes_count`, {
-      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
-    });
-    const [row] = await res.json();
-    const current = (row && row.likes_count) || 0;
-    const next = current + 1;
-    await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${id}`, {
-      method: 'PATCH',
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_likes`, {
+      method: 'POST',
       headers: {
         'apikey': SUPABASE_ANON_KEY,
         'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ likes_count: next })
+      body: JSON.stringify({ target_table: table, row_id: id })
     });
+    if (!res.ok) throw new Error('rpc failed: ' + res.status);
+    const next = await res.json();
     recordLikedPost(likeKey);
     if (btn) {
       btn.classList.add('liked');
