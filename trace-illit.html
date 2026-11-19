@@ -22,7 +22,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="application-name" content="Trace ILLIT">
-<meta name="theme-color" content="#3d1a5e">
+<meta name="theme-color" content="#2a8a72">
 <title>Trace ILLIT — 聖地巡礼MAP</title>
 <meta name="description" content="ILLITメンバーゆかりの聖地を地図で探そう。巡礼報告・評価・ポイントが貯まるK-POP聖地巡礼アプリ。">
 
@@ -45,19 +45,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@600;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #fdf0f5;
+    --cream: #f2fbf8;
     --white: #ffffff;
-    --purple-deep: #3d1a5e;
-    --purple-mid: #7b4fa6;
-    --purple-light: #c9a8e8;
-    --purple-pale: #f0e8f8;
-    --red: #c0392b;
-    --red-light: #e74c3c;
-    --gold: #c9a84c;
-    --text: #1a1025;
-    --text-mid: #4a3060;
-    --text-light: #9b8aab;
-    --border: rgba(123, 79, 166, 0.2);
+    --purple-deep: #2a8a72;
+    --purple-mid: #45b394;
+    --purple-light: #a6e3d0;
+    --purple-pale: #e2f5ee;
+    --red: #55c4a2;
+    --red-light: #95dfc6;
+    --pop-deep: #10433a; /* ポップアップの地（濃い）2026-11-19 */
+    --pop-mid: #2a8a72;
+    --gold: #a6e3d0;
+    --text: #12332b;
+    --text-mid: #3b6a5d;
+    --text-light: #8db4a8;
+    --border: rgba(69, 179, 148, 0.22);
     --content-top: 120px; /* header+member-tabsの実測高さでJSから上書きされる（フォールバック値） */
   }
 
@@ -286,7 +288,7 @@
     background: white;
     border-radius: 20px 20px 0 0;
     padding: 16px;
-    box-shadow: 0 -4px 24px rgba(61,26,94,0.12);
+    box-shadow: 0 -4px 24px rgba(42,138,114,0.12);
     transform: translateY(calc(100% - 60px));
     transition: transform 0.3s ease;
     z-index: 10;
@@ -499,7 +501,7 @@
     align-items: center;
     gap: 12px;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(61,26,94,0.05);
+    box-shadow: 0 2px 8px rgba(42,138,114,0.05);
     cursor: pointer;
     transition: transform 0.15s;
   }
@@ -582,7 +584,7 @@
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 10px rgba(61,26,94,0.06);
+    box-shadow: 0 2px 10px rgba(42,138,114,0.06);
   }
 
   .feed-header {
@@ -642,7 +644,7 @@
     position: absolute;
     bottom: 8px;
     left: 8px;
-    background: rgba(61,26,94,0.75);
+    background: rgba(42,138,114,0.75);
     color: white;
     padding: 4px 10px;
     border-radius: 10px;
@@ -857,7 +859,7 @@
     justify-content: center;
     font-size: 22px;
     color: white;
-    box-shadow: 0 4px 12px rgba(61,26,94,0.3);
+    box-shadow: 0 4px 12px rgba(42,138,114,0.3);
     border: none;
     cursor: pointer;
     margin-bottom: -8px;
@@ -1028,7 +1030,7 @@
     padding: 14px 10px;
     text-align: center;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(61,26,94,0.05);
+    box-shadow: 0 2px 8px rgba(42,138,114,0.05);
   }
 
   .stat-num {
@@ -1069,7 +1071,7 @@
     padding: 14px 10px;
     text-align: center;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(61,26,94,0.05);
+    box-shadow: 0 2px 8px rgba(42,138,114,0.05);
   }
 
   .badge-card.locked {
@@ -1108,7 +1110,7 @@
     align-items: center;
     gap: 12px;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(61,26,94,0.04);
+    box-shadow: 0 2px 8px rgba(42,138,114,0.04);
   }
 
   .my-spot-icon {
@@ -1229,7 +1231,7 @@
     border-radius: 14px;
     padding: 12px 14px;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(61,26,94,0.04);
+    box-shadow: 0 2px 8px rgba(42,138,114,0.04);
   }
 
   .rsc-left {
@@ -1304,7 +1306,7 @@
     align-items: center;
     justify-content: space-between;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(61,26,94,0.04);
+    box-shadow: 0 2px 8px rgba(42,138,114,0.04);
     margin-bottom: 10px;
   }
 
@@ -1714,7 +1716,7 @@
   .pr-section-title { font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px;display:flex;align-items:center;gap:6px; }
   .pr-pending-note { font-size:10px;background:#fef3c7;color:#a16207;padding:2px 8px;border-radius:10px;font-weight:500; }
   .pr-desc { font-size:11px;color:var(--text-light);margin-bottom:8px;line-height:1.6; }
-  .pr-card { background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(61,26,94,0.05); }
+  .pr-card { background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(42,138,114,0.05); }
   .pr-row { display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid var(--border);gap:8px; }
   .pr-row:last-child { border-bottom:none; }
   .pr-label { font-size:12px;color:var(--text-mid);flex:1;line-height:1.4; }
@@ -2111,7 +2113,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 2px 8px rgba(61,26,94,0.08);
+    box-shadow: 0 2px 8px rgba(42,138,114,0.08);
     cursor: pointer;
   }
   .spot-list-icon {
@@ -2571,7 +2573,7 @@ border-radius: 10px; padding: 9px 16px; min-height: 44px; display: inline-flex; 
 <!-- MEMBER FILTER TABS -->
 <div class="member-tabs" id="member-tabs">
   <div class="member-tab-item active" onclick="filterMember(this, 'all')">
-    <div class="member-tab-icon">💜</div>
+    <div class="member-tab-icon">💚</div>
     <div class="member-tab-name">全員</div>
   </div>
   <div class="member-tab-item" onclick="filterMember(this, 'ユナ')" ondblclick="showOshiRanking('ユナ')">
@@ -2595,7 +2597,7 @@ border-radius: 10px; padding: 9px 16px; min-height: 44px; display: inline-flex; 
     <div class="member-tab-name">イロハ</div>
   </div>
 </div>
-<div id="member-tabs-hint" style="display:none;background:#f0e8f8;text-align:center;font-size:11px;color:#7b4fa6;padding:4px 0;">
+<div id="member-tabs-hint" style="display:none;background:#e2f5ee;text-align:center;font-size:11px;color:#2a8a72;padding:4px 0;">
   👆 タップしてスポットのメンバーを選択
 </div>
 
@@ -2642,7 +2644,7 @@ border-radius: 10px; padding: 9px 16px; min-height: 44px; display: inline-flex; 
   <div id="view-map">
     <button type="button" id="map-back-btn" onclick="toggleListView()" style="display:none;">🗺️ 地図に戻る</button>
   <!-- お知らせバナー -->
-  <div id="notice-banner-wrap" style="display:none;margin:8px 8px 0;border-radius:12px;overflow:hidden;background:#1a0a2e;border:1px solid rgba(201,168,239,0.3);">
+  <div id="notice-banner-wrap" style="display:none;margin:8px 8px 0;border-radius:12px;overflow:hidden;background:#0d3a31;border:1px solid rgba(166,227,208,0.35);">
     <div id="notice-banner-header" onclick="toggleNoticeBanner()" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;">
       <span style="font-size:13px;font-weight:700;color:#b3b3b3;">📢 お知らせ <span id="notice-count-badge" style="background:rgba(201,168,239,0.2);color:#b3b3b3;padding:1px 8px;border-radius:20px;font-size:11px;"></span></span>
       <span id="notice-banner-arrow" style="color:#b3b3b3;font-size:12px;">▼</span>
@@ -2696,7 +2698,7 @@ border-radius: 10px; padding: 9px 16px; min-height: 44px; display: inline-flex; 
         <button id="area-btn" class="radius-btn" onclick="onAreaButton()">🗾 エリア</button>
         <button id="list-view-toggle" onclick="toggleListView()">📋 リスト</button>
       </div>
-        <button id="nearest-spot-btn" onclick="goToNearestSpot()" style="position:fixed;bottom:90px;right:16px;z-index:1000;background:linear-gradient(135deg,#1a1a1a,#7b1a3e);color:#fff;border:none;border-radius:50px;padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);display:none;align-items:center;gap:6px;">📍 最寄りスポット</button>
+        <button id="nearest-spot-btn" onclick="goToNearestSpot()" style="position:fixed;bottom:90px;right:16px;z-index:1000;background:linear-gradient(135deg,var(--purple-deep),var(--red));color:#fff;border:none;border-radius:50px;padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);display:none;align-items:center;gap:6px;">📍 最寄りスポット</button>
         <button id="card-fixed-close-btn" onclick="toggleCard()" aria-label="カードを閉じる" style="position:fixed;top:calc(var(--content-top) + 10px);right:14px;z-index:1200;width:36px;height:36px;border-radius:50%;background:rgba(20,20,20,0.75);color:#fff;border:none;font-size:18px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.3);">✕</button>
 
       <!-- スポット検索 -->
@@ -3217,7 +3219,7 @@ border-radius: 10px; padding: 9px 16px; min-height: 44px; display: inline-flex; 
       非公式ファンアプリです。BELIFT LAB・ILLITとは一切関係ありません。<br>
       掲載情報はファンによる投稿に基づくものであり、正確性を保証するものではありません。情報の利用・訪問により生じた損害について責任を負いかねます。<br>
       コンテンツ・システムの無断転用・商用利用を禁止します。
-      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(61,26,94,0.15);">
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(42,138,114,0.15);">
         <div style="font-weight:700;margin-bottom:6px;">🙏 聖地訪問のお願い</div>
         <div style="line-height:1.8;">
         • 周辺住民・通行人への配慮を忘れずに<br>
@@ -3500,7 +3502,7 @@ border-radius: 10px; padding: 9px 16px; min-height: 44px; display: inline-flex; 
         <div class="pr-rank-info">
           <div class="pr-rank-name">ダイヤモンド <span class="pr-current-badge" style="display:none;">現在</span></div>
           <div class="pr-rank-range">6000 pt〜</div>
-          <div style="font-size:10px;color:#c0392b;margin-top:2px;">🔒 友達紹介5人（称号「Scout」）以上が必要</div>
+          <div style="font-size:10px;color:var(--purple-deep);margin-top:2px;">🔒 友達紹介5人（称号「Scout」）以上が必要</div>
         </div>
         <div class="pr-rank-desc">準管理者候補</div>
       </div>
@@ -4153,7 +4155,7 @@ border-radius: 10px; padding: 9px 16px; min-height: 44px; display: inline-flex; 
   background:#141414;color:rgba(255,255,255,0.5);
   font-size:11px;line-height:1.7;
   padding:20px 20px 100px;text-align:center;
-  border-top:1px solid rgba(123,79,166,0.2);
+  border-top:1px solid rgba(69,179,148,0.2);
 ">
   <div style="margin-bottom:6px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:0.05em;">
     Trace ILLIT — 聖地巡礼MAP
@@ -4612,7 +4614,7 @@ function showUpdateModal() {
   const overlay = document.createElement('div');
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:center;justify-content:center;';
   const notes = GROUP_CONFIG.updateNotes.map(n => `<li style="margin-bottom:6px">${n}</li>`).join('');
-  overlay.innerHTML = `<div style="background:#fff;border-radius:20px;padding:28px 24px;max-width:300px;width:88%;text-align:center;"><div style="font-size:22px;margin-bottom:8px;">🎉 アップデート</div><div style="font-size:13px;color:#666;margin-bottom:12px;">v${GROUP_CONFIG.appVersion}</div><ul style="text-align:left;font-size:13px;color:#333;padding-left:18px;margin-bottom:20px;">${notes}</ul><button onclick="this.closest('div').parentElement.remove()" style="background:linear-gradient(135deg,#1a1a1a,#7b1a3e);color:#fff;border:none;border-radius:12px;padding:10px 32px;font-size:14px;cursor:pointer;">OK</button></div>`;
+  overlay.innerHTML = `<div style="background:#fff;border-radius:20px;padding:28px 24px;max-width:300px;width:88%;text-align:center;"><div style="font-size:22px;margin-bottom:8px;">🎉 アップデート</div><div style="font-size:13px;color:#666;margin-bottom:12px;">v${GROUP_CONFIG.appVersion}</div><ul style="text-align:left;font-size:13px;color:#333;padding-left:18px;margin-bottom:20px;">${notes}</ul><button onclick="this.closest('div').parentElement.remove()" style="background:linear-gradient(135deg,var(--purple-deep),var(--red));color:#fff;border:none;border-radius:12px;padding:10px 32px;font-size:14px;cursor:pointer;">OK</button></div>`;
   document.body.appendChild(overlay);
 }
 
@@ -4765,9 +4767,9 @@ function showBoostPopup(item, dismissKey) {
   }
   const overlay = document.createElement('div');
   overlay.id = 'boost-overlay';
-  overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(61,26,94,0.85);display:flex;align-items:center;justify-content:center;animation:fadeInBd 0.4s ease;';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(42,138,114,0.85);display:flex;align-items:center;justify-content:center;animation:fadeInBd 0.4s ease;';
   overlay.innerHTML = `
-    <div style="background:linear-gradient(135deg,#0f1b3d,#7b1a3e);border-radius:24px;padding:32px 28px;max-width:320px;width:90%;text-align:center;color:#fff;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+    <div style="background:linear-gradient(160deg,var(--pop-deep),var(--pop-mid));border-radius:24px;padding:32px 28px;max-width:320px;width:90%;text-align:center;color:#fff;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
       <button type="button" aria-label="閉じる" onclick="closeBoostPopup(false,'${dismissKey}')" style="position:absolute;top:6px;right:6px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.12);border:none;border-radius:50%;color:rgba(255,255,255,0.85);font-size:24px;line-height:1;padding:0;cursor:pointer;z-index:2;touch-action:manipulation;-webkit-tap-highlight-color:transparent;">×</button>
       <div style="font-size:40px;margin-bottom:8px;">${b.emoji || '✨'}</div>
       <div style="font-size:13px;font-weight:700;color:#ffd700;margin-bottom:4px;">${isPre ? '📣 予告' : '✨ 開催中 ✨'}</div>
@@ -4801,13 +4803,13 @@ function showEventPopup(ev, dismissKey) {
   overlay.id = 'event-overlay';
   overlay.style.cssText = `
     position:fixed;inset:0;z-index:9999;
-    background:rgba(61,26,94,0.85);
+    background:rgba(42,138,114,0.85);
     display:flex;align-items:center;justify-content:center;
     animation:fadeInBd 0.4s ease;
   `;
   overlay.innerHTML = `
     <div style="
-      background:linear-gradient(135deg,#1a1a1a,#7b1a3e);
+      background:linear-gradient(160deg,var(--pop-deep),var(--pop-mid));
       border-radius:24px;padding:32px 28px;max-width:320px;width:90%;
       text-align:center;color:#fff;position:relative;
       box-shadow:0 20px 60px rgba(0,0,0,0.5);
@@ -4855,7 +4857,7 @@ function showBirthdayPopup(event, dismissKey) {
   overlay.id = 'birthday-overlay';
   overlay.style.cssText = `
     position:fixed;inset:0;z-index:9999;
-    background:rgba(61,26,94,0.85);
+    background:rgba(42,138,114,0.85);
     display:flex;align-items:center;justify-content:center;
     animation:fadeInBd 0.4s ease;
   `;
@@ -4869,7 +4871,7 @@ function showBirthdayPopup(event, dismissKey) {
 
   overlay.innerHTML = `
     <div style="
-      background:linear-gradient(135deg,#1a1a1a,#7b1a3e);
+      background:linear-gradient(160deg,var(--pop-deep),var(--pop-mid));
       border-radius:24px;padding:32px 28px;max-width:320px;width:90%;
       text-align:center;color:#fff;position:relative;
       box-shadow:0 20px 60px rgba(0,0,0,0.5);
@@ -4894,9 +4896,9 @@ function showBirthdayPopup(event, dismissKey) {
         padding:8px 12px;font-size:13px;color:#ececec;margin-bottom:16px;
       ">${tag}</div>
       <button onclick="shareBirthdayX('${member.name}','${member.nameEn}','${tag}')" style="
-        background:linear-gradient(135deg,#c0392b,#e74c3c);
-        border:none;border-radius:14px;padding:10px 20px;
-        color:#fff;font-size:13px;font-weight:700;cursor:pointer;width:100%;
+        background:#fff;
+        border:none;border-radius:14px;padding:12px 20px;
+        color:var(--pop-deep);font-size:14px;font-weight:800;cursor:pointer;width:100%;box-shadow:0 4px 14px rgba(0,0,0,0.25);
       ">𝕏 お祝いポストを送る</button>
       <div onclick="closeBirthdayPopup(true,'${dismissKey}')" style="
         margin-top:14px;font-size:12px;color:rgba(255,255,255,0.5);
@@ -5688,7 +5690,7 @@ function jumpToSpotFromFeed(el) {
 
 function feedLikeButton(item, table) {
   const liked = hasLikedPost(table + ':' + item.id);
-  return `<button class="${liked ? 'liked' : ''}" onclick="toggleLike('${item.id}', this, '${table}')" ${liked ? 'disabled' : ''} style="border:none;background:${liked ? 'rgba(224,60,110,0.15)' : 'var(--purple-pale)'};color:${liked ? '#c0392b' : 'var(--purple-mid)'};border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:${liked ? 'default' : 'pointer'};display:flex;align-items:center;gap:5px;">
+  return `<button class="${liked ? 'liked' : ''}" onclick="toggleLike('${item.id}', this, '${table}')" ${liked ? 'disabled' : ''} style="border:none;background:${liked ? 'rgba(224,60,110,0.15)' : 'var(--purple-pale)'};color:${liked ? 'var(--purple-deep)' : 'var(--purple-mid)'};border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:${liked ? 'default' : 'pointer'};display:flex;align-items:center;gap:5px;">
     <span>${liked ? '❤️ いいね済み' : '🤍 いいね'}</span><span style="opacity:0.75;">${item.likes_count}件</span>
   </button>`;
 }
@@ -5722,7 +5724,7 @@ function renderFeedItem(item) {
   }
   // 巡礼報告
   if (item.feedType === 'visit') {
-    return `<div style="background:linear-gradient(135deg,#fff,var(--purple-pale));border-radius:18px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(123,79,166,0.08);border:1px solid var(--border);">
+    return `<div style="background:linear-gradient(135deg,#fff,var(--purple-pale));border-radius:18px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(69,179,148,0.08);border:1px solid var(--border);">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
         <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--purple-mid),var(--purple-deep));display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">🚩</div>
         <div style="font-size:13px;color:var(--text);line-height:1.4;"><b style="color:var(--purple-deep);">${escHtml(item.display_name)}</b>さんが<br><b>「${escHtml(item.spot_name)}」</b>を巡礼しました 🌸</div>
@@ -5734,7 +5736,7 @@ function renderFeedItem(item) {
   // 運営が登録したスポット
   if (item.feedType === 'spot') {
     const videoBadge = item.has_video ? `<span style="font-size:10px;background:#e0245e;color:#fff;border-radius:8px;padding:2px 8px;">🎬 動画あり</span>` : '';
-    return `<div data-spot-name="${escHtml(item.spot_name)}" onclick="jumpToSpotFromFeed(this)" style="cursor:pointer;background:#fff;border-radius:18px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(123,79,166,0.08);border:${item.has_video ? '2px solid #e0245e' : '1px solid var(--border)'};">
+    return `<div data-spot-name="${escHtml(item.spot_name)}" onclick="jumpToSpotFromFeed(this)" style="cursor:pointer;background:#fff;border-radius:18px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(69,179,148,0.08);border:${item.has_video ? '2px solid #e0245e' : '1px solid var(--border)'};">
       <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
         <span style="font-size:10px;background:var(--purple-mid);color:#fff;border-radius:8px;padding:2px 8px;">📍 新スポット追加${item.no != null ? ' No.' + item.no : ''}</span>
         ${videoBadge}
@@ -6454,7 +6456,7 @@ function openSeriesPicker() {
       <button onclick="closeSeriesPicker()" aria-label="閉じる" style="border:none;background:none;font-size:22px;color:var(--text-light);cursor:pointer;">✕</button>
     </div>
     <div style="font-size:11px;color:var(--text-mid);padding:0 16px 8px;">選ぶと、その旅（番組）で訪れたスポットだけを地図に表示します。</div>
-    <div style="display:flex;gap:6px;padding:0 16px 8px;flex-wrap:wrap;">${sortBtn('activity', '📅 活動日順')}${sortBtn('new', '🆕 登録が新しい順')}${sortBtn('count', '📍 スポットが多い順')}${activeSeries ? `<button type="button" onclick="clearSeries();closeSeriesPicker()" style="margin-left:auto;border:1.5px solid #c0392b;background:#fff;color:#c0392b;border-radius:14px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;">✕ 解除</button>` : ''}</div>
+    <div style="display:flex;gap:6px;padding:0 16px 8px;flex-wrap:wrap;">${sortBtn('activity', '📅 活動日順')}${sortBtn('new', '🆕 登録が新しい順')}${sortBtn('count', '📍 スポットが多い順')}${activeSeries ? `<button type="button" onclick="clearSeries();closeSeriesPicker()" style="margin-left:auto;border:1.5px solid var(--purple-deep);background:#fff;color:var(--purple-deep);border-radius:14px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;">✕ 解除</button>` : ''}</div>
     ${seriesPickerSort === 'activity' ? `<div style="font-size:11px;color:var(--text-mid);padding:0 16px 8px;line-height:1.5;">・活動日は、写真の出典（YouTube・Instagram・Xなど）の公開日、または手入力した活動月をもとにした目安で、<b style="color:#d9363e;">実際の活動日を保証するものではありません</b>。日付が分からない旅は一番下に並びます。${seriesActivityMap ? '' : '<br>読み込み中...'}</div>` : ''}
     ${seriesPickerSort === 'new' ? '<div style="font-size:11px;color:var(--text-mid);padding:0 16px 8px;line-height:1.5;">・アプリにスポットを登録した順です。過去の活動も順次追加しているため、<b style="color:#d9363e;">メンバーの活動が新しい順ではありません</b>。</div>' : ''}
     <div style="overflow-y:auto;-webkit-overflow-scrolling:touch;padding:0 12px 20px;">${rows || '<div style="padding:24px;text-align:center;color:var(--text-light);font-size:13px;">まだシリーズがありません</div>'}</div>
@@ -6644,7 +6646,7 @@ function openAreaPicker() {
     </div>
     <div style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--text-mid);padding:0 16px 8px;line-height:1.5;">
       <span style="flex:1;">選ぶと、そのエリアのスポットだけを地図に表示します。${memberNote}</span>
-      ${activeArea ? `<button type="button" onclick="clearArea();closeAreaPicker()" style="flex-shrink:0;border:1.5px solid #c0392b;background:#fff;color:#c0392b;border-radius:14px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;">✕ 解除</button>` : ''}
+      ${activeArea ? `<button type="button" onclick="clearArea();closeAreaPicker()" style="flex-shrink:0;border:1.5px solid var(--purple-deep);background:#fff;color:var(--purple-deep);border-radius:14px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;">✕ 解除</button>` : ''}
     </div>
     <div style="overflow-y:auto;-webkit-overflow-scrolling:touch;padding:0 12px 20px;">
       ${sum.jp ? row('jp', '', '🇯🇵', '日本（すべて）', sum.jp, false) + jpRows : ''}
@@ -7839,7 +7841,7 @@ async function buildShareCardBlob(spot) {
     ctx.drawImage(t, 0, 0, W, H);
     ctx.fillStyle = 'rgba(15,10,25,0.55)'; ctx.fillRect(0, 0, W, H);
   } else {
-    const g = ctx.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#2b1a3e'); g.addColorStop(1, '#7b1a3e');
+    const g = ctx.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#10433a'); g.addColorStop(1, '#45b394');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
   }
   // 上：ラベル・日付
@@ -10973,7 +10975,7 @@ function showLangComingSoon() {
     const hasEvidence = matchedPhotoDataUrl || url.length > 0;
     const btn = document.getElementById('matched-submit-btn');
     btn.disabled = !hasEvidence;
-    btn.style.background = hasEvidence ? 'linear-gradient(135deg,#1a1a1a,#c0392b)' : '#ccc';
+    btn.style.background = hasEvidence ? 'linear-gradient(135deg,var(--purple-deep),var(--red))' : '#ccc';
     btn.style.cursor = hasEvidence ? 'pointer' : 'not-allowed';
   }
 
@@ -11989,7 +11991,7 @@ function buildOshiGrids() {
       ">
         <div style="font-size:24px;">${MEMBER_ICONS[m.name]||'💜'}</div>
         <div style="font-size:11px;font-weight:700;color:#1a1a1a;margin-top:4px;">${m.name}</div>
-        ${selected ? '<div style="font-size:10px;color:#c0392b;margin-top:2px;">✓ 選択中</div>' : ''}
+        ${selected ? '<div style="font-size:10px;color:var(--purple-deep);margin-top:2px;">✓ 選択中</div>' : ''}
       </button>`;
     }).join('');
   });
@@ -12079,7 +12081,7 @@ function showOshiRanking(member) {
   // モーダルが既に開いていればメンバーだけ切り替え（×不要）
   if (modal && modal.style.display !== 'none') {
     const isAll = member === 'all';
-    const icon = isAll ? '💜' : (MEMBER_ICONS[member] || '💜');
+    const icon = isAll ? '💚' : (MEMBER_ICONS[member] || '💜');
     document.getElementById('oshi-ranking-icon').textContent = icon;
     document.getElementById('oshi-ranking-title').textContent = isAll
       ? '総合ポイントランキング'
@@ -12091,7 +12093,7 @@ function showOshiRanking(member) {
     return;
   }
   const isAll = member === 'all';
-  const icon = isAll ? '💜' : (MEMBER_ICONS[member] || '💜');
+  const icon = isAll ? '💚' : (MEMBER_ICONS[member] || '💜');
   document.getElementById('oshi-ranking-icon').textContent = icon;
   document.getElementById('oshi-ranking-title').textContent = isAll
     ? '総合ポイントランキング'
@@ -12192,7 +12194,7 @@ function initEventRankingTabs() {
     return;
   }
   container.innerHTML = activeEvents.map(ev =>
-    `<div class="rtab event-rtab" onclick="switchRankingPeriod(this,'event:${ev.id}')" data-event-id="${ev.id}" data-event-name="${ev.name}" data-event-start="${ev.start}" data-event-end="${ev.end}" style="background:linear-gradient(135deg,#1a1a1a,#7b1a3e);color:#fff;border-radius:20px;white-space:nowrap;">${ev.name}</div>`
+    `<div class="rtab event-rtab" onclick="switchRankingPeriod(this,'event:${ev.id}')" data-event-id="${ev.id}" data-event-name="${ev.name}" data-event-start="${ev.start}" data-event-end="${ev.end}" style="background:linear-gradient(135deg,var(--purple-deep),var(--red));color:#fff;border-radius:20px;white-space:nowrap;">${ev.name}</div>`
   ).join('');
 }
 
@@ -12404,9 +12406,9 @@ function buildOshiRanking() {
         : '<div style="color:var(--text-light);font-size:12px;">推しファンの巡礼データが集まるとランキングが表示されます 🌸</div>';
 
       return `
-      <div style="background:#fff;border-radius:16px;margin-bottom:14px;box-shadow:0 2px 10px rgba(61,26,94,0.08);overflow:hidden;">
+      <div style="background:#fff;border-radius:16px;margin-bottom:14px;box-shadow:0 2px 10px rgba(42,138,114,0.08);overflow:hidden;">
         <div style="
-          background:${isMyOshi1 ? 'linear-gradient(135deg,#1a1a1a,#7b1a3e)' : isMyOshi2 ? 'linear-gradient(135deg,#333333,#4d4d4d)' : 'linear-gradient(135deg,#ececec,#e6e6e6)'};
+          background:${isMyOshi1 ? 'linear-gradient(135deg,var(--purple-deep),var(--red))' : isMyOshi2 ? 'linear-gradient(135deg,#333333,#4d4d4d)' : 'linear-gradient(135deg,#ececec,#e6e6e6)'};
           padding:12px 16px;display:flex;align-items:center;gap:10px;
         ">
           <div style="font-size:28px;">${MEMBER_ICONS[m.name]||'💜'}</div>
@@ -14809,7 +14811,7 @@ function tpRefreshResult() {
     <!-- 1推し -->
     <div style="margin-bottom:20px;">
       <div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:8px;">
-        💜 1推し <span style="font-weight:400;color:#c0392b;font-size:12px;">×1.5倍ポイント</span>
+        💜 1推し <span style="font-weight:400;color:var(--purple-deep);font-size:12px;">×1.5倍ポイント</span>
       </div>
       <div id="oshi1-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;"></div>
     </div>
@@ -14826,7 +14828,7 @@ function tpRefreshResult() {
       ⚠️ 1推しと2推しに同じメンバーは設定できません
     </div>
 
-    <button onclick="saveOshiSettings()" style="width:100%;padding:12px;background:linear-gradient(135deg,#1a1a1a,#c0392b);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;">保存する</button>
+    <button onclick="saveOshiSettings()" style="width:100%;padding:12px;background:linear-gradient(135deg,var(--purple-deep),var(--red));color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;">保存する</button>
     <div id="oshi-save-msg" style="text-align:center;font-size:12px;color:#15803d;margin-top:8px;min-height:18px;"></div>
   </div>
 </div>
@@ -14835,7 +14837,7 @@ function tpRefreshResult() {
 <div id="oshi-ranking-modal" style="display:none;position:fixed;top:110px;left:0;right:0;bottom:60px;z-index:600;background:rgba(0,0,0,0.7);overflow-y:auto;" onclick="closeOshiRankingModal(event)">
   <div style="background:#fff;border-radius:20px;margin:16px 16px 40px;padding:0 0 24px;overflow:hidden;" onclick="event.stopPropagation()">
     <!-- ヘッダー -->
-    <div id="oshi-ranking-header" style="padding:20px 20px 16px;background:linear-gradient(135deg,#1a1a1a,#c0392b);color:#fff;position:relative;">
+    <div id="oshi-ranking-header" style="padding:20px 20px 16px;background:linear-gradient(135deg,var(--purple-deep),var(--red));color:#fff;position:relative;">
       <button onclick="document.getElementById('oshi-ranking-modal').style.display='none';" style="position:absolute;top:14px;right:16px;background:none;border:none;color:rgba(255,255,255,0.7);font-size:22px;cursor:pointer;">×</button>
       <div id="oshi-ranking-icon" style="font-size:36px;margin-bottom:6px;">🐆</div>
       <div id="oshi-ranking-title" style="font-size:18px;font-weight:700;">ユナ 推しランキング</div>
@@ -14875,7 +14877,7 @@ function tpRefreshResult() {
       <div style="background:#141414;border-radius:12px;padding:16px;margin-bottom:12px;position:relative;">
         <div id="transfer-code-display" style="font-family:monospace;font-size:13px;color:#ececec;letter-spacing:0.08em;word-break:break-all;line-height:1.8;user-select:all;">─</div>
       </div>
-      <button onclick="copyTransferCode()" id="copy-transfer-btn" style="width:100%;padding:12px;background:linear-gradient(135deg,#1a1a1a,#c0392b);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;">📋 コードをコピー</button>
+      <button onclick="copyTransferCode()" id="copy-transfer-btn" style="width:100%;padding:12px;background:linear-gradient(135deg,var(--purple-deep),var(--red));color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;">📋 コードをコピー</button>
       <div id="copy-transfer-msg" style="text-align:center;font-size:12px;color:#15803d;margin-top:8px;min-height:18px;"></div>
       <div style="margin-top:14px;padding:12px;background:#fef3c7;border-radius:10px;font-size:12px;color:#92400e;">⚠️ このコードは端末に保存されません。機種変更・アプリ削除の前に必ずコピーしてください。</div>
     </div>
@@ -14884,7 +14886,7 @@ function tpRefreshResult() {
     <div id="tpanel-import" style="display:none;">
       <div style="font-size:13px;color:#4a4a4a;margin-bottom:12px;">引き継ぎコードを貼り付けて「復元する」を押してください。</div>
       <textarea id="transfer-input" placeholder="TIV1-XXXX-XXXX-..." style="width:100%;height:100px;border:2px solid #b3b3b3;border-radius:12px;padding:12px;font-size:13px;font-family:monospace;resize:none;outline:none;color:#141414;"></textarea>
-      <button onclick="applyTransferCode()" style="width:100%;padding:12px;background:linear-gradient(135deg,#1a1a1a,#c0392b);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px;">✅ 復元する</button>
+      <button onclick="applyTransferCode()" style="width:100%;padding:12px;background:linear-gradient(135deg,var(--purple-deep),var(--red));color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px;">✅ 復元する</button>
       <div id="import-transfer-msg" style="text-align:center;font-size:12px;margin-top:8px;min-height:18px;"></div>
       <div style="margin-top:14px;padding:12px;background:#fef3c7;border-radius:10px;font-size:12px;color:#92400e;">⚠️ 復元すると現在のデータに上書きされます。</div>
     </div>
@@ -14913,7 +14915,7 @@ function tpRefreshResult() {
       ⚠️ 虚偽の報告をするとポイントが剥奪される場合があります
     </div>
 
-    <button onclick="submitLocationCorrection()" style="width:100%;padding:12px;background:linear-gradient(135deg,#1a1a1a,#c0392b);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;">
+    <button onclick="submitLocationCorrection()" style="width:100%;padding:12px;background:linear-gradient(135deg,var(--purple-deep),var(--red));color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;">
       この位置を正しい場所として報告
     </button>
   </div>
@@ -14970,7 +14972,7 @@ function tpRefreshResult() {
 
 
 <!-- ── オンボーディングモーダル ── -->
-<div id="onboarding-modal" style="display:none;position:fixed;inset:0;z-index:1000;background:linear-gradient(160deg,#1a0a2e 0%,#3d1a5e 60%,#6b2d8b 100%);overflow-y:auto;">
+<div id="onboarding-modal" style="display:none;position:fixed;inset:0;z-index:1000;background:linear-gradient(160deg,#0d3a31 0%,#2a8a72 60%,#45b394 100%);overflow-y:auto;">
   <div style="max-width:480px;margin:0 auto;padding:40px 24px 60px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;">
 
     <!-- ページ1：ようこそ -->
@@ -15167,7 +15169,7 @@ function tpRefreshResult() {
       <div style="font-size:11px;color:#9a9a9a;margin-top:4px;">20文字以内</div>
     </div>
 
-    <button onclick="saveProfileEdit()" style="width:100%;padding:13px;background:linear-gradient(135deg,#1a1a1a,#c0392b);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">
+    <button onclick="saveProfileEdit()" style="width:100%;padding:13px;background:linear-gradient(135deg,var(--purple-deep),var(--red));color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">
       保存する
     </button>
     <div id="profile-edit-msg" style="text-align:center;font-size:12px;color:#15803d;margin-top:8px;min-height:18px;"></div>

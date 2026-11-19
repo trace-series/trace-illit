@@ -4,8 +4,8 @@
   "start_url": "./trace-illit.html?utm_source=homescreen",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#fdf0f5",
-  "theme_color": "#3d1a5e",
+  "background_color": "#f2fbf8",
+  "theme_color": "#2a8a72",
   "lang": "ja",
   "icons": [
     {
